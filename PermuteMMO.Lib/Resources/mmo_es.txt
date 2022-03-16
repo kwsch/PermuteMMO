@@ -1,0 +1,10692 @@
+{
+  "0x7FA3A1DE69BD271E": [
+    {
+      "slot": 100,
+      "name": "Pikachu",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Pikachu",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Raichu",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Raichu",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x44182A854CD372AA": [
+    {
+      "slot": 100,
+      "name": "Raichu",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Raichu",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x44182B854CD3745D": [
+    {
+      "slot": 100,
+      "name": "Pikachu",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x441828854CD36F44": [
+    {
+      "slot": 100,
+      "name": "Raichu",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xB6A506CF7BC718EF": [
+    {
+      "slot": 100,
+      "name": "Zubat",
+      "alpha": false,
+      "level": [
+        19,
+        21
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Zubat",
+      "alpha": true,
+      "level": [
+        34,
+        36
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Golbat",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Golbat",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x7CCC8F76604EF8FB": [
+    {
+      "slot": 100,
+      "name": "Golbat",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Golbat",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x7CCC8E76604EF748": [
+    {
+      "slot": 100,
+      "name": "Zubat",
+      "alpha": true,
+      "level": [
+        34,
+        36
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x7CCC9176604EFC61": [
+    {
+      "slot": 100,
+      "name": "Golbat",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xAE0FB59D11E10887": [
+    {
+      "slot": 100,
+      "name": "Golbat",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Golbat",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Crobat",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Crobat",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xA331DBB81B1FC43": [
+    {
+      "slot": 100,
+      "name": "Crobat",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Crobat",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xA331CBB81B1FA90": [
+    {
+      "slot": 100,
+      "name": "Golbat",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xA331FBB81B1FFA9": [
+    {
+      "slot": 100,
+      "name": "Crobat",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x41E4947058A65FD8": [
+    {
+      "slot": 100,
+      "name": "Paras",
+      "alpha": false,
+      "level": [
+        21,
+        23
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Paras",
+      "alpha": true,
+      "level": [
+        36,
+        38
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Parasect",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Parasect",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x702EDC94E9044B34": [
+    {
+      "slot": 100,
+      "name": "Parasect",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Parasect",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x702EDD94E9044CE7": [
+    {
+      "slot": 100,
+      "name": "Paras",
+      "alpha": true,
+      "level": [
+        36,
+        38
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x702EDE94E9044E9A": [
+    {
+      "slot": 100,
+      "name": "Parasect",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x21C03B7FF717BBAB": [
+    {
+      "slot": 100,
+      "name": "Abra",
+      "alpha": false,
+      "level": [
+        13,
+        15
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Abra",
+      "alpha": true,
+      "level": [
+        28,
+        30
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Kadabra",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Kadabra",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x87D933E515710A7F": [
+    {
+      "slot": 100,
+      "name": "Kadabra",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Kadabra",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x87D932E5157108CC": [
+    {
+      "slot": 100,
+      "name": "Abra",
+      "alpha": true,
+      "level": [
+        28,
+        30
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x87D935E515710DE5": [
+    {
+      "slot": 100,
+      "name": "Kadabra",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x2636AF8BB69216A3": [
+    {
+      "slot": 100,
+      "name": "Kadabra",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Kadabra",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Alakazam",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Alakazam",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xCBC6C76D483390E7": [
+    {
+      "slot": 100,
+      "name": "Alakazam",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Alakazam",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xCBC6C66D48338F34": [
+    {
+      "slot": 100,
+      "name": "Kadabra",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xCBC6C96D4833944D": [
+    {
+      "slot": 100,
+      "name": "Alakazam",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xE680740C6BE14EFB": [
+    {
+      "slot": 100,
+      "name": "Geodude",
+      "alpha": false,
+      "level": [
+        22,
+        24
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Geodude",
+      "alpha": true,
+      "level": [
+        37,
+        39
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Graveler",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Graveler",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x2058EB6587596EEF": [
+    {
+      "slot": 100,
+      "name": "Graveler",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Graveler",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x2058EA6587596D3C": [
+    {
+      "slot": 100,
+      "name": "Geodude",
+      "alpha": true,
+      "level": [
+        37,
+        39
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x2058ED6587597255": [
+    {
+      "slot": 100,
+      "name": "Graveler",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x7A36227F4C2CC35D": [
+    {
+      "slot": 100,
+      "name": "Graveler",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Graveler",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Golem",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Golem",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xB5C199D8691677D1": [
+    {
+      "slot": 100,
+      "name": "Golem",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Golem",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xB5C198D86916761E": [
+    {
+      "slot": 100,
+      "name": "Graveler",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xB5C197D86916746B": [
+    {
+      "slot": 100,
+      "name": "Golem",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x8E51750B5EB775A0": [
+    {
+      "slot": 100,
+      "name": "Ponyta",
+      "alpha": false,
+      "level": [
+        37,
+        39
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Ponyta",
+      "alpha": true,
+      "level": [
+        52,
+        54
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Rapidash",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Rapidash",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x53327DB24229B98C": [
+    {
+      "slot": 100,
+      "name": "Rapidash",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Rapidash",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x53327EB24229BB3F": [
+    {
+      "slot": 100,
+      "name": "Ponyta",
+      "alpha": true,
+      "level": [
+        52,
+        54
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x53327FB24229BCF2": [
+    {
+      "slot": 100,
+      "name": "Rapidash",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xDEDBA54CA00F14E4": [
+    {
+      "slot": 100,
+      "name": "Scyther",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Scyther",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Kleavor",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Kleavor",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x2E2A5E3683B037E8": [
+    {
+      "slot": 100,
+      "name": "Kleavor",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Kleavor",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x2E2A5F3683B0399B": [
+    {
+      "slot": 100,
+      "name": "Scyther",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x2E2A603683B03B4E": [
+    {
+      "slot": 100,
+      "name": "Kleavor",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x4EBAFDB3F3D274CD": [
+    {
+      "slot": 100,
+      "name": "Pichu",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Pichu",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Pikachu",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Pikachu",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x88C23617D6BA8461": [
+    {
+      "slot": 100,
+      "name": "Pikachu",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Pikachu",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x88C23517D6BA82AE": [
+    {
+      "slot": 100,
+      "name": "Pichu",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x88C23417D6BA80FB": [
+    {
+      "slot": 100,
+      "name": "Pikachu",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x5BFA9CCA4ED8142B": [
+    {
+      "slot": 100,
+      "name": "Stantler",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Stantler",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Wyrdeer",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Wyrdeer",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xC213952F6D3162FF": [
+    {
+      "slot": 100,
+      "name": "Wyrdeer",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Wyrdeer",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xC213942F6D31614C": [
+    {
+      "slot": 100,
+      "name": "Stantler",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xC213972F6D316665": [
+    {
+      "slot": 100,
+      "name": "Wyrdeer",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xB5EE09F298C830F4": [
+    {
+      "slot": 100,
+      "name": "Wurmple",
+      "alpha": false,
+      "level": [
+        4,
+        6
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Wurmple",
+      "alpha": true,
+      "level": [
+        19,
+        21
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Silcoon",
+      "alpha": false,
+      "level": [
+        7,
+        9
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Silcoon",
+      "alpha": true,
+      "level": [
+        22,
+        24
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x311EC1D2F068F098": [
+    {
+      "slot": 100,
+      "name": "Silcoon",
+      "alpha": false,
+      "level": [
+        7,
+        9
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Silcoon",
+      "alpha": true,
+      "level": [
+        22,
+        24
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x311EC2D2F068F24B": [
+    {
+      "slot": 100,
+      "name": "Wurmple",
+      "alpha": true,
+      "level": [
+        19,
+        21
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x311EC3D2F068F3FE": [
+    {
+      "slot": 100,
+      "name": "Silcoon",
+      "alpha": true,
+      "level": [
+        22,
+        24
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xE35FD9B2D7A94E6F": [
+    {
+      "slot": 100,
+      "name": "Wurmple",
+      "alpha": false,
+      "level": [
+        4,
+        6
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Wurmple",
+      "alpha": true,
+      "level": [
+        19,
+        21
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Cascoon",
+      "alpha": false,
+      "level": [
+        7,
+        9
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Cascoon",
+      "alpha": true,
+      "level": [
+        22,
+        24
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xA9876259BC312E7B": [
+    {
+      "slot": 100,
+      "name": "Cascoon",
+      "alpha": false,
+      "level": [
+        7,
+        9
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Cascoon",
+      "alpha": true,
+      "level": [
+        22,
+        24
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xA9876159BC312CC8": [
+    {
+      "slot": 100,
+      "name": "Wurmple",
+      "alpha": true,
+      "level": [
+        19,
+        21
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xA9876459BC3131E1": [
+    {
+      "slot": 100,
+      "name": "Cascoon",
+      "alpha": true,
+      "level": [
+        22,
+        24
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x581DE2E85BA38AEC": [
+    {
+      "slot": 100,
+      "name": "Silcoon",
+      "alpha": false,
+      "level": [
+        7,
+        9
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Silcoon",
+      "alpha": true,
+      "level": [
+        22,
+        24
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Beautifly",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Beautifly",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x933C5A4178306D80": [
+    {
+      "slot": 100,
+      "name": "Beautifly",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Beautifly",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x933C5B4178306F33": [
+    {
+      "slot": 100,
+      "name": "Silcoon",
+      "alpha": true,
+      "level": [
+        22,
+        24
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x933C5C41783070E6": [
+    {
+      "slot": 100,
+      "name": "Beautifly",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x5182B16F9EC5667A": [
+    {
+      "slot": 100,
+      "name": "Cascoon",
+      "alpha": false,
+      "level": [
+        7,
+        9
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Cascoon",
+      "alpha": true,
+      "level": [
+        22,
+        24
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Dustox",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Dustox",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x8B8A69D381AE4F8E": [
+    {
+      "slot": 100,
+      "name": "Dustox",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Dustox",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x8B8A6AD381AE5141": [
+    {
+      "slot": 100,
+      "name": "Cascoon",
+      "alpha": true,
+      "level": [
+        22,
+        24
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x8B8A67D381AE4C28": [
+    {
+      "slot": 100,
+      "name": "Dustox",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x8F1EDD81805EF8A4": [
+    {
+      "slot": 100,
+      "name": "Spheal",
+      "alpha": false,
+      "level": [
+        29,
+        31
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Spheal",
+      "alpha": true,
+      "level": [
+        44,
+        46
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Sealeo",
+      "alpha": false,
+      "level": [
+        41,
+        43
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Sealeo",
+      "alpha": true,
+      "level": [
+        56,
+        58
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xDE6D966B64001BA8": [
+    {
+      "slot": 100,
+      "name": "Sealeo",
+      "alpha": false,
+      "level": [
+        41,
+        43
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Sealeo",
+      "alpha": true,
+      "level": [
+        56,
+        58
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xDE6D976B64001D5B": [
+    {
+      "slot": 100,
+      "name": "Spheal",
+      "alpha": true,
+      "level": [
+        44,
+        46
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xDE6D986B64001F0E": [
+    {
+      "slot": 100,
+      "name": "Sealeo",
+      "alpha": true,
+      "level": [
+        56,
+        58
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x2E9A27B02954F177": [
+    {
+      "slot": 100,
+      "name": "Chimchar",
+      "alpha": false,
+      "level": [
+        11,
+        13
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Chimchar",
+      "alpha": true,
+      "level": [
+        26,
+        28
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Monferno",
+      "alpha": false,
+      "level": [
+        33,
+        35
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Monferno",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x9AA8EC77FB41C53": [
+    {
+      "slot": 100,
+      "name": "Monferno",
+      "alpha": false,
+      "level": [
+        33,
+        35
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Monferno",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x9AA8DC77FB41AA0": [
+    {
+      "slot": 100,
+      "name": "Chimchar",
+      "alpha": true,
+      "level": [
+        26,
+        28
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x9AA90C77FB41FB9": [
+    {
+      "slot": 100,
+      "name": "Monferno",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xAEFE8B222374C781": [
+    {
+      "slot": 100,
+      "name": "Monferno",
+      "alpha": false,
+      "level": [
+        33,
+        35
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Monferno",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Infernape",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Infernape",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x203952BBCC8C88ED": [
+    {
+      "slot": 100,
+      "name": "Infernape",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Infernape",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x203951BBCC8C873A": [
+    {
+      "slot": 100,
+      "name": "Monferno",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x203950BBCC8C8587": [
+    {
+      "slot": 100,
+      "name": "Infernape",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xB76A7F0C08A5D3BC": [
+    {
+      "slot": 100,
+      "name": "Starly",
+      "alpha": false,
+      "level": [
+        11,
+        13
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Starly",
+      "alpha": true,
+      "level": [
+        26,
+        28
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Staravia",
+      "alpha": false,
+      "level": [
+        31,
+        33
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Staravia",
+      "alpha": true,
+      "level": [
+        46,
+        48
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x9DFAB76D78A429F0": [
+    {
+      "slot": 100,
+      "name": "Staravia",
+      "alpha": false,
+      "level": [
+        31,
+        33
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Staravia",
+      "alpha": true,
+      "level": [
+        46,
+        48
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x9DFAB86D78A42BA3": [
+    {
+      "slot": 100,
+      "name": "Starly",
+      "alpha": true,
+      "level": [
+        26,
+        28
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x9DFAB96D78A42D56": [
+    {
+      "slot": 100,
+      "name": "Staravia",
+      "alpha": true,
+      "level": [
+        46,
+        48
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x5F4F11A6FCD08365": [
+    {
+      "slot": 100,
+      "name": "Staravia",
+      "alpha": false,
+      "level": [
+        31,
+        33
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Staravia",
+      "alpha": true,
+      "level": [
+        46,
+        48
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Staraptor",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Staraptor",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x47289888E15CEE9": [
+    {
+      "slot": 100,
+      "name": "Staraptor",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Staraptor",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x47288888E15CD36": [
+    {
+      "slot": 100,
+      "name": "Staravia",
+      "alpha": true,
+      "level": [
+        46,
+        48
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x47287888E15CB83": [
+    {
+      "slot": 100,
+      "name": "Staraptor",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xAABDAAF4803C7B93": [
+    {
+      "slot": 100,
+      "name": "Bidoof",
+      "alpha": false,
+      "level": [
+        12,
+        14
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Bidoof",
+      "alpha": true,
+      "level": [
+        27,
+        29
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Bibarel",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Bibarel",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xCFAD43DD29DD50B7": [
+    {
+      "slot": 100,
+      "name": "Bibarel",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Bibarel",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xCFAD42DD29DD4F04": [
+    {
+      "slot": 100,
+      "name": "Bidoof",
+      "alpha": true,
+      "level": [
+        27,
+        29
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xCFAD45DD29DD541D": [
+    {
+      "slot": 100,
+      "name": "Bibarel",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x983077E222F88D07": [
+    {
+      "slot": 100,
+      "name": "Kricketot",
+      "alpha": false,
+      "level": [
+        7,
+        9
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Kricketot",
+      "alpha": true,
+      "level": [
+        22,
+        24
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Kricketune",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Kricketune",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xF453E00092C980C3": [
+    {
+      "slot": 100,
+      "name": "Kricketune",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Kricketune",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xF453DF0092C97F10": [
+    {
+      "slot": 100,
+      "name": "Kricketot",
+      "alpha": true,
+      "level": [
+        22,
+        24
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xF453E20092C98429": [
+    {
+      "slot": 100,
+      "name": "Kricketune",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xC0272DE866874B95": [
+    {
+      "slot": 100,
+      "name": "Shinx",
+      "alpha": false,
+      "level": [
+        12,
+        14
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Shinx",
+      "alpha": true,
+      "level": [
+        27,
+        29
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Luxio",
+      "alpha": false,
+      "level": [
+        27,
+        29
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Luxio",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xE4AA26D10FCBF1F9": [
+    {
+      "slot": 100,
+      "name": "Luxio",
+      "alpha": false,
+      "level": [
+        27,
+        29
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Luxio",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xE4AA25D10FCBF046": [
+    {
+      "slot": 100,
+      "name": "Shinx",
+      "alpha": true,
+      "level": [
+        27,
+        29
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xE4AA24D10FCBEE93": [
+    {
+      "slot": 100,
+      "name": "Luxio",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xABA3272412310022": [
+    {
+      "slot": 100,
+      "name": "Luxio",
+      "alpha": false,
+      "level": [
+        27,
+        29
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Luxio",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Luxray",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Luxray",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xFAF1600DF5D149A6": [
+    {
+      "slot": 100,
+      "name": "Luxray",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Luxray",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xFAF1610DF5D14B59": [
+    {
+      "slot": 100,
+      "name": "Luxio",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xFAF15E0DF5D14640": [
+    {
+      "slot": 100,
+      "name": "Luxray",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x6456E4C45D4447DD": [
+    {
+      "slot": 100,
+      "name": "Buizel",
+      "alpha": false,
+      "level": [
+        23,
+        25
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Buizel",
+      "alpha": true,
+      "level": [
+        38,
+        40
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Floatzel",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Floatzel",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x9FE25C1D7A2DFC51": [
+    {
+      "slot": 100,
+      "name": "Floatzel",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Floatzel",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x9FE25B1D7A2DFA9E": [
+    {
+      "slot": 100,
+      "name": "Buizel",
+      "alpha": true,
+      "level": [
+        38,
+        40
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x9FE25A1D7A2DF8EB": [
+    {
+      "slot": 100,
+      "name": "Floatzel",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x95E8E33C775F739A": [
+    {
+      "slot": 100,
+      "name": "Shellos-1",
+      "alpha": false,
+      "level": [
+        27,
+        29
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Shellos-1",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Gastrodon-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Gastrodon-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x24AD9BA2CE46D8AE": [
+    {
+      "slot": 100,
+      "name": "Gastrodon-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Gastrodon-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x24AD9CA2CE46DA61": [
+    {
+      "slot": 100,
+      "name": "Shellos-1",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x24AD99A2CE46D548": [
+    {
+      "slot": 100,
+      "name": "Gastrodon-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x267C94C0E8327C6D": [
+    {
+      "slot": 100,
+      "name": "Drifloon",
+      "alpha": false,
+      "level": [
+        25,
+        27
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Drifloon",
+      "alpha": true,
+      "level": [
+        40,
+        42
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Drifblim",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Drifblim",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xB541CD273F1ABB01": [
+    {
+      "slot": 100,
+      "name": "Drifblim",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Drifblim",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xB541CC273F1AB94E": [
+    {
+      "slot": 100,
+      "name": "Drifloon",
+      "alpha": true,
+      "level": [
+        40,
+        42
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xB541CB273F1AB79B": [
+    {
+      "slot": 100,
+      "name": "Drifblim",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x5B82458A398ABFA": [
+    {
+      "slot": 100,
+      "name": "Buneary",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Buneary",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Lopunny",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Lopunny",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x3FBFDCBC8681950E": [
+    {
+      "slot": 100,
+      "name": "Lopunny",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Lopunny",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x3FBFDDBC868196C1": [
+    {
+      "slot": 100,
+      "name": "Buneary",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x3FBFDABC868191A8": [
+    {
+      "slot": 100,
+      "name": "Lopunny",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x4418CAFB9AE0F8F7": [
+    {
+      "slot": 100,
+      "name": "MimeJr.",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "MimeJr.",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Mr.Mime",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Mr.Mime",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x1F293212F14023D3": [
+    {
+      "slot": 100,
+      "name": "Mr.Mime",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Mr.Mime",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x1F293112F1402220": [
+    {
+      "slot": 100,
+      "name": "MimeJr.",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x1F293412F1402739": [
+    {
+      "slot": 100,
+      "name": "Mr.Mime",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x69F12B63EF3B0D93": [
+    {
+      "slot": 100,
+      "name": "Chatot",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Chatot",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x8EE0C44C98DBE2B7": [
+    {
+      "slot": 100,
+      "name": "Chatot",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x5C4B06CB0F089DED": [
+    {
+      "slot": 100,
+      "name": "Munchlax",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Munchlax",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Snorlax",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Snorlax",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xEB103F3165F0DC81": [
+    {
+      "slot": 100,
+      "name": "Snorlax",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Snorlax",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xEB103E3165F0DACE": [
+    {
+      "slot": 100,
+      "name": "Munchlax",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xEB103D3165F0D91B": [
+    {
+      "slot": 100,
+      "name": "Snorlax",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xDA1D5C5459E77470": [
+    {
+      "slot": 100,
+      "name": "Zorua-1",
+      "alpha": false,
+      "level": [
+        27,
+        29
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Zorua-1",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Zoroark-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Zoroark-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xF38D23F2E9E91E3C": [
+    {
+      "slot": 100,
+      "name": "Zoroark-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Zoroark-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xF38D24F2E9E91FEF": [
+    {
+      "slot": 100,
+      "name": "Zorua-1",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xF38D25F2E9E921A2": [
+    {
+      "slot": 100,
+      "name": "Zoroark-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xB882ECC92227591": [
+    {
+      "slot": 100,
+      "name": "Psyduck",
+      "alpha": false,
+      "level": [
+        30,
+        32
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Psyduck",
+      "alpha": true,
+      "level": [
+        45,
+        47
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Golduck",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Golduck",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xCFFCB7737538C11D": [
+    {
+      "slot": 100,
+      "name": "Golduck",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Golduck",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xCFFCB6737538BF6A": [
+    {
+      "slot": 100,
+      "name": "Psyduck",
+      "alpha": true,
+      "level": [
+        45,
+        47
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xCFFCB5737538BDB7": [
+    {
+      "slot": 100,
+      "name": "Golduck",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x22B4B9D8EC78A773": [
+    {
+      "slot": 100,
+      "name": "Gastly",
+      "alpha": false,
+      "level": [
+        22,
+        24
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Gastly",
+      "alpha": true,
+      "level": [
+        37,
+        39
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Haunter",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Haunter",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x47A452C196197C97": [
+    {
+      "slot": 100,
+      "name": "Haunter",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Haunter",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x47A451C196197AE4": [
+    {
+      "slot": 100,
+      "name": "Gastly",
+      "alpha": true,
+      "level": [
+        37,
+        39
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x47A454C196197FFD": [
+    {
+      "slot": 100,
+      "name": "Haunter",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xA18BCA1FBA797769": [
+    {
+      "slot": 100,
+      "name": "Haunter",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Haunter",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Gengar",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Gengar",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xFC68523E29342BE5": [
+    {
+      "slot": 100,
+      "name": "Gengar",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Gengar",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xFC68513E29342A32": [
+    {
+      "slot": 100,
+      "name": "Haunter",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xFC68503E2934287F": [
+    {
+      "slot": 100,
+      "name": "Gengar",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x6B42457F1C3F5457": [
+    {
+      "slot": 100,
+      "name": "Onix",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Onix",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Steelix",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Steelix",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x4652AC96729E7F33": [
+    {
+      "slot": 100,
+      "name": "Steelix",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Steelix",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x4652AB96729E7D80": [
+    {
+      "slot": 100,
+      "name": "Onix",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x4652AE96729E8299": [
+    {
+      "slot": 100,
+      "name": "Steelix",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xCD9D902584FADC0B": [
+    {
+      "slot": 100,
+      "name": "Lickitung",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Lickitung",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Lickilicky",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Lickilicky",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x3204088AA1E36FDF": [
+    {
+      "slot": 100,
+      "name": "Lickilicky",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Lickilicky",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x3204078AA1E36E2C": [
+    {
+      "slot": 100,
+      "name": "Lickitung",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x32040A8AA1E37345": [
+    {
+      "slot": 100,
+      "name": "Lickilicky",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xCBC824216CF129E5": [
+    {
+      "slot": 100,
+      "name": "Rhyhorn",
+      "alpha": false,
+      "level": [
+        39,
+        41
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Rhyhorn",
+      "alpha": true,
+      "level": [
+        54,
+        56
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Rhydon",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Rhydon",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x70EB9C02FE367569": [
+    {
+      "slot": 100,
+      "name": "Rhydon",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Rhydon",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x70EB9B02FE3673B6": [
+    {
+      "slot": 100,
+      "name": "Rhyhorn",
+      "alpha": true,
+      "level": [
+        54,
+        56
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x70EB9A02FE367203": [
+    {
+      "slot": 100,
+      "name": "Rhydon",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xDE62430A26019073": [
+    {
+      "slot": 100,
+      "name": "Rhydon",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Rhydon",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Rhyperior",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Rhyperior",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x351DBF2CFA26597": [
+    {
+      "slot": 100,
+      "name": "Rhyperior",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Rhyperior",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x351DAF2CFA263E4": [
+    {
+      "slot": 100,
+      "name": "Rhydon",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x351DDF2CFA268FD": [
+    {
+      "slot": 100,
+      "name": "Rhyperior",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xB348E127ECE2CE20": [
+    {
+      "slot": 100,
+      "name": "Tangela",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Tangela",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Tangrowth",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Tangrowth",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x7829E9CED055120C": [
+    {
+      "slot": 100,
+      "name": "Tangrowth",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Tangrowth",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x7829EACED05513BF": [
+    {
+      "slot": 100,
+      "name": "Tangela",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x7829EBCED0551572": [
+    {
+      "slot": 100,
+      "name": "Tangrowth",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x1AC404AAAAAE96F0": [
+    {
+      "slot": 100,
+      "name": "Cyndaquil",
+      "alpha": false,
+      "level": [
+        14,
+        16
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Cyndaquil",
+      "alpha": true,
+      "level": [
+        29,
+        31
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Quilava",
+      "alpha": false,
+      "level": [
+        33,
+        35
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Quilava",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x3433CC493AB040BC": [
+    {
+      "slot": 100,
+      "name": "Quilava",
+      "alpha": false,
+      "level": [
+        33,
+        35
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Quilava",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x3433CD493AB0426F": [
+    {
+      "slot": 100,
+      "name": "Cyndaquil",
+      "alpha": true,
+      "level": [
+        29,
+        31
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x3433CE493AB04422": [
+    {
+      "slot": 100,
+      "name": "Quilava",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x53F8FBC800ABF304": [
+    {
+      "slot": 100,
+      "name": "Quilava",
+      "alpha": false,
+      "level": [
+        33,
+        35
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Quilava",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Typhlosion-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Typhlosion-1",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x4E89B4AF704CE708": [
+    {
+      "slot": 100,
+      "name": "Typhlosion-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Typhlosion-1",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x4E89B5AF704CE8BB": [
+    {
+      "slot": 100,
+      "name": "Quilava",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x4E89B6AF704CEA6E": [
+    {
+      "slot": 100,
+      "name": "Typhlosion-1",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xEBB267557307B5FF": [
+    {
+      "slot": 100,
+      "name": "Yanma",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Yanma",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Yanmega",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Yanmega",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x85996EF054AE672B": [
+    {
+      "slot": 100,
+      "name": "Yanmega",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Yanmega",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x85996DF054AE6578": [
+    {
+      "slot": 100,
+      "name": "Yanma",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x859970F054AE6A91": [
+    {
+      "slot": 100,
+      "name": "Yanmega",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x39A6B2692D9CA51": [
+    {
+      "slot": 100,
+      "name": "Murkrow",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Murkrow",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Honchkrow",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Honchkrow",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xC80EF3CD75F015DD": [
+    {
+      "slot": 100,
+      "name": "Honchkrow",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Honchkrow",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xC80EF2CD75F0142A": [
+    {
+      "slot": 100,
+      "name": "Murkrow",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xC80EF1CD75F01277": [
+    {
+      "slot": 100,
+      "name": "Honchkrow",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xC756FF484B9DD6": [
+    {
+      "slot": 100,
+      "name": "Swinub",
+      "alpha": false,
+      "level": [
+        30,
+        32
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Swinub",
+      "alpha": true,
+      "level": [
+        45,
+        47
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Piloswine",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Piloswine",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x87491F1EF21B9932": [
+    {
+      "slot": 100,
+      "name": "Piloswine",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Piloswine",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x8749201EF21B9AE5": [
+    {
+      "slot": 100,
+      "name": "Swinub",
+      "alpha": true,
+      "level": [
+        45,
+        47
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x87491D1EF21B95CC": [
+    {
+      "slot": 100,
+      "name": "Piloswine",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x6D75099BA76E03B9": [
+    {
+      "slot": 100,
+      "name": "Teddiursa",
+      "alpha": false,
+      "level": [
+        27,
+        29
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Teddiursa",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Ursaring",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Ursaring",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x48F210B2FE295D55": [
+    {
+      "slot": 100,
+      "name": "Ursaring",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Ursaring",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x48F20FB2FE295BA2": [
+    {
+      "slot": 100,
+      "name": "Teddiursa",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x48F20EB2FE2959EF": [
+    {
+      "slot": 100,
+      "name": "Ursaring",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xAD190734A744BDEA": [
+    {
+      "slot": 100,
+      "name": "Ursaring",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Ursaring",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Ursaluna",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Ursaluna",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xE8A47E8DC42E725E": [
+    {
+      "slot": 100,
+      "name": "Ursaluna",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Ursaluna",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xE8A47F8DC42E7411": [
+    {
+      "slot": 100,
+      "name": "Ursaring",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xE8A47C8DC42E6EF8": [
+    {
+      "slot": 100,
+      "name": "Ursaluna",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x2B9EA24085244E5A": [
+    {
+      "slot": 100,
+      "name": "Roselia",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Roselia",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Roserade",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Roserade",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x10E85AA1F40D086E": [
+    {
+      "slot": 100,
+      "name": "Roserade",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Roserade",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x10E85BA1F40D0A21": [
+    {
+      "slot": 100,
+      "name": "Roselia",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x10E858A1F40D0508": [
+    {
+      "slot": 100,
+      "name": "Roserade",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x3F66AF29D7FB4867": [
+    {
+      "slot": 100,
+      "name": "Turtwig",
+      "alpha": false,
+      "level": [
+        15,
+        17
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Turtwig",
+      "alpha": true,
+      "level": [
+        30,
+        32
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Grotle",
+      "alpha": false,
+      "level": [
+        29,
+        31
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Grotle",
+      "alpha": true,
+      "level": [
+        44,
+        46
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x99D697484659CE23": [
+    {
+      "slot": 100,
+      "name": "Grotle",
+      "alpha": false,
+      "level": [
+        29,
+        31
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Grotle",
+      "alpha": true,
+      "level": [
+        44,
+        46
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x99D696484659CC70": [
+    {
+      "slot": 100,
+      "name": "Turtwig",
+      "alpha": true,
+      "level": [
+        30,
+        32
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x99D699484659D189": [
+    {
+      "slot": 100,
+      "name": "Grotle",
+      "alpha": true,
+      "level": [
+        44,
+        46
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xB97BEC7AEBAFE187": [
+    {
+      "slot": 100,
+      "name": "Grotle",
+      "alpha": false,
+      "level": [
+        29,
+        31
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Grotle",
+      "alpha": true,
+      "level": [
+        44,
+        46
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Torterra",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Torterra",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x159F54995B80D543": [
+    {
+      "slot": 100,
+      "name": "Torterra",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Torterra",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x159F53995B80D390": [
+    {
+      "slot": 100,
+      "name": "Grotle",
+      "alpha": true,
+      "level": [
+        44,
+        46
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x159F56995B80D8A9": [
+    {
+      "slot": 100,
+      "name": "Torterra",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x4FE26D01FE772A10": [
+    {
+      "slot": 100,
+      "name": "Budew",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Budew",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Roselia",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Roselia",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x1647B49E1BEB12DC": [
+    {
+      "slot": 100,
+      "name": "Roselia",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Roselia",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x1647B59E1BEB148F": [
+    {
+      "slot": 100,
+      "name": "Budew",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x1647B69E1BEB1642": [
+    {
+      "slot": 100,
+      "name": "Roselia",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x44B4AE7881B41F32": [
+    {
+      "slot": 100,
+      "name": "Pachirisu",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Pachirisu",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xBE32E658D7E423D6": [
+    {
+      "slot": 100,
+      "name": "Pachirisu",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x519961D10096CFF3": [
+    {
+      "slot": 100,
+      "name": "Stunky",
+      "alpha": false,
+      "level": [
+        31,
+        33
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Stunky",
+      "alpha": true,
+      "level": [
+        46,
+        48
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Skuntank",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Skuntank",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x7688FAB9AA37A517": [
+    {
+      "slot": 100,
+      "name": "Skuntank",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Skuntank",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x7688F9B9AA37A364": [
+    {
+      "slot": 100,
+      "name": "Stunky",
+      "alpha": true,
+      "level": [
+        46,
+        48
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x7688FCB9AA37A87D": [
+    {
+      "slot": 100,
+      "name": "Skuntank",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xA26B38E34424A441": [
+    {
+      "slot": 100,
+      "name": "Bronzor",
+      "alpha": false,
+      "level": [
+        30,
+        32
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Bronzor",
+      "alpha": true,
+      "level": [
+        45,
+        47
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Bronzong",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Bronzong",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xBD210081D53B10AD": [
+    {
+      "slot": 100,
+      "name": "Bronzong",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Bronzong",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xBD20FF81D53B0EFA": [
+    {
+      "slot": 100,
+      "name": "Bronzor",
+      "alpha": true,
+      "level": [
+        45,
+        47
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xBD20FE81D53B0D47": [
+    {
+      "slot": 100,
+      "name": "Bronzong",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xE4A58F1740AD777": [
+    {
+      "slot": 100,
+      "name": "Bonsly",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Bonsly",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Sudowoodo",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Sudowoodo",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xE95AC008CA6A0253": [
+    {
+      "slot": 100,
+      "name": "Sudowoodo",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Sudowoodo",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xE95ABF08CA6A00A0": [
+    {
+      "slot": 100,
+      "name": "Bonsly",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xE95AC208CA6A05B9": [
+    {
+      "slot": 100,
+      "name": "Sudowoodo",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x27017E5B2F0EE5B6": [
+    {
+      "slot": 100,
+      "name": "Spiritomb",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Spiritomb",
+      "alpha": true,
+      "level": [
+        80,
+        82
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x8DC67D4B6CA212": [
+    {
+      "slot": 100,
+      "name": "Spiritomb",
+      "alpha": true,
+      "level": [
+        80,
+        82
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x5E324E1DF8EA92FB": [
+    {
+      "slot": 100,
+      "name": "Hippopotas",
+      "alpha": false,
+      "level": [
+        31,
+        33
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Hippopotas",
+      "alpha": true,
+      "level": [
+        46,
+        48
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Hippowdon",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Hippowdon",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x980AC5771462B2EF": [
+    {
+      "slot": 100,
+      "name": "Hippowdon",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Hippowdon",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x980AC4771462B13C": [
+    {
+      "slot": 100,
+      "name": "Hippopotas",
+      "alpha": true,
+      "level": [
+        46,
+        48
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x980AC7771462B655": [
+    {
+      "slot": 100,
+      "name": "Hippowdon",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x30D73D9EFF1E1D08": [
+    {
+      "slot": 100,
+      "name": "Skorupi",
+      "alpha": false,
+      "level": [
+        37,
+        39
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Skorupi",
+      "alpha": true,
+      "level": [
+        52,
+        54
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Drapion",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Drapion",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x364684B78F7D2904": [
+    {
+      "slot": 100,
+      "name": "Drapion",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Drapion",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x364685B78F7D2AB7": [
+    {
+      "slot": 100,
+      "name": "Skorupi",
+      "alpha": true,
+      "level": [
+        52,
+        54
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x364686B78F7D2C6A": [
+    {
+      "slot": 100,
+      "name": "Drapion",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xDEB61555F04A8F1A": [
+    {
+      "slot": 100,
+      "name": "Croagunk",
+      "alpha": false,
+      "level": [
+        34,
+        36
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Croagunk",
+      "alpha": true,
+      "level": [
+        49,
+        51
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Toxicroak",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Toxicroak",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x6D7ACDBC4731F42E": [
+    {
+      "slot": 100,
+      "name": "Toxicroak",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Toxicroak",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x6D7ACEBC4731F5E1": [
+    {
+      "slot": 100,
+      "name": "Croagunk",
+      "alpha": true,
+      "level": [
+        49,
+        51
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x6D7ACBBC4731F0C8": [
+    {
+      "slot": 100,
+      "name": "Toxicroak",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x72D67547C0638264": [
+    {
+      "slot": 100,
+      "name": "Carnivine",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Carnivine",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xC2252E31A404A568": [
+    {
+      "slot": 100,
+      "name": "Carnivine",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xF59E7A06CC950E35": [
+    {
+      "slot": 100,
+      "name": "Petilil",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Petilil",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Lilligant-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Lilligant-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x1A20F2EF75D8DB19": [
+    {
+      "slot": 100,
+      "name": "Lilligant-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Lilligant-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x1A20F1EF75D8D966": [
+    {
+      "slot": 100,
+      "name": "Petilil",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x1A20F0EF75D8D7B3": [
+    {
+      "slot": 100,
+      "name": "Lilligant-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xEAD59441FDF5ADF8": [
+    {
+      "slot": 100,
+      "name": "Goomy",
+      "alpha": false,
+      "level": [
+        37,
+        39
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Goomy",
+      "alpha": true,
+      "level": [
+        52,
+        54
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Sliggoo-1",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Sliggoo-1",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xC614DC641BC4FED4": [
+    {
+      "slot": 100,
+      "name": "Sliggoo-1",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Sliggoo-1",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xC614DD641BC50087": [
+    {
+      "slot": 100,
+      "name": "Goomy",
+      "alpha": true,
+      "level": [
+        52,
+        54
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xC614DE641BC5023A": [
+    {
+      "slot": 100,
+      "name": "Sliggoo-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x33920EBC10C294E": [
+    {
+      "slot": 100,
+      "name": "Sliggoo-1",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Sliggoo-1",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Goodra-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Goodra-1",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xC9316887DE23403A": [
+    {
+      "slot": 100,
+      "name": "Goodra-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Goodra-1",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xC9316987DE2341ED": [
+    {
+      "slot": 100,
+      "name": "Sliggoo-1",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xC9316687DE233CD4": [
+    {
+      "slot": 100,
+      "name": "Goodra-1",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x64064A0B10810230": [
+    {
+      "slot": 100,
+      "name": "Unown",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-1",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-1",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-2",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-2",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-3",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-3",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-4",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-4",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-5",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-5",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-6",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-6",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-7",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-7",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-8",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-8",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-9",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-9",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-10",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-10",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-11",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-11",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-12",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-12",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-13",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-13",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-14",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-14",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-15",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-15",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-16",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-16",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-17",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-17",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-18",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-18",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-19",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-19",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-20",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-20",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-21",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-21",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-22",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-22",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-23",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-23",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-24",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-24",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-25",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-25",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-26",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-26",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Unown-27",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Unown-27",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xD3FB11A4B88400FC": [
+    {
+      "slot": 100,
+      "name": "Unown",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-1",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-2",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-3",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-4",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-5",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-6",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-7",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-8",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-9",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-10",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-11",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-12",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-13",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-14",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-15",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-16",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-17",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-18",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-19",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-20",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-21",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-22",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-23",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-24",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-25",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-26",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Unown-27",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x6F03E1A52F7D3223": [
+    {
+      "slot": 100,
+      "name": "Vulpix",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Vulpix",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Ninetales",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Ninetales",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x1493F986C11EAC67": [
+    {
+      "slot": 100,
+      "name": "Ninetales",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Ninetales",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x1493F886C11EAAB4": [
+    {
+      "slot": 100,
+      "name": "Vulpix",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x1493FB86C11EAFCD": [
+    {
+      "slot": 100,
+      "name": "Ninetales",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xF952ECA9545BE7A3": [
+    {
+      "slot": 100,
+      "name": "Growlithe-1",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Growlithe-1",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Arcanine-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Arcanine-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x9EE3048AE5FD61E7": [
+    {
+      "slot": 100,
+      "name": "Arcanine-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Arcanine-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x9EE3038AE5FD6034": [
+    {
+      "slot": 100,
+      "name": "Growlithe-1",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x9EE3068AE5FD654D": [
+    {
+      "slot": 100,
+      "name": "Arcanine-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xC44A139615D5807E": [
+    {
+      "slot": 100,
+      "name": "Machop",
+      "alpha": false,
+      "level": [
+        25,
+        27
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Machop",
+      "alpha": true,
+      "level": [
+        40,
+        42
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Machoke",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Machoke",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x88BE9C3CF8EBCC0A": [
+    {
+      "slot": 100,
+      "name": "Machoke",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Machoke",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x88BE9D3CF8EBCDBD": [
+    {
+      "slot": 100,
+      "name": "Machop",
+      "alpha": true,
+      "level": [
+        40,
+        42
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x88BE9A3CF8EBC8A4": [
+    {
+      "slot": 100,
+      "name": "Machoke",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xFDE94940751B7D08": [
+    {
+      "slot": 100,
+      "name": "Machoke",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Machoke",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Machamp",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Machamp",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x3589059057A8904": [
+    {
+      "slot": 100,
+      "name": "Machamp",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Machamp",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x3589159057A8AB7": [
+    {
+      "slot": 100,
+      "name": "Machoke",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x3589259057A8C6A": [
+    {
+      "slot": 100,
+      "name": "Machamp",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xA6D0B804DEC5D165": [
+    {
+      "slot": 100,
+      "name": "Tentacool",
+      "alpha": false,
+      "level": [
+        27,
+        29
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Tentacool",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Tentacruel",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Tentacruel",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x4BF42FE6700B1CE9": [
+    {
+      "slot": 100,
+      "name": "Tentacruel",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Tentacruel",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x4BF42EE6700B1B36": [
+    {
+      "slot": 100,
+      "name": "Tentacool",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x4BF42DE6700B1983": [
+    {
+      "slot": 100,
+      "name": "Tentacruel",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xE5BEFD02102232EA": [
+    {
+      "slot": 100,
+      "name": "Chansey",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Chansey",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Blissey",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Blissey",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x214A745B2D0BE75E": [
+    {
+      "slot": 100,
+      "name": "Blissey",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Blissey",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x214A755B2D0BE911": [
+    {
+      "slot": 100,
+      "name": "Chansey",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x214A725B2D0BE3F8": [
+    {
+      "slot": 100,
+      "name": "Blissey",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x5CB29387A22D4AFA": [
+    {
+      "slot": 100,
+      "name": "Magmar",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Magmar",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Magmortar",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Magmortar",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x96BA4BEB8516340E": [
+    {
+      "slot": 100,
+      "name": "Magmortar",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Magmortar",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x96BA4CEB851635C1": [
+    {
+      "slot": 100,
+      "name": "Magmar",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x96BA49EB851630A8": [
+    {
+      "slot": 100,
+      "name": "Magmortar",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xABF467237487BF28": [
+    {
+      "slot": 100,
+      "name": "Magikarp",
+      "alpha": false,
+      "level": [
+        17,
+        19
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Magikarp",
+      "alpha": true,
+      "level": [
+        32,
+        34
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Gyarados",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Gyarados",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x5CA5AE3990E69C24": [
+    {
+      "slot": 100,
+      "name": "Gyarados",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Gyarados",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x5CA5AF3990E69DD7": [
+    {
+      "slot": 100,
+      "name": "Magikarp",
+      "alpha": true,
+      "level": [
+        32,
+        34
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x5CA5B03990E69F8A": [
+    {
+      "slot": 100,
+      "name": "Gyarados",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xA9B9415FFACD90C4": [
+    {
+      "slot": 100,
+      "name": "Cleffa",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Cleffa",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Clefairy",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Clefairy",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x4DC4FA4C526D2FC8": [
+    {
+      "slot": 100,
+      "name": "Clefairy",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Clefairy",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x4DC4FB4C526D317B": [
+    {
+      "slot": 100,
+      "name": "Cleffa",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x4DC4FC4C526D332E": [
+    {
+      "slot": 100,
+      "name": "Clefairy",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x13E5616E29422F7A": [
+    {
+      "slot": 100,
+      "name": "Togepi",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Togepi",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Togetic",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Togetic",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x4DED19D20C2B188E": [
+    {
+      "slot": 100,
+      "name": "Togetic",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Togetic",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x4DED1AD20C2B1A41": [
+    {
+      "slot": 100,
+      "name": "Togepi",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x4DED17D20C2B1528": [
+    {
+      "slot": 100,
+      "name": "Togetic",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x359B53CAD9D52791": [
+    {
+      "slot": 100,
+      "name": "Togetic",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Togetic",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Togekiss",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Togekiss",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xFA0FDC71BCEB731D": [
+    {
+      "slot": 100,
+      "name": "Togekiss",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Togekiss",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xFA0FDB71BCEB716A": [
+    {
+      "slot": 100,
+      "name": "Togetic",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xFA0FDA71BCEB6FB7": [
+    {
+      "slot": 100,
+      "name": "Togekiss",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x1303244B4F700044": [
+    {
+      "slot": 100,
+      "name": "Aipom",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Aipom",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Ambipom",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Ambipom",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xB70EDD37A70F9F48": [
+    {
+      "slot": 100,
+      "name": "Ambipom",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Ambipom",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xB70EDE37A70FA0FB": [
+    {
+      "slot": 100,
+      "name": "Aipom",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xB70EDF37A70FA2AE": [
+    {
+      "slot": 100,
+      "name": "Ambipom",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xC36D985994A653F4": [
+    {
+      "slot": 100,
+      "name": "Qwilfish-1",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Qwilfish-1",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Overqwil",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Overqwil",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x3E9E5039EC471398": [
+    {
+      "slot": 100,
+      "name": "Overqwil",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Overqwil",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x3E9E5139EC47154B": [
+    {
+      "slot": 100,
+      "name": "Qwilfish-1",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x3E9E5239EC4716FE": [
+    {
+      "slot": 100,
+      "name": "Overqwil",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x8A464B6EE75BFD4C": [
+    {
+      "slot": 100,
+      "name": "Magby",
+      "alpha": false,
+      "level": [
+        27,
+        29
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Magby",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Magmar",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Magmar",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xC56542C803E9B960": [
+    {
+      "slot": 100,
+      "name": "Magmar",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Magmar",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xC56543C803E9BB13": [
+    {
+      "slot": 100,
+      "name": "Magby",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xC56544C803E9BCC6": [
+    {
+      "slot": 100,
+      "name": "Magmar",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x7019147A364CBDE3": [
+    {
+      "slot": 100,
+      "name": "Sealeo",
+      "alpha": false,
+      "level": [
+        41,
+        43
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Sealeo",
+      "alpha": true,
+      "level": [
+        56,
+        58
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Walrein",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Walrein",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x6C2E2C56DFEF8D27": [
+    {
+      "slot": 100,
+      "name": "Walrein",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Walrein",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x6C2E2B56DFEF8B74": [
+    {
+      "slot": 100,
+      "name": "Sealeo",
+      "alpha": true,
+      "level": [
+        56,
+        58
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x6C2E2E56DFEF908D": [
+    {
+      "slot": 100,
+      "name": "Walrein",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xD50704A9B3BC059C": [
+    {
+      "slot": 100,
+      "name": "Piplup",
+      "alpha": false,
+      "level": [
+        13,
+        15
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Piplup",
+      "alpha": true,
+      "level": [
+        28,
+        30
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Prinplup",
+      "alpha": false,
+      "level": [
+        33,
+        35
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Prinplup",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xEA1BD0D96481CD0": [
+    {
+      "slot": 100,
+      "name": "Prinplup",
+      "alpha": false,
+      "level": [
+        33,
+        35
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Prinplup",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xEA1BE0D96481E83": [
+    {
+      "slot": 100,
+      "name": "Piplup",
+      "alpha": true,
+      "level": [
+        28,
+        30
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xEA1BF0D96482036": [
+    {
+      "slot": 100,
+      "name": "Prinplup",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x7BDDFF2CB7692BB4": [
+    {
+      "slot": 100,
+      "name": "Prinplup",
+      "alpha": false,
+      "level": [
+        33,
+        35
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Prinplup",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Empoleon",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Empoleon",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x4D93B708270B4058": [
+    {
+      "slot": 100,
+      "name": "Empoleon",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Empoleon",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x4D93B808270B420B": [
+    {
+      "slot": 100,
+      "name": "Prinplup",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x4D93B908270B43BE": [
+    {
+      "slot": 100,
+      "name": "Empoleon",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x1D5825AF90B533C6": [
+    {
+      "slot": 100,
+      "name": "Glameow",
+      "alpha": false,
+      "level": [
+        35,
+        37
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Glameow",
+      "alpha": true,
+      "level": [
+        50,
+        52
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Purugly",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Purugly",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x22C76CC821143FC2": [
+    {
+      "slot": 100,
+      "name": "Purugly",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Purugly",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x22C76DC821144175": [
+    {
+      "slot": 100,
+      "name": "Glameow",
+      "alpha": true,
+      "level": [
+        50,
+        52
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x22C76AC821143C5C": [
+    {
+      "slot": 100,
+      "name": "Purugly",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x4625E3DAEE7FBCA3": [
+    {
+      "slot": 100,
+      "name": "Happiny",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Happiny",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Chansey",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Chansey",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xEBB5FBBC802136E7": [
+    {
+      "slot": 100,
+      "name": "Chansey",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Chansey",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xEBB5FABC80213534": [
+    {
+      "slot": 100,
+      "name": "Happiny",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xEBB5FDBC80213A4D": [
+    {
+      "slot": 100,
+      "name": "Chansey",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x5FD7B5386E4E8864": [
+    {
+      "slot": 100,
+      "name": "Riolu",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Riolu",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Lucario",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Lucario",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xAF266E2251EFAB68": [
+    {
+      "slot": 100,
+      "name": "Lucario",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Lucario",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xAF266F2251EFAD1B": [
+    {
+      "slot": 100,
+      "name": "Riolu",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xAF26702251EFAECE": [
+    {
+      "slot": 100,
+      "name": "Lucario",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xA043B85457FB671F": [
+    {
+      "slot": 100,
+      "name": "Finneon",
+      "alpha": false,
+      "level": [
+        28,
+        30
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Finneon",
+      "alpha": true,
+      "level": [
+        43,
+        45
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Lumineon",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Lumineon",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x3BDD3FEF3B12D34B": [
+    {
+      "slot": 100,
+      "name": "Lumineon",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Lumineon",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x3BDD3EEF3B12D198": [
+    {
+      "slot": 100,
+      "name": "Finneon",
+      "alpha": true,
+      "level": [
+        43,
+        45
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x3BDD41EF3B12D6B1": [
+    {
+      "slot": 100,
+      "name": "Lumineon",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x1FE5B66F00A81D14": [
+    {
+      "slot": 100,
+      "name": "Mantyke",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Mantyke",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Mantine",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Mantine",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x44A66E4CE2D8CC38": [
+    {
+      "slot": 100,
+      "name": "Mantine",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Mantine",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x44A66F4CE2D8CDEB": [
+    {
+      "slot": 100,
+      "name": "Mantyke",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x44A6704CE2D8CF9E": [
+    {
+      "slot": 100,
+      "name": "Mantine",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xA37B2DA46ABBE8A6": [
+    {
+      "slot": 100,
+      "name": "Basculin-2",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Basculin-2",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Basculegion",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 10,
+      "name": "Basculegion-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Basculegion",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Basculegion-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x542CF4BA871B9F22": [
+    {
+      "slot": 100,
+      "name": "Basculegion",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 100,
+      "name": "Basculegion-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Basculegion",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 1,
+      "name": "Basculegion-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x542CF5BA871BA0D5": [
+    {
+      "slot": 100,
+      "name": "Basculin-2",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x542CF2BA871B9BBC": [
+    {
+      "slot": 100,
+      "name": "Basculegion",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    },
+    {
+      "slot": 100,
+      "name": "Basculegion-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x11E3B0315A9DB8B1": [
+    {
+      "slot": 100,
+      "name": "Clefairy",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Clefairy",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Clefable",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Clefable",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xD65838D83DB4043D": [
+    {
+      "slot": 100,
+      "name": "Clefable",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Clefable",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xD65837D83DB4028A": [
+    {
+      "slot": 100,
+      "name": "Clefairy",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xD65836D83DB400D7": [
+    {
+      "slot": 100,
+      "name": "Clefable",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x74F99006BF1DF995": [
+    {
+      "slot": 100,
+      "name": "Voltorb-1",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Voltorb-1",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Electrode-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Electrode-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x997C88EF68629FF9": [
+    {
+      "slot": 100,
+      "name": "Electrode-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Electrode-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x997C87EF68629E46": [
+    {
+      "slot": 100,
+      "name": "Voltorb-1",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x997C86EF68629C93": [
+    {
+      "slot": 100,
+      "name": "Electrode-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x7E6885E452C04311": [
+    {
+      "slot": 100,
+      "name": "Electabuzz",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Electabuzz",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Electivire",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Electivire",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x42DD0E8B35D68E9D": [
+    {
+      "slot": 100,
+      "name": "Electivire",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Electivire",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x42DD0D8B35D68CEA": [
+    {
+      "slot": 100,
+      "name": "Electabuzz",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x42DD0C8B35D68B37": [
+    {
+      "slot": 100,
+      "name": "Electivire",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x3B40EB53F427739": [
+    {
+      "slot": 100,
+      "name": "Misdreavus",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Misdreavus",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Mismagius",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Mismagius",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xDF3115CC95FDD0D5": [
+    {
+      "slot": 100,
+      "name": "Mismagius",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Mismagius",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xDF3114CC95FDCF22": [
+    {
+      "slot": 100,
+      "name": "Misdreavus",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xDF3113CC95FDCD6F": [
+    {
+      "slot": 100,
+      "name": "Mismagius",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xB549ADD0FBB4E11E": [
+    {
+      "slot": 100,
+      "name": "Gligar",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Gligar",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Gliscor",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Gliscor",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x79BE3677DECB2CAA": [
+    {
+      "slot": 100,
+      "name": "Gliscor",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Gliscor",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x79BE3777DECB2E5D": [
+    {
+      "slot": 100,
+      "name": "Gligar",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x79BE3477DECB2944": [
+    {
+      "slot": 100,
+      "name": "Gliscor",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x43F1F75C8859C78E": [
+    {
+      "slot": 100,
+      "name": "Heracross",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Heracross",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x9EA3EF8A570DE7A": [
+    {
+      "slot": 100,
+      "name": "Heracross",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x7C1EF5BAB066B858": [
+    {
+      "slot": 100,
+      "name": "Sneasel-1",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Sneasel-1",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Sneasler",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Sneasler",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xAA693DDF40C4A3B4": [
+    {
+      "slot": 100,
+      "name": "Sneasler",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Sneasler",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xAA693EDF40C4A567": [
+    {
+      "slot": 100,
+      "name": "Sneasel-1",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xAA693FDF40C4A71A": [
+    {
+      "slot": 100,
+      "name": "Sneasler",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x2BE4440F60B027BC": [
+    {
+      "slot": 100,
+      "name": "Elekid",
+      "alpha": false,
+      "level": [
+        27,
+        29
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Elekid",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Electabuzz",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Electabuzz",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x12747C70D0AE7DF0": [
+    {
+      "slot": 100,
+      "name": "Electabuzz",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Electabuzz",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x12747D70D0AE7FA3": [
+    {
+      "slot": 100,
+      "name": "Elekid",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x12747E70D0AE8156": [
+    {
+      "slot": 100,
+      "name": "Electabuzz",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x535CFB0C132AFE2B": [
+    {
+      "slot": 100,
+      "name": "Nosepass",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Nosepass",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Probopass",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Probopass",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xB975F37131844CFF": [
+    {
+      "slot": 100,
+      "name": "Probopass",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Probopass",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xB975F27131844B4C": [
+    {
+      "slot": 100,
+      "name": "Nosepass",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xB975F57131845065": [
+    {
+      "slot": 100,
+      "name": "Probopass",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x38865A58581A125B": [
+    {
+      "slot": 100,
+      "name": "Duskull",
+      "alpha": false,
+      "level": [
+        34,
+        36
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Duskull",
+      "alpha": true,
+      "level": [
+        49,
+        51
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Dusclops",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Dusclops",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x7411D1B17503C6CF": [
+    {
+      "slot": 100,
+      "name": "Dusclops",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Dusclops",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x7411D0B17503C51C": [
+    {
+      "slot": 100,
+      "name": "Duskull",
+      "alpha": true,
+      "level": [
+        49,
+        51
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x7411D3B17503CA35": [
+    {
+      "slot": 100,
+      "name": "Dusclops",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x719AB319152CAC75": [
+    {
+      "slot": 100,
+      "name": "Dusclops",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Dusclops",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Dusknoir",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Dusknoir",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x961D2C01BE707959": [
+    {
+      "slot": 100,
+      "name": "Dusknoir",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Dusknoir",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x961D2B01BE7077A6": [
+    {
+      "slot": 100,
+      "name": "Dusclops",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x961D2A01BE7075F3": [
+    {
+      "slot": 100,
+      "name": "Dusknoir",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x1F583F5782609CBD": [
+    {
+      "slot": 100,
+      "name": "Chingling",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Chingling",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Chimecho",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Chimecho",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x5AE3B6B09F4A5131": [
+    {
+      "slot": 100,
+      "name": "Chimecho",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Chimecho",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x5AE3B5B09F4A4F7E": [
+    {
+      "slot": 100,
+      "name": "Chingling",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x5AE3B4B09F4A4DCB": [
+    {
+      "slot": 100,
+      "name": "Chimecho",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x1DD87D8FAD092308": [
+    {
+      "slot": 100,
+      "name": "Gible",
+      "alpha": false,
+      "level": [
+        21,
+        23
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Gible",
+      "alpha": true,
+      "level": [
+        36,
+        38
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Gabite",
+      "alpha": false,
+      "level": [
+        45,
+        47
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Gabite",
+      "alpha": true,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x2347C4A83D682F04": [
+    {
+      "slot": 100,
+      "name": "Gabite",
+      "alpha": false,
+      "level": [
+        45,
+        47
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Gabite",
+      "alpha": true,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x2347C5A83D6830B7": [
+    {
+      "slot": 100,
+      "name": "Gible",
+      "alpha": true,
+      "level": [
+        36,
+        38
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x2347C6A83D68326A": [
+    {
+      "slot": 100,
+      "name": "Gabite",
+      "alpha": true,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x85714105CF348588": [
+    {
+      "slot": 100,
+      "name": "Gabite",
+      "alpha": false,
+      "level": [
+        45,
+        47
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Gabite",
+      "alpha": true,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Garchomp",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Garchomp",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x8AE0881E5F939184": [
+    {
+      "slot": 100,
+      "name": "Garchomp",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Garchomp",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x8AE0891E5F939337": [
+    {
+      "slot": 100,
+      "name": "Gabite",
+      "alpha": true,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x8AE08A1E5F9394EA": [
+    {
+      "slot": 100,
+      "name": "Garchomp",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x1F9587A4771A0D70": [
+    {
+      "slot": 100,
+      "name": "Snover",
+      "alpha": false,
+      "level": [
+        37,
+        39
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Snover",
+      "alpha": true,
+      "level": [
+        52,
+        54
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Abomasnow",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Abomasnow",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x39054F43071BB73C": [
+    {
+      "slot": 100,
+      "name": "Abomasnow",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Abomasnow",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x39055043071BB8EF": [
+    {
+      "slot": 100,
+      "name": "Snover",
+      "alpha": true,
+      "level": [
+        52,
+        54
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x39055143071BBAA2": [
+    {
+      "slot": 100,
+      "name": "Abomasnow",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x72AFB1813E05C033": [
+    {
+      "slot": 100,
+      "name": "Rotom",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Rotom",
+      "alpha": true,
+      "level": [
+        80,
+        82
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x979F4A69E7A69557": [
+    {
+      "slot": 100,
+      "name": "Rotom",
+      "alpha": true,
+      "level": [
+        80,
+        82
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x5EB6A79B1B1FFB18": [
+    {
+      "slot": 100,
+      "name": "Rowlet",
+      "alpha": false,
+      "level": [
+        14,
+        16
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Rowlet",
+      "alpha": true,
+      "level": [
+        29,
+        31
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Dartrix",
+      "alpha": false,
+      "level": [
+        33,
+        35
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Dartrix",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xE385EFBAC37F3B74": [
+    {
+      "slot": 100,
+      "name": "Dartrix",
+      "alpha": false,
+      "level": [
+        33,
+        35
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Dartrix",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xE385F0BAC37F3D27": [
+    {
+      "slot": 100,
+      "name": "Rowlet",
+      "alpha": true,
+      "level": [
+        29,
+        31
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xE385F1BAC37F3EDA": [
+    {
+      "slot": 100,
+      "name": "Dartrix",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x65503545DDDA60FA": [
+    {
+      "slot": 100,
+      "name": "Dartrix",
+      "alpha": false,
+      "level": [
+        33,
+        35
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Dartrix",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Decidueye-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Decidueye-1",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x9F57EDA9C0C34A0E": [
+    {
+      "slot": 100,
+      "name": "Decidueye-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Decidueye-1",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x9F57EEA9C0C34BC1": [
+    {
+      "slot": 100,
+      "name": "Dartrix",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x9F57EBA9C0C346A8": [
+    {
+      "slot": 100,
+      "name": "Decidueye-1",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x5D27A6CE8F149ABA": [
+    {
+      "slot": 100,
+      "name": "Piloswine",
+      "alpha": false,
+      "level": [
+        60,
+        62
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Piloswine",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Mamoswine",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Mamoswine",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x972F5F3271FD83CE": [
+    {
+      "slot": 100,
+      "name": "Mamoswine",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Mamoswine",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x972F603271FD8581": [
+    {
+      "slot": 100,
+      "name": "Piloswine",
+      "alpha": true,
+      "level": [
+        75,
+        77
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x972F5D3271FD8068": [
+    {
+      "slot": 100,
+      "name": "Mamoswine",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x225AB5796A9B35A8": [
+    {
+      "slot": 100,
+      "name": "Ralts",
+      "alpha": false,
+      "level": [
+        17,
+        19
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Ralts",
+      "alpha": true,
+      "level": [
+        32,
+        34
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Kirlia",
+      "alpha": false,
+      "level": [
+        27,
+        29
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Kirlia",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xD30BFC8F86FA12A4": [
+    {
+      "slot": 100,
+      "name": "Kirlia",
+      "alpha": false,
+      "level": [
+        27,
+        29
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Kirlia",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xD30BFD8F86FA1457": [
+    {
+      "slot": 100,
+      "name": "Ralts",
+      "alpha": true,
+      "level": [
+        32,
+        34
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xD30BFE8F86FA160A": [
+    {
+      "slot": 100,
+      "name": "Kirlia",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x11EF632709A94392": [
+    {
+      "slot": 100,
+      "name": "Kirlia",
+      "alpha": false,
+      "level": [
+        27,
+        29
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Kirlia",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Gardevoir",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Gardevoir",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x38631B04ED4B8736": [
+    {
+      "slot": 100,
+      "name": "Gardevoir",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Gardevoir",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x38631C04ED4B88E9": [
+    {
+      "slot": 100,
+      "name": "Kirlia",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x38631904ED4B83D0": [
+    {
+      "slot": 100,
+      "name": "Gardevoir",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x2C5861D521AA1336": [
+    {
+      "slot": 100,
+      "name": "Kirlia",
+      "alpha": false,
+      "level": [
+        27,
+        29
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Kirlia",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Gallade",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Gallade",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x5E4A9F73E07CF92": [
+    {
+      "slot": 100,
+      "name": "Gallade",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Gallade",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x5E4AAF73E07D145": [
+    {
+      "slot": 100,
+      "name": "Kirlia",
+      "alpha": true,
+      "level": [
+        42,
+        44
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x5E4A7F73E07CC2C": [
+    {
+      "slot": 100,
+      "name": "Gallade",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x920D11DAB8D7B9C7": [
+    {
+      "slot": 100,
+      "name": "Snorunt",
+      "alpha": false,
+      "level": [
+        39,
+        41
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Snorunt",
+      "alpha": true,
+      "level": [
+        54,
+        56
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Glalie",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Glalie",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x97AB79FE10A75883": [
+    {
+      "slot": 100,
+      "name": "Glalie",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Glalie",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x97AB78FE10A756D0": [
+    {
+      "slot": 100,
+      "name": "Snorunt",
+      "alpha": true,
+      "level": [
+        54,
+        56
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x97AB7BFE10A75BE9": [
+    {
+      "slot": 100,
+      "name": "Glalie",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xEFC729C7F6FE3183": [
+    {
+      "slot": 100,
+      "name": "Snorunt",
+      "alpha": false,
+      "level": [
+        39,
+        41
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Snorunt",
+      "alpha": true,
+      "level": [
+        54,
+        56
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Froslass",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Froslass",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xEA28C1A49F2E92C7": [
+    {
+      "slot": 100,
+      "name": "Froslass",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Froslass",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xEA28C0A49F2E9114": [
+    {
+      "slot": 100,
+      "name": "Snorunt",
+      "alpha": true,
+      "level": [
+        54,
+        56
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xEA28C3A49F2E962D": [
+    {
+      "slot": 100,
+      "name": "Froslass",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x433A2D3EF14D5E5F": [
+    {
+      "slot": 100,
+      "name": "Oshawott",
+      "alpha": false,
+      "level": [
+        14,
+        16
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Oshawott",
+      "alpha": true,
+      "level": [
+        29,
+        31
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Dewott",
+      "alpha": false,
+      "level": [
+        33,
+        35
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Dewott",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 3
+    }
+  ],
+  "0xDED3B4D9D464CA8B": [
+    {
+      "slot": 100,
+      "name": "Dewott",
+      "alpha": false,
+      "level": [
+        33,
+        35
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Dewott",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xDED3B3D9D464C8D8": [
+    {
+      "slot": 100,
+      "name": "Oshawott",
+      "alpha": true,
+      "level": [
+        29,
+        31
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xDED3B6D9D464CDF1": [
+    {
+      "slot": 100,
+      "name": "Dewott",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x23AD04E3DF914A0B": [
+    {
+      "slot": 100,
+      "name": "Dewott",
+      "alpha": false,
+      "level": [
+        33,
+        35
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Dewott",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Samurott-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Samurott-1",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x88137D48FC79DDDF": [
+    {
+      "slot": 100,
+      "name": "Samurott-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Samurott-1",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x88137C48FC79DC2C": [
+    {
+      "slot": 100,
+      "name": "Dewott",
+      "alpha": true,
+      "level": [
+        48,
+        50
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x88137F48FC79E145": [
+    {
+      "slot": 100,
+      "name": "Samurott-1",
+      "alpha": true,
+      "level": [
+        82,
+        84
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xEC7666812A3AC3C3": [
+    {
+      "slot": 100,
+      "name": "Rufflet",
+      "alpha": false,
+      "level": [
+        51,
+        53
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Rufflet",
+      "alpha": true,
+      "level": [
+        66,
+        68
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Braviary-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Braviary-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x9052FE62BA69D007": [
+    {
+      "slot": 100,
+      "name": "Braviary-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Braviary-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x9052FD62BA69CE54": [
+    {
+      "slot": 100,
+      "name": "Rufflet",
+      "alpha": true,
+      "level": [
+        66,
+        68
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x90530062BA69D36D": [
+    {
+      "slot": 100,
+      "name": "Braviary-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0xECBF77B8F7302126": [
+    {
+      "slot": 100,
+      "name": "Bergmite",
+      "alpha": false,
+      "level": [
+        34,
+        36
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Bergmite",
+      "alpha": true,
+      "level": [
+        49,
+        51
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 10,
+      "name": "Avalugg-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 0
+    },
+    {
+      "slot": 1,
+      "name": "Avalugg-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 3
+    }
+  ],
+  "0x9D713ECF138FD7A2": [
+    {
+      "slot": 100,
+      "name": "Avalugg-1",
+      "alpha": false,
+      "level": [
+        62,
+        64
+      ],
+      "ivs": 3
+    },
+    {
+      "slot": 1,
+      "name": "Avalugg-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x9D713FCF138FD955": [
+    {
+      "slot": 100,
+      "name": "Bergmite",
+      "alpha": true,
+      "level": [
+        49,
+        51
+      ],
+      "ivs": 4
+    }
+  ],
+  "0x9D713CCF138FD43C": [
+    {
+      "slot": 100,
+      "name": "Avalugg-1",
+      "alpha": true,
+      "level": [
+        77,
+        79
+      ],
+      "ivs": 4
+    }
+  ]
+}
