@@ -8,7 +8,7 @@ public sealed record PermuteMeta(ISpawnInfo Spawner)
     /// <summary>
     /// Global configuration for determining if a <see cref="EntityResult"/> is a suitable result.
     /// </summary>
-    public static Func<EntityResult, bool> SatisfyCriteria { private get; set; } = result => result.IsShiny && result.IsAlpha;
+    public static Func<EntityResult, IReadOnlyList<Advance>, bool> SatisfyCriteria { private get; set; } = (result, _) => result.IsShiny && result.IsAlpha;
 
     public readonly List<PermuteResult> Results = new();
     private readonly List<Advance> Advances = new();
@@ -37,7 +37,7 @@ public sealed record PermuteMeta(ISpawnInfo Spawner)
     /// <summary>
     /// Checks if the <see cref="entity"/> is a suitable result.
     /// </summary>
-    public bool IsResult(EntityResult entity) => SatisfyCriteria(entity);
+    public bool IsResult(EntityResult entity) => SatisfyCriteria(entity, Advances);
 
     /// <summary>
     /// Calls <see cref="PermuteResult.Print"/> for all objects in the result list.
