@@ -1,4 +1,5 @@
-﻿using PKHeX.Core;
+﻿using System.Diagnostics;
+using PKHeX.Core;
 
 namespace PermuteMMO.Lib;
 
@@ -22,14 +23,19 @@ public static class ConsolePermuter
                 Console.WriteLine($"No outbreak in {areaName}.");
                 continue;
             }
+            Debug.Assert(area.IsValid);
 
             Console.WriteLine($"Permuting all possible paths for {areaName}.");
             Console.WriteLine("==========");
             for (int j = 0; j < MassiveOutbreakArea8a.SpawnerCount; j++)
             {
                 var spawner = area[j];
+                if (spawner.Status is MassiveOutbreakSpawnerStatus.None)
+                    continue;
+
+                Debug.Assert(spawner.HasBase);
                 var seed = spawner.SpawnSeed;
-                var info = new SpawnInfo
+                var spawn = new SpawnInfo
                 {
                     BaseCount = spawner.BaseCount,
                     BaseTable = spawner.BaseTable,
@@ -38,14 +44,14 @@ public static class ConsolePermuter
                     BonusTable = spawner.BonusTable,
                 };
 
-                Permuter.Permute(info, seed);
+                Permuter.Permute(spawn, seed);
 
-                var result = Permuter.Permute(info, seed);
+                var result = Permuter.Permute(spawn, seed);
                 if (!result.HasResults)
                     continue;
 
                 Console.WriteLine($"Spawner {j+1} at ({spawner.X:F1}, {spawner.Y:F1}, {spawner.Z}) shows {SpeciesName.GetSpeciesName(spawner.DisplaySpecies, 2)}");
-                Console.WriteLine($"Parameters: {info}");
+                Console.WriteLine($"Parameters: {spawn}");
                 result.PrintResults();
                 Console.WriteLine();
             }
@@ -54,6 +60,9 @@ public static class ConsolePermuter
         }
     }
 
+    /// <summary>
+    /// Permutes a single spawn with simple info.
+    /// </summary>
     public static void PermuteSingle(SpawnInfo spawn, ulong seed)
     {
         Console.WriteLine($"Permuting all possible paths for {seed:X16}.");

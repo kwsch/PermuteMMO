@@ -28,4 +28,7 @@ public readonly ref struct MassiveOutbreakSpawner8a
     public uint SpawnedCount => BinaryPrimitives.ReadUInt32LittleEndian(Data[0x64..]);
     public ulong SpawnerName => BinaryPrimitives.ReadUInt64LittleEndian(Data[0x68..]);
     public byte BonusCount => Data[0x74];
+
+    public bool HasBase => BaseTable is not (0 or 0xCBF29CE484222645);
+    public bool HasBonus => BonusTable is not (0 or 0xCBF29CE484222645);
 }

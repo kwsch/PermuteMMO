@@ -15,6 +15,7 @@ public readonly ref struct MassiveOutbreakArea8a
 
     public ulong AreaHash => BinaryPrimitives.ReadUInt64LittleEndian(Data);
     public bool IsActive => Data[0x8] == 1;
+    public bool IsValid => AreaHash is not (0 or 0xCBF29CE484222645);
 
     public MassiveOutbreakSpawner8a this[int index] => new(Data.Slice(0x10 + (MassiveOutbreakSpawner8a.SIZE * index), MassiveOutbreakSpawner8a.SIZE));
 }

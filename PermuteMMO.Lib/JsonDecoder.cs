@@ -15,7 +15,7 @@ public static class JsonDecoder
     public static Dictionary<ulong, SlotDetail[]> GetDictionary(string json)
     {
         var obj = JsonConvert.DeserializeObject<Dictionary<string, SlotDetail[]>>(json);
-        var result = new Dictionary<ulong, SlotDetail[]>();
+        var result = new Dictionary<ulong, SlotDetail[]>(obj.Count);
         foreach (var (key, value) in obj)
         {
             var hash = ulong.Parse(key[2..], NumberStyles.HexNumber, CultureInfo.InvariantCulture);

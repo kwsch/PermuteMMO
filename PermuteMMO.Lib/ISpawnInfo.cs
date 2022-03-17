@@ -7,5 +7,7 @@ public interface ISpawnInfo
     int BonusCount { get; }
     ulong BaseTable { get; }
     ulong BonusTable { get; }
+
+    bool HasBase => BaseTable is not (0 or 0xCBF29CE484222645);
     bool HasBonus => BonusTable is not (0 or 0xCBF29CE484222645);
 }
