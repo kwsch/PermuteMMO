@@ -12,7 +12,7 @@ public static class SpawnGenerator
     public static readonly IReadOnlyDictionary<ulong, SlotDetail[]> EncounterTables = JsonDecoder.GetDictionary(Resources.mmo_es);
 
     #region Public Mutable - Useful for DLL consumers
-    public static SAV8LA SaveFile { private get; set; } = GetFake();
+    public static SAV8LA SaveFile { get; set; } = GetFake();
     public static PokedexSave8a Pokedex => SaveFile.PokedexSave;
     public static byte[] BackingArray => SaveFile.Blocks.GetBlock(0x02168706).Data;
     public static bool HasCharm { get; set; } = true;
@@ -33,7 +33,7 @@ public static class SpawnGenerator
     /// <summary>
     /// Generates an <see cref="EntityResult"/> from the input <see cref="seed"/> and <see cref="table"/>.
     /// </summary>
-    public static EntityResult Generate(in ulong seed, in ulong table)
+    public static EntityResult Generate(in ulong seed, in ulong table, SpawnType type)
     {
         var slotrng = new Xoroshiro128Plus(seed);
 
@@ -47,7 +47,7 @@ public static class SpawnGenerator
         var gt = PersonalTable.LA.GetFormEntry(slot.Species, slot.Form).Gender;
 
         // Get roll count from save file
-        int shinyRolls = GetRerollCount(slot.Species);
+        int shinyRolls = GetRerollCount(slot.Species, type);
 
         var result = GeneratePokemon(genseed, shinyRolls, slot.FlawlessIVs, gt, slot.IsAlpha);
         result.Level = GetLevel(slot, slotrng);
@@ -57,11 +57,11 @@ public static class SpawnGenerator
         return result;
     }
 
-    private static int GetRerollCount(in int species)
+    private static int GetRerollCount(in int species, SpawnType type)
     {
         bool perfect = Pokedex.IsPerfect(species);
         bool complete = Pokedex.IsComplete(species);
-        return 1 + (complete ? 1 : 0) + (perfect ? 2 : 0) + (HasCharm ? 3 : 0) + 12;
+        return 1 + (complete ? 1 : 0) + (perfect ? 2 : 0) + (HasCharm ? 3 : 0) + (int)type;
     }
 
     private static int GetLevel(SlotDetail slot, Xoroshiro128Plus slotrng)

@@ -10,4 +10,5 @@ public interface ISpawnInfo
 
     bool HasBase => BaseTable is not (0 or 0xCBF29CE484222645);
     bool HasBonus => BonusTable is not (0 or 0xCBF29CE484222645);
+    SpawnType Type { get; }
 }

@@ -79,7 +79,7 @@ public static class Permuter
             var subSeed = rng.Next();
             _ = rng.Next(); // Unknown
 
-            var generate = SpawnGenerator.Generate(subSeed, table);
+            var generate = SpawnGenerator.Generate(subSeed, table, spawn.Spawner.Type);
             if (spawn.IsResult(generate))
                 spawn.AddResult(generate, i, isBonus);
         }

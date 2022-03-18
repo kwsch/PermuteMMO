@@ -9,4 +9,5 @@ public sealed record SpawnInfo : ISpawnInfo
     public int BonusCount { get; init; }
     public ulong BaseTable { get; init; }
     public ulong BonusTable { get; init; }
+    public SpawnType Type { get; init; } = SpawnType.MMO;
 }
