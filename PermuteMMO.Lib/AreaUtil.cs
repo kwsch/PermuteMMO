@@ -6,6 +6,7 @@ public static class AreaUtil
 
     public static readonly IReadOnlyDictionary<ulong, string> AreaTable = new Dictionary<ulong, string>
     {
+        { 0, NONE },
         { 0xCBF29CE484222645, NONE },
         { 0xE3BBEF047A645A1D, "Obsidian Fieldlands" },
         { 0xE3BBEC047A645504, "Crimson Mirelands" },
