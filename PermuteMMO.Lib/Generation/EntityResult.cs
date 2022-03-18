@@ -29,6 +29,7 @@ public sealed class EntityResult
         var shiny = IsShiny ? $" {RollCount,2} {(ShinyXor == 0 ? '■' : '*')}(^{ShinyXor,2})" : "";
         var alpha = IsAlpha ? "α-" : "";
         var notAlpha = !IsAlpha ? " -- NOT ALPHA" : "";
-        return $"{alpha}{Name}:{shiny}{notAlpha}";
+        var gender = Gender == 2 ? "" : Gender == 1 ? " (F)" : " (M)";
+        return $"{alpha}{Name}{gender}:{shiny}{notAlpha}";
     }
 }
