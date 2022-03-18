@@ -8,6 +8,8 @@ namespace PermuteMMO.Lib;
 /// </summary>
 public static class ConsolePermuter
 {
+    static ConsolePermuter() => Console.OutputEncoding = System.Text.Encoding.Unicode;
+
     /// <summary>
     /// Permutes all the areas to print out all possible spawns.
     /// </summary>
@@ -51,7 +53,7 @@ public static class ConsolePermuter
                     continue;
 
                 Console.WriteLine($"Spawner {j+1} at ({spawner.X:F1}, {spawner.Y:F1}, {spawner.Z}) shows {SpeciesName.GetSpeciesName(spawner.DisplaySpecies, 2)}");
-                Console.WriteLine($"Parameters: {spawn}");
+                Console.WriteLine(spawn);
                 result.PrintResults();
                 Console.WriteLine();
             }

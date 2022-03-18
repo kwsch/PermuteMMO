@@ -26,6 +26,9 @@ public sealed class EntityResult
 
     public string GetSummary()
     {
-        return $"{(IsAlpha? "α-" : "")}{Name}: {RollCount} (^{ShinyXor}){(IsAlpha ?"": " -- NOT ALPHA")}";
+        var shiny = IsShiny ? $" {RollCount,2} {(ShinyXor == 0 ? '■' : '*')}(^{ShinyXor,2})" : "";
+        var alpha = IsAlpha ? "α-" : "";
+        var notAlpha = !IsAlpha ? " -- NOT ALPHA" : "";
+        return $"{alpha}{Name}:{shiny}{notAlpha}";
     }
 }
