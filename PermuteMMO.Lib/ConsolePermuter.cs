@@ -103,9 +103,9 @@ public static class ConsolePermuter
             Console.WriteLine(spawn);
             result.PrintResults();
             Console.WriteLine();
-            Console.WriteLine("Done permuting Mass Outbreaks.");
-            Console.WriteLine("==========");
         }
+        Console.WriteLine("Done permuting Mass Outbreaks.");
+        Console.WriteLine("==========");
     }
 
     /// <summary>
