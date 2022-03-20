@@ -48,7 +48,7 @@ public sealed class EntityResult
             return " -- Timid, multi.";
 
         if (!IsTimid)
-            return " -- Timid result, multi.";
+            return " -- Base Timid, not multi.";
 
         return "-- TIMID, NO MULTI";
     }
