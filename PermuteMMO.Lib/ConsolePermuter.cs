@@ -58,7 +58,7 @@ public static class ConsolePermuter
 
                 Console.WriteLine($"Spawner {j+1} at ({spawner.X:F1}, {spawner.Y:F1}, {spawner.Z}) shows {SpeciesName.GetSpeciesName(spawner.DisplaySpecies, 2)}");
                 Console.WriteLine(spawn);
-                result.PrintResults();
+                result.PrintResults(spawner.DisplaySpecies);
                 Console.WriteLine();
             }
 
@@ -111,7 +111,7 @@ public static class ConsolePermuter
             Console.WriteLine("==========");
             Console.WriteLine($"Spawner at ({spawner.X:F1}, {spawner.Y:F1}, {spawner.Z}) shows {SpeciesName.GetSpeciesName(spawner.DisplaySpecies, 2)}");
             Console.WriteLine(spawn);
-            result.PrintResults();
+            result.PrintResults(spawner.DisplaySpecies);
             Console.WriteLine();
         }
         Console.WriteLine("Done permuting Mass Outbreaks.");
@@ -121,14 +121,14 @@ public static class ConsolePermuter
     /// <summary>
     /// Permutes a single spawn with simple info.
     /// </summary>
-    public static void PermuteSingle(SpawnInfo spawn, ulong seed)
+    public static void PermuteSingle(SpawnInfo spawn, ulong seed, ushort species)
     {
         Console.WriteLine($"Permuting all possible paths for {seed:X16}.");
         Console.WriteLine($"Parameters: {spawn}");
         Console.WriteLine();
 
         var result = Permuter.Permute(spawn, seed);
-        result.PrintResults();
+        result.PrintResults(species);
 
         Console.WriteLine();
         Console.WriteLine("Done.");

@@ -42,10 +42,10 @@ public sealed record PermuteMeta(ISpawnInfo Spawner)
     /// <summary>
     /// Calls <see cref="PermuteResult.Print"/> for all objects in the result list.
     /// </summary>
-    public void PrintResults()
+    public void PrintResults(ushort species)
     {
         foreach (var result in Results)
-            result.Print();
+            result.Print(species);
     }
 
     public bool HasResults => Results.Count is not 0;
@@ -53,9 +53,9 @@ public sealed record PermuteMeta(ISpawnInfo Spawner)
 
 public sealed record PermuteResult(Advance[] Advances, EntityResult Entity, in int SpawnIndex, in bool IsBonus)
 {
-    public void Print()
+    public void Print(ushort species)
     {
         var steps = string.Join("|", Advances.Select(z => z.GetName()));
-        Console.WriteLine($"* {steps,-30} >>> {(IsBonus ? "Bonus " : "")}Spawn{SpawnIndex} = {Entity.GetSummary()}");
+        Console.WriteLine($"* {steps,-30} >>> {(IsBonus ? "Bonus " : "")}Spawn{SpawnIndex} = {Entity.GetSummary(species, Advances)}");
     }
 }

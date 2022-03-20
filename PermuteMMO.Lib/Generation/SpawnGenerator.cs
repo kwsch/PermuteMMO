@@ -54,6 +54,7 @@ public static class SpawnGenerator
         result.IsAlpha = slot.IsAlpha;
         result.Seed = seed;
         result.Name = slot.Name;
+        result.Species = slot.Species;
         return result;
     }
 

@@ -10,8 +10,8 @@ namespace PermuteMMO.Tests;
 public sealed class SimpleTests
 {
     [Theory]
-    [InlineData(0xA5D779D8831721FD, 10, 6)]
-    public void First(in ulong seed, in int baseCount, in int bonusCount)
+    [InlineData(0xA5D779D8831721FD, 10, 6, (ushort)25)]
+    public void First(in ulong seed, in int baseCount, in int bonusCount, in ushort species)
     {
         var spawner = new SpawnInfo
         {
@@ -25,6 +25,6 @@ public sealed class SimpleTests
         var result = Permuter.Permute(spawner, seed);
         result.Results.Find(z => z.Entity.PID == 0x6f4edff0).Should().NotBeNull();
 
-        ConsolePermuter.PermuteSingle(spawner, seed);
+        ConsolePermuter.PermuteSingle(spawner, seed, species);
     }
 }
