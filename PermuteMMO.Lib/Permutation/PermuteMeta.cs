@@ -3,7 +3,7 @@
 /// <summary>
 /// Stores object-type references for cleaner passing internally. Only refer to <see cref="Results"/> when done.
 /// </summary>
-public sealed record PermuteMeta(ISpawnInfo Spawner)
+public sealed record PermuteMeta(SpawnInfo Spawner)
 {
     /// <summary>
     /// Global configuration for determining if a <see cref="EntityResult"/> is a suitable result.

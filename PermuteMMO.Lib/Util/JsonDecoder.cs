@@ -30,8 +30,8 @@ public static class JsonDecoder
 /// <summary>
 /// Encounter slot detail.
 /// </summary>
-/// <param name="Name">Community label name with Species-Form</param>
 /// <param name="Rate">Weight factor used to determine how frequent the encounter is yielded.</param>
+/// <param name="Name">Community label name with Species-Form</param>
 /// <param name="IsAlpha">Indicates if it is an alpha</param>
 /// <param name="Level">Level range array</param>
 /// <param name="FlawlessIVs">Amount of flawless IVs</param>

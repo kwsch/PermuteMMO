@@ -1,7 +1,7 @@
 ﻿namespace PermuteMMO.Lib;
 
 /// <summary>
-/// Overall block data for Mass Outbreaks, containing all areas and their spawners.
+/// Overall block data for Mass Outbreaks, containing all areas and their spawner objects.
 /// </summary>
 public readonly ref struct MassOutbreakSet8a
 {

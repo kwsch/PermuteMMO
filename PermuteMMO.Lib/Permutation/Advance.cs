@@ -60,10 +60,19 @@ public static class AdvanceExtensions
     /// <summary>
     /// Indicates if a multi-battle is required for this advancement.
     /// </summary>
-    public static bool IsMulti(this Advance advance) => advance.AdvanceCount() > 1;
+    public static bool IsMulti(this Advance advance) => advance > Advance.A1;
 
     /// <summary>
     /// Indicates if any advance requires a multi-battle for advancement.
     /// </summary>
-    public static bool IsAnyMulti(this IEnumerable<Advance> advances) => advances.Any(z => z.IsMulti());
+    public static bool IsAnyMulti(this ReadOnlySpan<Advance> advances)
+    {
+        foreach (var adv in advances)
+        {
+            if (adv.IsMulti())
+                return true;
+        }
+
+        return false;
+    }
 }

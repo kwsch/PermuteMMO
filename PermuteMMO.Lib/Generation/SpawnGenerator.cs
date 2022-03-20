@@ -42,6 +42,7 @@ public static class SpawnGenerator
         var slotroll = slotrng.NextFloat(slotSum);
         var slot = GetSlot(slots, slotroll);
         var genseed = slotrng.Next();
+        var level = GetLevel(slot, slotrng);
 
         // Determine stuff from slot detail
         var gt = PersonalTable.LA.GetFormEntry(slot.Species, slot.Form).Gender;
@@ -49,12 +50,18 @@ public static class SpawnGenerator
         // Get roll count from save file
         int shinyRolls = GetRerollCount(slot.Species, type);
 
-        var result = GeneratePokemon(genseed, shinyRolls, slot.FlawlessIVs, gt, slot.IsAlpha);
-        result.Level = GetLevel(slot, slotrng);
-        result.IsAlpha = slot.IsAlpha;
-        result.Seed = seed;
-        result.Name = slot.Name;
-        result.Species = slot.Species;
+        var result = new EntityResult
+        {
+            Species = slot.Species,
+            Form = slot.Form,
+            Level = level,
+            IsAlpha = slot.IsAlpha,
+
+            Seed = seed,
+            Name = slot.Name,
+        };
+
+        GeneratePokemon(result, genseed, shinyRolls, slot.FlawlessIVs, gt);
         return result;
     }
 
@@ -118,18 +125,13 @@ public static class SpawnGenerator
         throw new ArgumentOutOfRangeException(nameof(slotroll));
     }
 
-    public static EntityResult GeneratePokemon(in ulong seed, in int shinyrolls, in int flawless, in int genderRatio, in bool isAlpha)
+    public static void GeneratePokemon(EntityResult result, in ulong seed, in int shinyrolls, in int flawless, in int genderRatio)
     {
         var rng = new Xoroshiro128Plus(seed);
-        var result = new EntityResult();
 
         // Encryption Constant
-        var encryptionConstant = (uint)rng.NextInt();
-        result.EC = encryptionConstant;
-
-        // Fake TID
-        var fakeTID = (uint)rng.NextInt();
-        result.FakeTID = fakeTID;
+        result.EC = (uint)rng.NextInt();
+        result.FakeTID = (uint)rng.NextInt();
 
         // PID
         uint pid;
@@ -138,21 +140,21 @@ public static class SpawnGenerator
         {
             ++ctr;
             pid = (uint)rng.NextInt();
-            var ShinyXor = GetShinyXor(pid, fakeTID);
+            var ShinyXor = GetShinyXor(pid, result.FakeTID);
             var isShiny = result.IsShiny = ShinyXor < 16;
             if (!isShiny)
                 continue;
 
-            result.RollCount = ctr;
             result.ShinyXor = ShinyXor;
-            result.PermittedRolls = shinyrolls;
+            result.RollCountUsed = ctr;
+            result.RollCountAllowed = shinyrolls;
             break;
         } while (ctr < shinyrolls);
         result.PID = pid;
 
-        const int UNSET = -1;
-        int[] ivs = { UNSET, UNSET, UNSET, UNSET, UNSET, UNSET };
-        const int MAX = 31;
+        const byte UNSET = byte.MaxValue;
+        var ivs = result.IVs;
+        const byte MAX = 31;
         for (int i = 0; i < flawless; i++)
         {
             int index;
@@ -165,33 +167,22 @@ public static class SpawnGenerator
         for (int i = 0; i < ivs.Length; i++)
         {
             if (ivs[i] == UNSET)
-                ivs[i] = (int)rng.NextInt(32);
+                ivs[i] = (byte)rng.NextInt(32);
         }
-
-        var ability = (int)rng.NextInt(2);
-
-        int gender = genderRatio switch
+        result.Ability = (byte)rng.NextInt(2);
+        result.Gender = genderRatio switch
         {
             PersonalInfo.RatioMagicGenderless => 2,
             PersonalInfo.RatioMagicFemale => 1,
             PersonalInfo.RatioMagicMale => 0,
-            _ => (int)rng.NextInt(252) + 1 < genderRatio ? 1 : 0,
+            _ => (int)rng.NextInt(252) + 1 < genderRatio ? (byte)1: (byte)0,
         };
+        result.Nature = (byte)rng.NextInt(25);
 
-        int nature = (int)rng.NextInt(25);
-
-        var (height, weight) = isAlpha
+        (result.Height, result.Weight) = result.IsAlpha
             ? (byte.MaxValue, byte.MaxValue)
             : ((byte)((int)rng.NextInt(0x81) + (int)rng.NextInt(0x80)),
                (byte)((int)rng.NextInt(0x81) + (int)rng.NextInt(0x80)));
-
-        result.Ability = ability;
-        result.Gender = gender;
-        result.Nature = nature;
-        result.Height = height;
-        result.Weight = weight;
-
-        return result;
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
