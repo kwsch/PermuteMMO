@@ -13,7 +13,7 @@ public static class ConsolePermuter
     /// <summary>
     /// Permutes all the areas to print out all possible spawns.
     /// </summary>
-    public static void PermuteMassiveMassOutbreak(byte[] data)
+    public static void PermuteMassiveMassOutbreak(Span<byte> data)
     {
         var block = new MassiveOutbreakSet8a(data);
         for (int i = 0; i < MassiveOutbreakSet8a.AreaCount; i++)
@@ -77,7 +77,7 @@ public static class ConsolePermuter
     /// <summary>
     /// Permutes all the Mass Outbreaks to print out all possible spawns.
     /// </summary>
-    public static void PermuteBlockMassOutbreak(byte[] data)
+    public static void PermuteBlockMassOutbreak(Span<byte> data)
     {
         Console.WriteLine("Permuting Mass Outbreaks.");
         var block = new MassOutbreakSet8a(data);
