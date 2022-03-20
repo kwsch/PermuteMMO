@@ -1,6 +1,4 @@
-﻿using System.Buffers.Binary;
-
-namespace PermuteMMO.Lib;
+﻿namespace PermuteMMO.Lib;
 
 /// <summary>
 /// Overall block data for Mass Outbreaks, containing all areas and their spawners.

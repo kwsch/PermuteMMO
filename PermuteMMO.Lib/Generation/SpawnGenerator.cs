@@ -37,7 +37,7 @@ public static class SpawnGenerator
     {
         var slotrng = new Xoroshiro128Plus(seed);
 
-        var slots = EncounterTables[table];
+        var slots = GetSlots(table);
         var slotSum = slots.Sum(z => z.Rate);
         var slotroll = slotrng.NextFloat(slotSum);
         var slot = GetSlot(slots, slotroll);
@@ -55,6 +55,37 @@ public static class SpawnGenerator
         result.Seed = seed;
         result.Name = slot.Name;
         return result;
+    }
+
+    private static readonly Dictionary<ushort, SlotDetail[]> Outbreaks = new();
+    private static readonly int[] FakeLevels = { 0, 1, 2 };
+
+    private static SlotDetail[] GetSlots(in ulong table)
+    {
+        if (table > 1000)
+            return EncounterTables[table];
+
+        ushort species = (ushort)table;
+        return GetFakeOutbreak(species);
+    }
+
+    private static SlotDetail[] GetFakeOutbreak(ushort species)
+    {
+        if (Outbreaks.TryGetValue(species, out var value))
+            return value;
+
+        var name = SpeciesName.GetSpeciesName(species, 2);
+        if (species == (ushort)Species.Basculin)
+            name = $"{name}-2";
+        value = new[]
+        {
+            new SlotDetail(100, name, false, FakeLevels, 3),
+            new SlotDetail(001, name, true, FakeLevels, 3),
+        };
+        foreach (var slot in value)
+            slot.SetSpecies();
+
+        return Outbreaks[species] = value;
     }
 
     private static int GetRerollCount(in int species, SpawnType type)

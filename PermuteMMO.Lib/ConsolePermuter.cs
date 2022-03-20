@@ -13,7 +13,7 @@ public static class ConsolePermuter
     /// <summary>
     /// Permutes all the areas to print out all possible spawns.
     /// </summary>
-    public static void PermuteBlock(byte[] data)
+    public static void PermuteMassiveMassOutbreak(byte[] data)
     {
         var block = new MassiveOutbreakSet8a(data);
         for (int i = 0; i < MassiveOutbreakSet8a.AreaCount; i++)
@@ -86,10 +86,7 @@ public static class ConsolePermuter
             var spawn = new SpawnInfo
             {
                 BaseCount = spawner.BaseCount,
-                BaseTable = 0xC53972A070FC6A28,
-
-                BonusCount = 0,
-                BonusTable = 0,
+                BaseTable = spawner.DisplaySpecies,
                 Type = SpawnType.Outbreak,
             };
 

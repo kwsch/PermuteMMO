@@ -12,7 +12,7 @@ public readonly ref struct MassOutbreakSpawner8a
 
     public MassOutbreakSpawner8a(Span<byte> data) => Data = data;
 
-    public ushort DisplaySpecies => BinaryPrimitives.ReadUInt16LittleEndian(Data[0..]);
+    public ushort DisplaySpecies => BinaryPrimitives.ReadUInt16LittleEndian(Data);
     public ushort DisplayForm => BinaryPrimitives.ReadUInt16LittleEndian(Data[4..]);
     public ulong AreaHash => BinaryPrimitives.ReadUInt64LittleEndian(Data[0x18..]);
     public float X => BinaryPrimitives.ReadSingleLittleEndian(Data[0x20..]);

@@ -12,7 +12,7 @@ else
     data = SpawnGenerator.SaveFile.Accessor.GetBlock(0x7799EB86).Data;
 
 // Compute and print.
-ConsolePermuter.PermuteBlock(data);
+ConsolePermuter.PermuteMassiveMassOutbreak(data);
 
 Console.WriteLine();
 Console.WriteLine("==========");
