@@ -12,4 +12,16 @@ else
     data = SpawnGenerator.SaveFile.Accessor.GetBlock(0x7799EB86).Data;
 
 // Compute and print.
-ConsolePermuter.PermuteBlock(data);
+ConsolePermuter.PermuteMassiveMassOutbreak(data);
+
+Console.WriteLine();
+Console.WriteLine("==========");
+// Load mo file if present, otherwise fall back to whatever is in the save file.
+const string filemo = "mo.bin";
+if (File.Exists(filemo))
+    data = File.ReadAllBytes(filemo);
+else
+    data = SpawnGenerator.SaveFile.Accessor.GetBlock(0x1E0F1BA3).Data;
+
+// Compute and print.
+ConsolePermuter.PermuteBlockMassOutbreak(data);
