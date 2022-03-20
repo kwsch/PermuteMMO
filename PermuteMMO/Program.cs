@@ -9,7 +9,7 @@ if (File.Exists(file))
 {
     Span<byte> data = File.ReadAllBytes(file);
     data_mo = data[..MassOutbreakSet8a.SIZE];
-    data_mmo = data.Slice(MassOutbreakSet8a.SIZE, 0x3980);
+    data_mmo = data.Slice(MassOutbreakSet8a.SIZE, MassiveOutbreakSet8a.SIZE);
 }
 else
 {

@@ -5,6 +5,7 @@
 /// </summary>
 public readonly ref struct MassiveOutbreakSet8a
 {
+    public const int SIZE = 0x3980;
     public const int AreaCount = 5;
 
     private readonly Span<byte> Data;

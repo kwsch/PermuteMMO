@@ -6,8 +6,9 @@
 public readonly ref struct MassOutbreakSet8a
 {
     public const int SIZE = 0x190;
-    private readonly Span<byte> Data;
     public const int AreaCount = 5;
+
+    private readonly Span<byte> Data;
 
     public MassOutbreakSet8a(Span<byte> data) => Data = data;
 

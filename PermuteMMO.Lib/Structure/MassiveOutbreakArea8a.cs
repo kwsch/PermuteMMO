@@ -8,8 +8,9 @@ namespace PermuteMMO.Lib;
 public readonly ref struct MassiveOutbreakArea8a
 {
     public const int SIZE = 0xB80;
-    private readonly Span<byte> Data;
     public const int SpawnerCount = 20;
+
+    private readonly Span<byte> Data;
 
     public MassiveOutbreakArea8a(Span<byte> data) => Data = data;
 
