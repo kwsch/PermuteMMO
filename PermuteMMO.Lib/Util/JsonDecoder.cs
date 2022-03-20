@@ -45,8 +45,8 @@ public sealed record SlotDetail(
 {
     public int LevelMin => Level[0];
     public int LevelMax => Level[1];
-    public int Species { get; private set; }
-    public int Form { get; private set; }
+    public ushort Species { get; private set; }
+    public ushort Form { get; private set; }
 
     /// <summary>
     /// Parses the string name into actual indexes.
@@ -59,7 +59,7 @@ public sealed record SlotDetail(
             var dash = Name.IndexOf('-');
             if (dash > 0)
             {
-                Form = int.Parse(Name.AsSpan(dash+1));
+                Form = ushort.Parse(Name.AsSpan(dash+1));
                 species = Name[..dash];
             }
             else
@@ -72,7 +72,7 @@ public sealed record SlotDetail(
             if (species == "Mr.Mime") // STOP FAKE NAMING SPECIES
                 species = "Mr. Mime";
 
-            Species = SpeciesName.SpeciesDict[(int)LanguageID.English][species];
+            Species = (ushort)SpeciesName.SpeciesDict[(int)LanguageID.English][species];
         }
         catch (Exception e)
         {
