@@ -19,7 +19,7 @@ public class ReversalTests
         foreach (var d in all)
         {
             var pa8 = new PA8(d);
-            var seeds = IterativeReversal.GetSeeds(pa8, 32);
+            var seeds = IterativeReversal.GetSeeds(pa8, 17);
             seeds.Should().NotBeEmpty();
         }
     }

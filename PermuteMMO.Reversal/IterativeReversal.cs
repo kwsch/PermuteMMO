@@ -42,7 +42,16 @@ public static class IterativeReversal
     /// <inheritdoc cref="FindSeeds(uint,uint,ReadOnlySpan{int},byte,Span{ulong},Span{byte})"/>
     public static int FindSeeds(PKM pk, byte max_rolls, Span<ulong> seeds, Span<byte> rolls)
     {
-        return FindSeeds(pk.PID, pk.EncryptionConstant, pk.IVs, max_rolls, seeds, rolls);
+        ReadOnlySpan<int> ivs = stackalloc int[6]
+        {
+            pk.IV_HP,
+            pk.IV_ATK,
+            pk.IV_DEF,
+            pk.IV_SPA,
+            pk.IV_SPD,
+            pk.IV_SPE,
+        };
+        return FindSeeds(pk.PID, pk.EncryptionConstant, ivs, max_rolls, seeds, rolls);
     }
 
     public static ulong[] GetSeeds(uint pid, uint ec, Span<int> ivs, byte max_rolls)
