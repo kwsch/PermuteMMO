@@ -16,7 +16,7 @@ public static class IterativeReversal
     }
 
     [DllImport(LibraryPath, CallingConvention = CallingConvention.Cdecl)]
-    private static extern int pa_PLA_find_seeds(uint pid, uint ec, ref int ivs, byte max_rolls, ref ulong seeds, ref byte rolls, int length);
+    private static extern int pa_PLA_find_seeds(uint pid, uint ec, ref byte ivs, byte max_rolls, ref ulong seeds, ref byte rolls, int length);
 
     /// <summary>
     /// Finds all seeds using the Pokémon Automation's reversal algorithm (parallelized brute forcing)
@@ -28,33 +28,30 @@ public static class IterativeReversal
     /// <param name="seeds">Result storage for all seeds</param>
     /// <param name="rolls">Result storage for amount of shiny rolls performed prior to the seed attempt stopping</param>
     /// <returns>Count of seed-rolls stored in the input spans.</returns>
-    public static int FindSeeds(uint pid, uint ec, ReadOnlySpan<int> ivs, byte max_rolls, Span<ulong> seeds, Span<byte> rolls)
+    public static int FindSeeds(uint pid, uint ec, ReadOnlySpan<byte> ivs, byte max_rolls, Span<ulong> seeds, Span<byte> rolls)
     {
         Debug.Assert(seeds.Length == rolls.Length);
         var length = seeds.Length;
 
-        var ptrIVs = MemoryMarshal.GetReference(ivs);
-        var ptrSeeds = MemoryMarshal.GetReference(seeds);
-        var ptrRoll = MemoryMarshal.GetReference(rolls);
-        return pa_PLA_find_seeds(pid, ec, ref ptrIVs, max_rolls, ref ptrSeeds, ref ptrRoll, length);
+        return pa_PLA_find_seeds(pid, ec, ref MemoryMarshal.GetReference(ivs), max_rolls, ref MemoryMarshal.GetReference(seeds), ref MemoryMarshal.GetReference(rolls), length);
     }
 
-    /// <inheritdoc cref="FindSeeds(uint,uint,ReadOnlySpan{int},byte,Span{ulong},Span{byte})"/>
+    /// <inheritdoc cref="FindSeeds(uint,uint,ReadOnlySpan{byte},byte,Span{ulong},Span{byte})"/>
     public static int FindSeeds(PKM pk, byte max_rolls, Span<ulong> seeds, Span<byte> rolls)
     {
-        ReadOnlySpan<int> ivs = stackalloc int[6]
+        ReadOnlySpan<byte> ivs = stackalloc byte[6]
         {
-            pk.IV_HP,
-            pk.IV_ATK,
-            pk.IV_DEF,
-            pk.IV_SPA,
-            pk.IV_SPD,
-            pk.IV_SPE,
+            (byte)pk.IV_HP,
+            (byte)pk.IV_ATK,
+            (byte)pk.IV_DEF,
+            (byte)pk.IV_SPA,
+            (byte)pk.IV_SPD,
+            (byte)pk.IV_SPE,
         };
         return FindSeeds(pk.PID, pk.EncryptionConstant, ivs, max_rolls, seeds, rolls);
     }
 
-    public static ulong[] GetSeeds(uint pid, uint ec, Span<int> ivs, byte max_rolls)
+    public static ulong[] GetSeeds(uint pid, uint ec, Span<byte> ivs, byte max_rolls)
     {
         const int overkill = 0x10; // normally 0-2 results, but let's go overboard :)
         Span<ulong> possible = stackalloc ulong[overkill];
