@@ -63,9 +63,19 @@ namespace PermuteMMO.Reversal.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] PLA_SeedFinder {
+        internal static byte[] PLA_SeedFinder_32 {
             get {
-                object obj = ResourceManager.GetObject("PLA-SeedFinder", resourceCulture);
+                object obj = ResourceManager.GetObject("PLA_SeedFinder_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] PLA_SeedFinder_64 {
+            get {
+                object obj = ResourceManager.GetObject("PLA_SeedFinder_64", resourceCulture);
                 return ((byte[])(obj));
             }
         }

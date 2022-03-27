@@ -11,8 +11,13 @@ public static class IterativeReversal
     static IterativeReversal()
     {
         const string dllPath = LibraryPath + ".dll";
-        if (!File.Exists(dllPath))
-            File.WriteAllBytes(dllPath, Properties.Resources.PLA_SeedFinder);
+        if (File.Exists(dllPath))
+            return;
+
+        var bin = Environment.Is64BitProcess
+            ? Properties.Resources.PLA_SeedFinder_64
+            : Properties.Resources.PLA_SeedFinder_32;
+        File.WriteAllBytes(dllPath, bin);
     }
 
     [DllImport(LibraryPath, CallingConvention = CallingConvention.Cdecl)]
