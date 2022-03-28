@@ -10,6 +10,11 @@ namespace PermuteMMO.Lib;
 public static class JsonDecoder
 {
     /// <summary>
+    /// Wrapper to deserialize the json using whatever package this project is currently using.
+    /// </summary>
+    public static T Deserialize<T>(string path) where T : class => JsonConvert.DeserializeObject<T>(path);
+
+    /// <summary>
     /// Converts the json string back to a usable dictionary.
     /// </summary>
     public static Dictionary<ulong, SlotDetail[]> GetDictionary(string json)
