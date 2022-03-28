@@ -2,7 +2,7 @@
 
 namespace PermuteMMO.Reversal;
 
-internal static class GroupSeedFinder
+public static class GroupSeedFinder
 {
     public const byte max_rolls = 32;
 
@@ -10,11 +10,17 @@ internal static class GroupSeedFinder
     public static IEnumerable<ulong> FindSeeds(IEnumerable<string> files, byte maxRolls = max_rolls) => FindSeeds(files.Select(File.ReadAllBytes), maxRolls);
     public static IEnumerable<ulong> FindSeeds(IEnumerable<byte[]> data, byte maxRolls = max_rolls) => FindSeeds(data.Select(PKMConverter.GetPKMfromBytes).OfType<PKM>(), maxRolls);
 
+    /// <summary>
+    /// Returns all valid Group Seeds (should only be one) that generated the input data.
+    /// </summary>
+    /// <param name="data">Entities that were generated</param>
+    /// <param name="maxRolls">Max amount of PID re-rolls for shiny odds.</param>
     public static IEnumerable<ulong> FindSeeds(IEnumerable<PKM> data, byte maxRolls = max_rolls)
     {
         var entities = data.ToArray();
         var ecs = entities.Select(z => z.EncryptionConstant).ToArray();
 
+        // Backwards we go! Reverse the pkm data -> seed first (this takes the longest, so we only do one at a time).
         var allPokeResults = entities.Select(z => IterativeReversal.GetSeeds(z, maxRolls));
         foreach (var pokeResult in allPokeResults)
         {
@@ -36,7 +42,13 @@ internal static class GroupSeedFinder
         }
     }
 
-    private static bool IsValidGroupSeed(ulong seed, Span<uint> ecs)
+    /// <summary>
+    /// Uses the input <see cref="seed"/> as the group seed to check if it generates all of the input <see cref="PKM.EncryptionConstant"/> values.
+    /// </summary>
+    /// <param name="seed">Group seed</param>
+    /// <param name="ecs">Entity encryption constants</param>
+    /// <returns>True if all <see cref="ecs"/> are generated from the <see cref="seed"/>.</returns>
+    private static bool IsValidGroupSeed(ulong seed, ReadOnlySpan<uint> ecs)
     {
         int matched = 0;
 

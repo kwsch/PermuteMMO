@@ -3,50 +3,37 @@ using PKHeX.Core;
 
 namespace PermuteMMO.Reversal;
 
+/// <summary>
+/// Reverses for top and middle step seeds by using Z3 to calculate.
+/// </summary>
 public static class GenSeedReversal
 {
-    public static IList<ulong> GetAllGenSeeds(ulong seed)
+    /// <summary>
+    /// Top level seed calculation for the initial Group Seed
+    /// </summary>
+    /// <param name="seed">Middle level Generator seed that generates Slot and the Entity seed.</param>
+    public static IEnumerable<ulong> FindPotentialGroupSeeds(ulong seed)
     {
-        var seeds = FindPotentialGenSeeds(seed);
+        using var ctx = new Context(new Dictionary<string, string> { { "model", "true" } });
+        var exp = CreateGroupSeedModel(ctx, seed, out var s0);
 
-        var result = new List<ulong>();
-        foreach (var _seed in seeds)
-            result.Add(_seed);
-        return result;
+        return FindAllMatches(ctx, exp, s0);
     }
 
+    /// <summary>
+    /// Middle level seed calculation for the Generator Seed
+    /// </summary>
+    /// <param name="seed">Bottom level Entity seed.</param>
     public static IEnumerable<ulong> FindPotentialGenSeeds(ulong seed)
     {
         using var ctx = new Context(new Dictionary<string, string> { { "model", "true" } });
         var exp = CreateGenSeedModel(ctx, seed, out var s0);
 
-        while (Check(ctx, exp) is { } x)
-        {
-            foreach (var kvp in x.Consts)
-            {
-                var tmp = (BitVecNum)kvp.Value;
-                yield return tmp.UInt64;
-                exp = ctx.MkAnd(exp, ctx.MkNot(ctx.MkEq(s0, x.Evaluate(s0))));
-            }
-        }
+        return FindAllMatches(ctx, exp, s0);
     }
 
-    public static IList<ulong> GetAllGroupSeeds(ulong seed)
+    private static IEnumerable<ulong> FindAllMatches(Context ctx, BoolExpr exp, BitVecExpr s0)
     {
-        var seeds = FindPotentialGroupSeeds(seed);
-
-        var result = new List<ulong>();
-        foreach (var _seed in seeds)
-            result.Add(_seed);
-        return result;
-    }
-
-    public static IEnumerable<ulong> FindPotentialGroupSeeds(ulong seed)
-    {
-        using var ctx = new Context(new Dictionary<string, string> { { "model", "true" } });
-
-        var exp = CreateGroupSeedModel(ctx, seed, out var s0);
-
         while (Check(ctx, exp) is { } m)
         {
             foreach (var kvp in m.Consts)
@@ -56,6 +43,18 @@ public static class GenSeedReversal
                 exp = ctx.MkAnd(exp, ctx.MkNot(ctx.MkEq(s0, m.Evaluate(s0))));
             }
         }
+    }
+
+    private static BoolExpr CreateGroupSeedModel(Context ctx, ulong seed, out BitVecExpr s0)
+    {
+        s0 = ctx.MkBVConst("s0", 64);
+        BitVecExpr s1 = ctx.MkBV(Xoroshiro128Plus.XOROSHIRO_CONST, 64);
+
+        var real_seed = ctx.MkBV(seed, 64);
+        var genseed_check = AdvanceSymbolicNext(ctx, ref s0, ref s1);
+
+        var exp = ctx.MkEq(real_seed, genseed_check);
+        return ctx.MkAnd(exp);
     }
 
     private static BoolExpr CreateGenSeedModel(Context ctx, ulong seed, out BitVecExpr s0)
@@ -91,18 +90,5 @@ public static class GenSeedReversal
         if (q != Status.SATISFIABLE)
             return null;
         return solver.Model;
-    }
-
-    private static BoolExpr CreateGroupSeedModel(Context ctx, ulong seed, out BitVecExpr s0)
-    {
-        s0 = ctx.MkBVConst("s0", 64);
-        BitVecExpr s1 = ctx.MkBV(Xoroshiro128Plus.XOROSHIRO_CONST, 64);
-
-        var real_seed = ctx.MkBV(seed, 64);
-
-        var genseed_check = AdvanceSymbolicNext(ctx, ref s0, ref s1);
-
-        var exp = ctx.MkEq(real_seed, genseed_check);
-        return ctx.MkAnd(exp);
     }
 }

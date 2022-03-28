@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using System.Linq;
+using FluentAssertions;
 using PermuteMMO.Reversal;
 using PKHeX.Core;
 using Xunit;
@@ -15,12 +16,15 @@ public class ReversalTests
         var pk3 = Properties.Resources.Tentacool3;
         var pk4 = Properties.Resources.Tentacool4;
 
-        var all = new[] { pk1, pk2, pk3, pk4 };
+        var all = new[] { pk1, pk2, pk3, pk4 }.Select(z => new PA8(z)).ToArray();
         foreach (var d in all)
         {
-            var pa8 = new PA8(d);
-            var seeds = IterativeReversal.GetSeeds(pa8, 17);
+            var seeds = IterativeReversal.GetSeeds(d, 17);
             seeds.Should().NotBeEmpty();
         }
+
+        var groupSeed = GroupSeedFinder.FindSeeds(all, 17);
+        var results = groupSeed.ToArray();
+        results.Length.Should().Be(1);
     }
 }

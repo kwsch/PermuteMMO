@@ -4,16 +4,27 @@ using PKHeX.Core;
 
 namespace PermuteMMO.Reversal;
 
+/// <summary>
+/// Reverses an entity's details into the seed that generated it.
+/// </summary>
+/// <remarks>
+/// Uses dll provided by PokemonAutomation under the BSD license. Refer to their GitHub repo for how the parallel-iteration brute-force works.
+/// https://github.com/PokemonAutomation/Experimental/tree/4001b0402515ade042528d9bffb07ceab4476c96
+/// </remarks>
 public static class IterativeReversal
 {
-    private const string LibraryPath = "PLA-SeedFinder";
+    private const string LibraryPath = "PLA-SeedFinder"; // dll
 
+    /// <summary>
+    /// First call into this class needs to ensure the PokemonAutomation Group's cpp calculation dll is available.
+    /// </summary>
     static IterativeReversal()
     {
         const string dllPath = LibraryPath + ".dll";
         if (File.Exists(dllPath))
             return;
 
+        // Check for 32/64bit and write the correct dll to the local path.
         var bin = Environment.Is64BitProcess
             ? Properties.Resources.PLA_SeedFinder_64
             : Properties.Resources.PLA_SeedFinder_32;
@@ -44,6 +55,7 @@ public static class IterativeReversal
     /// <inheritdoc cref="FindSeeds(uint,uint,ReadOnlySpan{byte},byte,Span{ulong},Span{byte})"/>
     public static int FindSeeds(PKM pk, byte max_rolls, Span<ulong> seeds, Span<byte> rolls)
     {
+        // IVs are in order of Speed Last.
         ReadOnlySpan<byte> ivs = stackalloc byte[6]
         {
             (byte)pk.IV_HP,
