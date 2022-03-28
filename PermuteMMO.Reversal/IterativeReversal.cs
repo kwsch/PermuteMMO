@@ -56,7 +56,7 @@ public static class IterativeReversal
         return FindSeeds(pk.PID, pk.EncryptionConstant, ivs, max_rolls, seeds, rolls);
     }
 
-    public static ulong[] GetSeeds(uint pid, uint ec, Span<byte> ivs, byte max_rolls)
+    public static (ulong Seed, byte Rolls)[] GetSeeds(uint pid, uint ec, Span<byte> ivs, byte max_rolls)
     {
         const int overkill = 0x10; // normally 0-2 results, but let's go overboard :)
         Span<ulong> possible = stackalloc ulong[overkill];
@@ -65,7 +65,7 @@ public static class IterativeReversal
         int count = FindSeeds(pid, ec, ivs, max_rolls, possible, rolls);
         Debug.Assert(count <= overkill);
 
-        return possible[..count].ToArray();
+        return GetResult(count, possible, rolls);
     }
 
     public static (ulong Seed, byte Rolls)[] GetSeeds(PKM pk, byte max_rolls)
@@ -77,6 +77,11 @@ public static class IterativeReversal
         int count = FindSeeds(pk, max_rolls, possible, rolls);
         Debug.Assert(count <= overkill);
 
+        return GetResult(count, possible, rolls);
+    }
+
+    private static (ulong Seed, byte Rolls)[] GetResult(int count, Span<ulong> possible, Span<byte> rolls)
+    {
         var result = new (ulong, byte)[count];
         for (int i = 0; i < result.Length; i++)
             result[i] = (possible[i], rolls[i]);
