@@ -9,7 +9,7 @@ if (File.Exists(json))
 {
     var info = JsonDecoder.Deserialize<UserEnteredSpawnInfo>(File.ReadAllText(json));
     var spawner = info.GetSpawn();
-    SpawnGenerator.MaxShinyRolls = spawner.HasBonus ? 32 : 17;
+    SpawnGenerator.MaxShinyRolls = spawner.Type is SpawnType.MMO ? 17 : 32;
     ConsolePermuter.PermuteSingle(spawner, info.GetSeed(), info.Species);
 
     Console.WriteLine("Press [ENTER] to exit.");
