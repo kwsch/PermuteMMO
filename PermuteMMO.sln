@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PermuteMMO.ConsoleApp", "PermuteMMO.ConsoleApp\PermuteMMO.ConsoleApp.csproj", "{D35AAC6B-C2BA-4573-8C2F-F3F135E0902F}"
+Project("{AE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermuteMMO.ConsoleApp", "PermuteMMO.ConsoleApp\PermuteMMO.ConsoleApp.csproj", "{D35AAC6B-C2BA-4573-8C2F-F3F135E0902F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PermuteMMO.Lib", "PermuteMMO.Lib\PermuteMMO.Lib.csproj", "{91D75103-E981-4FCC-9D3F-F5086641B057}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermuteMMO.Lib", "PermuteMMO.Lib\PermuteMMO.Lib.csproj", "{91D75103-E981-4FCC-9D3F-F5086641B057}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PermuteMMO.Tests", "PermuteMMO.Tests\PermuteMMO.Tests.csproj", "{C72B86A5-539B-41D0-B18E-852BA72E1A66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PermuteMMO.Tests", "PermuteMMO.Tests\PermuteMMO.Tests.csproj", "{C72B86A5-539B-41D0-B18E-852BA72E1A66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
