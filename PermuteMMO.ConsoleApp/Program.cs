@@ -11,6 +11,9 @@ if (File.Exists(json))
     var spawner = info.GetSpawn();
     SpawnGenerator.MaxShinyRolls = spawner.HasBonus ? 32 : 17;
     ConsolePermuter.PermuteSingle(spawner, info.GetSeed(), info.Species);
+
+    Console.WriteLine("Press [ENTER] to exit.");
+    Console.ReadLine();
     return;
 }
 
