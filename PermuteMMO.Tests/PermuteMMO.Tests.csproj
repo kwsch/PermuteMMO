@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PermuteMMO.Lib\PermuteMMO.Lib.csproj" />
-    <ProjectReference Include="..\PermuteMMO.Reversal\PermuteMMO.Reversal.csproj" />
   </ItemGroup>
 
   <ItemGroup>
