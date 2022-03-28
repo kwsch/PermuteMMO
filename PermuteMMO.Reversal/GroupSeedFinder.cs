@@ -21,9 +21,14 @@ public static class GroupSeedFinder
         var ecs = entities.Select(z => z.EncryptionConstant).ToArray();
 
         // Backwards we go! Reverse the pkm data -> seed first (this takes the longest, so we only do one at a time).
-        var allPokeResults = entities.Select(z => IterativeReversal.GetSeeds(z, maxRolls));
-        foreach (var pokeResult in allPokeResults)
+        for (int i = 0; i < entities.Length; i++)
         {
+            var entity = entities[i];
+            Console.WriteLine($"Checking entity {i+1}/{entities.Length} for group seeds...");
+            int count = 0;
+
+            var pokeResult = IterativeReversal.GetSeeds(entity, maxRolls);
+
             foreach (var (pokeSeed, _) in pokeResult)
             {
                 // Get seed for slot-pkm
@@ -34,11 +39,14 @@ public static class GroupSeedFinder
                     var groupSeeds = GenSeedReversal.FindPotentialGroupSeeds(genSeed);
                     foreach (var groupSeed in groupSeeds)
                     {
-                        if (IsValidGroupSeed(groupSeed, ecs))
-                            yield return groupSeed;
+                        if (!IsValidGroupSeed(groupSeed, ecs))
+                            continue;
+                        count++;
+                        yield return groupSeed;
                     }
                 }
             }
+            Console.WriteLine($"Found {count} group seeds for entity {i+1}.");
         }
     }
 
