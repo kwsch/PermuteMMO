@@ -14,24 +14,3 @@ public sealed record SpawnInfo
     public bool HasBase => BaseTable is not (0 or 0xCBF29CE484222645);
     public bool HasBonus => BonusTable is not (0 or 0xCBF29CE484222645);
 }
-
-public sealed record UserEnteredSpawnInfo
-{
-    public ulong Seed { get; set; }
-    public ushort Species { get; set; }
-
-    public int BaseCount { get; set; }
-    public ulong BaseTable { get; set; }
-
-    public int BonusCount { get; set; }
-    public ulong BonusTable { get; set; }
-
-    public SpawnInfo GetSpawn() => new()
-    {
-        BaseCount = BaseCount,
-        BonusCount = BonusCount,
-        BaseTable = BaseTable,
-        BonusTable = BonusTable,
-        Type = BonusTable is not (0 or 0xCBF29CE484222645) ? SpawnType.MMO : SpawnType.Outbreak,
-    };
-}

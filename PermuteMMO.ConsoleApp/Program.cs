@@ -7,10 +7,10 @@ PermuteMeta.SatisfyCriteria = (result, advances) => result.IsShiny;
 const string json = "spawner.json";
 if (File.Exists(json))
 {
-    var info = JsonDecoder.Deserialize<UserEnteredSpawnInfo>(json);
+    var info = JsonDecoder.Deserialize<UserEnteredSpawnInfo>(File.ReadAllText(json));
     var spawner = info.GetSpawn();
     SpawnGenerator.MaxShinyRolls = spawner.HasBonus ? 32 : 17;
-    ConsolePermuter.PermuteSingle(spawner, info.Seed, info.Species);
+    ConsolePermuter.PermuteSingle(spawner, info.GetSeed(), info.Species);
     return;
 }
 

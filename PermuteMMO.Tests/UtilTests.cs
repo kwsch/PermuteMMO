@@ -15,10 +15,12 @@ public static class UtilTests
     {
         var obj = new UserEnteredSpawnInfo
         {
-            Seed = 0xDEADBABE_BEEFCAFE,
             Species = (int)Species.Diglett,
-            BaseCount = 1,
-            BaseTable = 0x1122_10F4_7DE9_8115,
+            Seed = 0xDEADBABE_BEEFCAFE.ToString(),
+            BaseCount = 10,
+            BaseTable = $"0x{0x1122_10F4_7DE9_8115:X16}",
+            BonusCount = 0,
+            BonusTable = $"0x{0:X16}",
         };
 
         var fileName = Path.Combine(Environment.CurrentDirectory, "spawner.json");
