@@ -14,6 +14,7 @@ internal static class GroupSeedFinder
     {
         var entities = data.ToArray();
         var ecs = entities.Select(z => z.EncryptionConstant).ToArray();
+
         var allPokeResults = entities.Select(z => IterativeReversal.GetSeeds(z, maxRolls));
         foreach (var pokeResult in allPokeResults)
         {
@@ -35,8 +36,29 @@ internal static class GroupSeedFinder
         }
     }
 
-    private static bool IsValidGroupSeed(ulong groupSeed, uint[] ecs)
+    private static bool IsValidGroupSeed(ulong seed, Span<uint> ecs)
     {
-        throw new NotImplementedException();
+        int matched = 0;
+
+        var rng = new Xoroshiro128Plus(seed);
+        for (int count = 0; count < 4; count++)
+        {
+            var genseed = rng.Next();
+            _ = rng.Next(); // unknown
+
+            var slotrng = new Xoroshiro128Plus(genseed);
+            _ = slotrng.Next(); // slot
+            var mon_seed = slotrng.Next();
+         // _ = slotrng.Next(); // level
+
+            var monrng = new Xoroshiro128Plus(mon_seed);
+            var ec = (uint)monrng.NextInt();
+
+            var index = ecs.IndexOf(ec);
+            if (index != -1)
+                matched++;
+        }
+
+        return matched == ecs.Length;
     }
 }
