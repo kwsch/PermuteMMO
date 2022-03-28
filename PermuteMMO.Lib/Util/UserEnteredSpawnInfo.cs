@@ -15,14 +15,22 @@ public sealed record UserEnteredSpawnInfo
     public int BonusCount { get; set; }
     public string BonusTable { get; set; } = string.Empty;
 
-    public SpawnInfo GetSpawn() => new()
+    public SpawnInfo GetSpawn()
     {
-        BaseCount = BaseCount,
-        BonusCount = BonusCount,
-        BaseTable = Parse(BaseTable),
-        BonusTable = Parse(BonusTable),
-        Type = Parse(BonusTable) is not 0 ? SpawnType.MMO : SpawnType.Outbreak,
-    };
+        var table = Parse(BaseTable);
+        var bonus = Parse(BonusTable);
+        if (table < 1000)
+            table = Species;
+
+        return new SpawnInfo
+        {
+            BaseCount = BaseCount,
+            BonusCount = BonusCount,
+            BaseTable = table,
+            BonusTable = bonus,
+            Type = bonus is not 0 ? SpawnType.MMO : SpawnType.Outbreak,
+        };
+    }
 
     private static ulong Parse(string hex)
     {
