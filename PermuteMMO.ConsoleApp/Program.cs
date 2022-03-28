@@ -3,6 +3,20 @@
 // Change the criteria for emitting matches here.
 PermuteMeta.SatisfyCriteria = (result, advances) => result.IsShiny;
 
+// If a spawner json exists, spawn from that instead
+const string json = "spawner.json";
+if (File.Exists(json))
+{
+    var info = JsonDecoder.Deserialize<UserEnteredSpawnInfo>(File.ReadAllText(json));
+    var spawner = info.GetSpawn();
+    SpawnGenerator.MaxShinyRolls = spawner.Type is SpawnType.MMO ? 17 : 32;
+    ConsolePermuter.PermuteSingle(spawner, info.GetSeed(), info.Species);
+
+    Console.WriteLine("Press [ENTER] to exit.");
+    Console.ReadLine();
+    return;
+}
+
 const string file = "combo.bin";
 Span<byte> data_mo, data_mmo;
 if (File.Exists(file))
@@ -31,3 +45,6 @@ ConsolePermuter.PermuteMassiveMassOutbreak(data_mmo);
 Console.WriteLine();
 Console.WriteLine("==========");
 ConsolePermuter.PermuteBlockMassOutbreak(data_mo);
+
+Console.WriteLine("Press [ENTER] to exit.");
+Console.ReadLine();
