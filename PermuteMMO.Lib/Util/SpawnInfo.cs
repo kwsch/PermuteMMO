@@ -21,8 +21,9 @@ public sealed record UserEnteredSpawnInfo
     public ushort Species { get; set; }
 
     public int BaseCount { get; set; }
-    public int BonusCount { get; set; }
     public ulong BaseTable { get; set; }
+
+    public int BonusCount { get; set; }
     public ulong BonusTable { get; set; }
 
     public SpawnInfo GetSpawn() => new()
