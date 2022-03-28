@@ -13,3 +13,6 @@ Console.WriteLine($"Found {result.Length} {(result.Length == 1 ? "seed" : "seeds
 foreach (var seed in result)
     Console.WriteLine(seed);
 Console.WriteLine("Done!");
+
+Console.WriteLine();
+Console.WriteLine("Press [ENTER] to exit.");
