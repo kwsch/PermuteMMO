@@ -19,6 +19,7 @@ public sealed record UserEnteredSpawnInfo
     {
         var table = Parse(BaseTable);
         var bonus = Parse(BonusTable);
+        var type = bonus is 0 && table is 0 ? SpawnType.Outbreak : SpawnType.MMO;
         if (table < 1000)
             table = Species;
 
@@ -28,7 +29,7 @@ public sealed record UserEnteredSpawnInfo
             BonusCount = BonusCount,
             BaseTable = table,
             BonusTable = bonus,
-            Type = bonus is 0 && table is 0 ? SpawnType.Outbreak : SpawnType.MMO,
+            Type = type,
         };
     }
 
