@@ -128,7 +128,10 @@ public static class ConsolePermuter
         Console.WriteLine();
 
         var result = Permuter.Permute(spawn, seed);
-        result.PrintResults(species);
+        if (!result.HasResults)
+            Console.WriteLine("No results found.");
+        else
+            result.PrintResults(species);
 
         Console.WriteLine();
         Console.WriteLine("Done.");
