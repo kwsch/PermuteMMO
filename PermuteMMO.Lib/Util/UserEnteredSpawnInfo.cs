@@ -28,7 +28,7 @@ public sealed record UserEnteredSpawnInfo
             BonusCount = BonusCount,
             BaseTable = table,
             BonusTable = bonus,
-            Type = bonus is not 0 ? SpawnType.MMO : SpawnType.Outbreak,
+            Type = bonus is 0 && table is 0 ? SpawnType.Outbreak : SpawnType.MMO,
         };
     }
 
