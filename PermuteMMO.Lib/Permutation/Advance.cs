@@ -60,7 +60,7 @@ public static class AdvanceExtensions
     /// <summary>
     /// Indicates if a multi-battle is required for this advancement.
     /// </summary>
-    public static bool IsMulti(this Advance advance) => advance > Advance.A1;
+    public static bool IsMulti(this Advance advance) => advance > Advance.A1 && advance <= Advance.A4;
 
     /// <summary>
     /// Indicates if any advance requires a multi-battle for advancement.
