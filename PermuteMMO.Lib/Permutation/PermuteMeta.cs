@@ -56,6 +56,8 @@ public sealed record PermuteResult(Advance[] Advances, EntityResult Entity, in i
     public void Print(ushort species)
     {
         var steps = string.Join("|", Advances.Select(z => z.GetName()));
-        Console.WriteLine($"* {steps,-30} >>> {(IsBonus ? "Bonus " : "")}Spawn{SpawnIndex} = {Entity.GetSummary(species, Advances)}");
+        // 37 total characters for the steps:
+        // 10+7 spawner has 6+(3)+3=12 max permutations, +"SB|", remove last |; (3*12+2)=37.
+        Console.WriteLine($"* {steps,-37} >>> {(IsBonus ? "Bonus " : "")}Spawn{SpawnIndex} = {Entity.GetSummary(species, Advances)}");
     }
 }
