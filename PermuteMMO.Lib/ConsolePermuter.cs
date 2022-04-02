@@ -129,7 +129,7 @@ public static class ConsolePermuter
 
         var result = Permuter.Permute(spawn, seed);
         if (!result.HasResults)
-            Console.WriteLine("No results found.");
+            Console.WriteLine("No results found. Try another outbreak! :(");
         else
             result.PrintResults(species);
 
