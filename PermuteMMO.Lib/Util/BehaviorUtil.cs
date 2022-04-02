@@ -68,6 +68,7 @@ public static class BehaviorUtil
         (ushort)Togepi,
         (ushort)Togetic,
         (ushort)Turtwig,
+        (ushort)Unown,
         (ushort)Vulpix,
         (ushort)Wurmple,
     };
