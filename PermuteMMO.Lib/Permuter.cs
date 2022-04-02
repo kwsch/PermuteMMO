@@ -9,11 +9,16 @@ namespace PermuteMMO.Lib;
 public static class Permuter
 {
     private const int MaxAlive = 4;
-    private const int MaxKill = 4;
+    private const int MaxDead = 4;
     private const int MaxGhosts = 3;
 
     // State tracking
-    private readonly record struct SpawnState(in int Count, in int Alive = 0, in int Dead = 0, in int Ghost = 0);
+    private readonly record struct SpawnState(in int Count, in int Alive = 0, in int Dead = 0, in int Ghost = 0)
+    {
+        public SpawnState Knockout(int count) => this with { Alive = Alive - count, Dead = Dead + count };
+        public SpawnState Generate(int count) => this with { Count = Count - count, Alive = Alive + count, Dead = Dead - count, Ghost = Dead - count };
+        public SpawnState AddGhosts(int count) => this with { Alive = Alive - count, Dead = Dead + count, Ghost = count };
+    }
 
     /// <summary>
     /// Iterates through all possible player actions with the starting <see cref="seed"/> and <see cref="spawner"/> details.
@@ -21,7 +26,7 @@ public static class Permuter
     public static PermuteMeta Permute(SpawnInfo spawner, ulong seed)
     {
         var info = new PermuteMeta(spawner);
-        var state = new SpawnState(spawner.BaseCount);
+        var state = new SpawnState(spawner.BaseCount) { Dead = MaxDead };
 
         // Generate the encounters!
         PermuteRecursion(info, spawner.BaseTable, false, seed, state);
@@ -41,12 +46,13 @@ public static class Permuter
     private static void PermuteOutbreak(PermuteMeta meta, in ulong table, in bool isBonus, in ulong seed, in SpawnState state)
     {
         // Re-spawn to capacity
-        var respawn = Math.Min(state.Count, MaxAlive - state.Alive);
+        var emptySlots = state.Dead;
+        var respawn = Math.Min(state.Count, emptySlots);
         Debug.Assert(respawn != 0);
-        var reseed = GenerateSpawns(meta, table, isBonus, seed, respawn);
+        var reseed = GenerateSpawns(meta, table, isBonus, seed, emptySlots);
 
         // Update spawn state
-        var newState = state with { Count = state.Count - respawn, Alive = MaxAlive };
+        var newState = state.Generate(respawn);
         ContinuePermute(meta, table, isBonus, reseed, newState);
     }
 
@@ -60,12 +66,11 @@ public static class Permuter
         }
 
         // Permute our remaining options
-        int canKO = state.Count >= MaxAlive ? MaxKill : state.Count;
-        for (int i = 1; i <= canKO; i++)
+        for (int i = 1; i <= state.Alive; i++)
         {
             var step = (int)Advance.A1 + (i - 1);
             meta.Start((Advance)step);
-            var newState = state with { Alive = state.Alive - i, Dead = state.Dead + i };
+            var newState = state.Knockout(i);
             PermuteRecursion(meta, table, isBonus, seed, newState);
             meta.End();
         }
@@ -98,7 +103,7 @@ public static class Permuter
     private static void PermuteBonusTable(PermuteMeta meta, in ulong seed)
     {
         meta.Start(Advance.SB);
-        var state = new SpawnState(meta.Spawner.BonusCount);
+        var state = new SpawnState(meta.Spawner.BonusCount) { Dead = MaxDead };
         PermuteOutbreak(meta, meta.Spawner.BonusTable, true, seed, state);
         meta.End();
     }
@@ -110,26 +115,15 @@ public static class Permuter
         {
             // Get updated state with added ghosts
             var ghosts = state.Ghost + i;
-            var newState = state with { Count = 0, Alive = state.Alive - i, Dead = state.Dead + i, Ghost = ghosts };
+            var newState = state.AddGhosts(ghosts);
             var step = (int)Advance.G1 + (i - 1);
 
             // Simulate ghost advancements via camp reset
-            var gSeed = GetGhostSeed(seed, ghosts);
+            var gSeed = Calculations.GetGroupSeed(seed, ghosts);
 
             meta.Start((Advance)step);
             PermuteRecursion(meta, table, false, gSeed, newState);
             meta.End();
         }
-    }
-
-    private static ulong GetGhostSeed(in ulong seed, in int ghosts)
-    {
-        var rng = new Xoroshiro128Plus(seed);
-        for (int g = 0; g < ghosts; g++)
-        {
-            _ = rng.Next();
-            _ = rng.Next();
-        }
-        return rng.Next();
     }
 }
