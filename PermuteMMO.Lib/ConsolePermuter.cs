@@ -124,6 +124,7 @@ public static class ConsolePermuter
     public static void PermuteSingle(SpawnInfo spawn, ulong seed, ushort species)
     {
         Console.WriteLine($"Permuting all possible paths for {seed:X16}.");
+        Console.WriteLine($"Base Species: {SpeciesName.GetSpeciesName(species, 2)}");
         Console.WriteLine($"Parameters: {spawn}");
         Console.WriteLine();
 
