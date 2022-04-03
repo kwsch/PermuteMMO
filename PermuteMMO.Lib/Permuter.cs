@@ -49,7 +49,7 @@ public static class Permuter
         var emptySlots = state.Dead;
         var respawn = Math.Min(state.Count, emptySlots);
         Debug.Assert(respawn != 0);
-        var reseed = GenerateSpawns(meta, table, isBonus, seed, emptySlots);
+        var reseed = GenerateSpawns(meta, table, isBonus, seed, emptySlots, respawn);
 
         // Update spawn state
         var newState = state.Generate(respawn);
@@ -76,13 +76,16 @@ public static class Permuter
         }
     }
 
-    private static ulong GenerateSpawns(PermuteMeta spawn, in ulong table, in bool isBonus, in ulong seed, in int count)
+    private static ulong GenerateSpawns(PermuteMeta spawn, in ulong table, in bool isBonus, in ulong seed, int count, in int respawn)
     {
         var rng = new Xoroshiro128Plus(seed);
         for (int i = 1; i <= count; i++)
         {
             var subSeed = rng.Next();
             _ = rng.Next(); // Unknown
+
+            if (i > respawn)
+                continue; // end of wave ghost
 
             var generate = SpawnGenerator.Generate(subSeed, table, spawn.Spawner.Type);
             if (spawn.IsResult(generate))
