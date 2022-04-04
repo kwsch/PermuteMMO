@@ -1,4 +1,6 @@
-﻿namespace PermuteMMO.Lib;
+﻿using PKHeX.Core;
+
+namespace PermuteMMO.Lib;
 
 /// <summary>
 /// Spawned Pokémon Data that can be encountered.
@@ -33,7 +35,9 @@ public sealed class EntityResult
 
     public string GetSummary(ushort species, ReadOnlySpan<Advance> advances)
     {
-        var shiny = IsShiny ? $" {RollCountUsed,2} {(ShinyXor == 0 ? '■' : '*')}(^{ShinyXor,2})" : "";
+        var shiny = IsShiny ? $" {RollCountUsed,2} {(ShinyXor == 0 ? '■' : '*')}" : "";
+        var ivs = $" {IVs[0]:00}/{IVs[1]:00}/{IVs[2]:00}/{IVs[3]:00}/{IVs[4]:00}/{IVs[5]:00}";
+        var nature = $" {GameInfo.GetStrings(1).Natures[Nature]}";
         var alpha = IsAlpha ? "α-" : "";
         var notAlpha = !IsAlpha ? " -- NOT ALPHA" : "";
         var gender = Gender switch
@@ -43,7 +47,7 @@ public sealed class EntityResult
             _ => " (M)",
         };
         var timid = GetTimidString(species, advances);
-        return $"{alpha}{Name}{gender}:{shiny}{notAlpha}{timid}";
+        return $"{alpha}{Name}{gender}:{shiny}{ivs}{nature,-8}{notAlpha}{timid}";
     }
 
     private string GetTimidString(ushort species, ReadOnlySpan<Advance> advances)
