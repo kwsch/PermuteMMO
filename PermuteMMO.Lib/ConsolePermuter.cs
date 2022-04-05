@@ -41,8 +41,8 @@ public static class ConsolePermuter
                     BaseCount = spawner.BaseCount,
                     BaseTable = spawner.BaseTable,
 
-                    BonusCount = spawner.BonusCount,
-                    BonusTable = spawner.BonusTable,
+                    BonusCount = spawner.HasBonus ? spawner.BonusCount : 0,
+                    BonusTable = spawner.HasBonus ? spawner.BonusTable : 0,
                 };
 
                 var result = Permuter.Permute(spawn, seed);
