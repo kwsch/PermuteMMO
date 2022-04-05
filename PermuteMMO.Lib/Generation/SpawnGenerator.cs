@@ -88,7 +88,7 @@ public static class SpawnGenerator
             name = $"{name}-2";
         value = new[]
         {
-            new SlotDetail(100, name, false, FakeLevels, 3),
+            new SlotDetail(100, name, false, FakeLevels, 0),
             new SlotDetail(001, name, true, FakeLevels, 3),
         };
         foreach (var slot in value)
