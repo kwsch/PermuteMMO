@@ -16,6 +16,7 @@ public static class Permuter
     private readonly record struct SpawnState(in int Count, in int Alive = 0, in int Dead = 0, in int Ghost = 0, int AliveAggressive = 0)
     {
         public int AliveSkittish => Alive - AliveAggressive;
+        public int MaxCountBattle => Math.Min(Alive, AliveAggressive + 1);
 
         public SpawnState Knockout(int count)
         {
@@ -88,20 +89,14 @@ public static class Permuter
         }
 
         // Permute our remaining options
-        var possible = meta.CanBeReachedBehavior;
-        for (int i = 1; i <= state.Alive; i++)
+        for (int i = 1; i <= state.MaxCountBattle; i++)
         {
             var step = (int)Advance.A1 + (i - 1);
             meta.Start((Advance)step);
-
-            if (i >= 2)
-                meta.CanBeReachedBehavior &= i - 1 <= state.AliveAggressive;
-
             var newState = state.Knockout(i);
             PermuteRecursion(meta, table, isBonus, seed, newState);
             meta.End();
         }
-        meta.CanBeReachedBehavior = possible;
     }
 
     private static (ulong Seed, int Aggressive) GenerateSpawns(PermuteMeta spawn, in ulong table, in bool isBonus, in ulong seed, int count, in int respawn)
