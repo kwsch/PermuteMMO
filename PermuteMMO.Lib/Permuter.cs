@@ -15,20 +15,14 @@ public static class Permuter
     // State tracking
     private readonly record struct SpawnState(in int Count, in int Alive = 0, in int Dead = 0, in int Ghost = 0, int AliveAggressive = 0)
     {
-        public int AliveSkittish => Alive - AliveAggressive;
         public int MaxCountBattle => Math.Min(Alive, AliveAggressive + 1);
 
         public SpawnState Knockout(int count)
         {
-            int skittish = AliveSkittish;
-            int aggro = AliveAggressive;
-
-            // Prefer to knock out skittish
-            var delta = skittish - count;
-            if (delta < 0)
-                aggro += delta;
-
-            return this with { Alive = Alive - count, Dead = Dead + count, AliveAggressive = aggro };
+            // Prefer to knock out the Skittish, and any required Aggressives
+            var newAggro = AliveAggressive - count + 1;
+            Debug.Assert(newAggro >= 0);
+            return this with { Alive = Alive - count, Dead = Dead + count, AliveAggressive = newAggro };
         }
 
         public SpawnState Generate(int count, int aggro) => this with
