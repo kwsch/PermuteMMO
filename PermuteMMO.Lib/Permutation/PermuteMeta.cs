@@ -13,6 +13,8 @@ public sealed record PermuteMeta(SpawnInfo Spawner)
     public readonly List<PermuteResult> Results = new();
     private readonly List<Advance> Advances = new();
 
+    public bool CanBeReachedBehavior { get; set; } = true;
+
     /// <summary>
     /// Signals the start of a recursive permutation step.
     /// </summary>
@@ -31,6 +33,7 @@ public sealed record PermuteMeta(SpawnInfo Spawner)
     {
         var steps = Advances.ToArray();
         var result = new PermuteResult(steps, entity, index, isBonus);
+        entity.CanBeReachedBehavior = CanBeReachedBehavior;
         Results.Add(result);
     }
 
@@ -45,7 +48,10 @@ public sealed record PermuteMeta(SpawnInfo Spawner)
     public void PrintResults(ushort species)
     {
         foreach (var result in Results)
-            result.Print(species);
+        {
+            if (result.Entity.CanBeReachedBehavior)
+                result.Print(species);
+        }
     }
 
     public bool HasResults => Results.Count is not 0;

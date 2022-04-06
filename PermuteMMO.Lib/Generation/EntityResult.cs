@@ -8,7 +8,9 @@ namespace PermuteMMO.Lib;
 public sealed class EntityResult
 {
     public string Name { get; init; } = string.Empty;
-    public readonly byte[] IVs = { byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue };
+
+    public readonly byte[] IVs =
+        { byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue };
 
     public ulong Seed { get; init; }
     public int Level { get; init; }
@@ -31,7 +33,9 @@ public sealed class EntityResult
     public byte Height { get; set; }
     public byte Weight { get; set; }
 
-    public bool IsTimid => BehaviorUtil.Timid.Contains(Species);
+    public bool IsSkittish => BehaviorUtil.Skittish.Contains(Species);
+    public bool IsAggressive => IsAlpha || !IsSkittish;
+    public bool CanBeReachedBehavior { get; set; }
 
     public string GetSummary(ushort species, ReadOnlySpan<Advance> advances)
     {
@@ -46,22 +50,26 @@ public sealed class EntityResult
             1 => " (F)",
             _ => " (M)",
         };
-        var timid = GetTimidString(species, advances);
-        return $"{alpha}{Name}{gender}:{shiny}{ivs}{nature,-8}{notAlpha}{timid}";
+        var feasibility = GetFeasibility(species, advances, CanBeReachedBehavior);
+        return $"{alpha}{Name}{gender}:{shiny}{ivs}{nature,-8}{notAlpha}{feasibility}";
     }
 
-    private string GetTimidString(ushort species, ReadOnlySpan<Advance> advances)
+    private string GetFeasibility(ushort species, ReadOnlySpan<Advance> advances, bool feasible)
     {
-        var baseTimid = BehaviorUtil.Timid.Contains(species);
-        if (!baseTimid)
+        var isBaseSkittish = BehaviorUtil.Skittish.Contains(species);
+        if (!isBaseSkittish)
             return string.Empty;
 
         var anyMulti = advances.IsAnyMulti();
         if (anyMulti)
-            return " -- Timid, multi :(";
+        {
+            if (feasible)
+                return " -- Skittish, multi with sufficient aggressive peers!";
+            return " -- Skittish, multi :(";
+        }
 
-        if (IsTimid)
-            return " -- TIMID, NOT MULTI";
-        return " -- Base encounter Timid, NOT MULTI.";
+        if (IsSkittish)
+            return " -- SKITTISH, NOT MULTI";
+        return " -- Base encounter Skittish, NOT MULTI.";
     }
 }

@@ -4,7 +4,7 @@ namespace PermuteMMO.Lib;
 
 public static class BehaviorUtil
 {
-    public static readonly HashSet<ushort> Timid = new()
+    public static readonly HashSet<ushort> Skittish = new()
     {
         (ushort)Abra,
         (ushort)Aipom,
