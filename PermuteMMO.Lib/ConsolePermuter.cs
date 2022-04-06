@@ -58,7 +58,6 @@ public static class ConsolePermuter
 
                 Console.WriteLine($"Spawner {j+1} at ({spawner.X:F1}, {spawner.Y:F1}, {spawner.Z}) shows {SpeciesName.GetSpeciesName(spawner.DisplaySpecies, 2)}");
                 Console.WriteLine(spawn);
-                Console.WriteLine(spawner.SpawnSeed);
                 result.PrintResults(spawner.DisplaySpecies);
                 Console.WriteLine();
             }

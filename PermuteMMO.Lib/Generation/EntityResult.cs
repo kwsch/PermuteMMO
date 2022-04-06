@@ -8,9 +8,7 @@ namespace PermuteMMO.Lib;
 public sealed class EntityResult
 {
     public string Name { get; init; } = string.Empty;
-
-    public readonly byte[] IVs =
-        { byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue };
+    public readonly byte[] IVs = { byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue };
 
     public ulong Seed { get; init; }
     public int Level { get; init; }
