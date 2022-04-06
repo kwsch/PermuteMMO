@@ -52,6 +52,7 @@ public sealed record SlotDetail(
     public int LevelMax => Level[1];
     public ushort Species { get; private set; }
     public ushort Form { get; private set; }
+    public bool IsSkittish => BehaviorUtil.Skittish.Contains(Species);
 
     /// <summary>
     /// Parses the string name into actual indexes.

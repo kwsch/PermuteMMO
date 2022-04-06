@@ -32,6 +32,17 @@ public static class SpawnGenerator
     }
 
     /// <summary>
+    /// Checks if a Table (or species) is skittish.
+    /// </summary>
+    /// <param name="table">Table hash or species ID.</param>
+    /// <returns>True if skittish.</returns>
+    public static bool IsSkittish(ulong table)
+    {
+        var slots = GetSlots(table);
+        return slots.Any(z => z.IsSkittish);
+    }
+
+    /// <summary>
     /// Generates an <see cref="EntityResult"/> from the input <see cref="seed"/> and <see cref="table"/>.
     /// </summary>
     public static EntityResult Generate(in ulong seed, in ulong table, SpawnType type)

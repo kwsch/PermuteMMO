@@ -58,7 +58,8 @@ public static class ConsolePermuter
 
                 Console.WriteLine($"Spawner {j+1} at ({spawner.X:F1}, {spawner.Y:F1}, {spawner.Z}) shows {SpeciesName.GetSpeciesName(spawner.DisplaySpecies, 2)}");
                 Console.WriteLine(spawn);
-                result.PrintResults(spawner.DisplaySpecies);
+                bool hasSkittish = SpawnGenerator.IsSkittish(spawn.BaseTable);
+                result.PrintResults(hasSkittish);
                 Console.WriteLine();
             }
 
@@ -111,7 +112,8 @@ public static class ConsolePermuter
             Console.WriteLine("==========");
             Console.WriteLine($"Spawner at ({spawner.X:F1}, {spawner.Y:F1}, {spawner.Z}) shows {SpeciesName.GetSpeciesName(spawner.DisplaySpecies, 2)}");
             Console.WriteLine(spawn);
-            result.PrintResults(spawner.DisplaySpecies);
+            bool hasSkittish = SpawnGenerator.IsSkittish(spawner.DisplaySpecies);
+            result.PrintResults(hasSkittish);
             Console.WriteLine();
         }
         Console.WriteLine("Done permuting Mass Outbreaks.");
@@ -130,9 +132,14 @@ public static class ConsolePermuter
 
         var result = Permuter.Permute(spawn, seed);
         if (!result.HasResults)
+        {
             Console.WriteLine("No results found. Try another outbreak! :(");
+        }
         else
-            result.PrintResults(species);
+        {
+            bool hasSkittish = SpawnGenerator.IsSkittish(spawn.BaseTable);
+            result.PrintResults(hasSkittish);
+        }
 
         Console.WriteLine();
         Console.WriteLine("Done.");

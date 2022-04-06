@@ -34,7 +34,7 @@ public sealed class EntityResult
     public bool IsSkittish => BehaviorUtil.Skittish.Contains(Species);
     public bool IsAggressive => IsAlpha || !IsSkittish;
 
-    public string GetSummary(ushort species, ReadOnlySpan<Advance> advances)
+    public string GetSummary(ReadOnlySpan<Advance> advances, bool indicateSkittish)
     {
         var shiny = IsShiny ? $" {RollCountUsed,2} {(ShinyXor == 0 ? '■' : '*')}" : "";
         var ivs = $" {IVs[0]:00}/{IVs[1]:00}/{IVs[2]:00}/{IVs[3]:00}/{IVs[4]:00}/{IVs[5]:00}";
@@ -47,21 +47,18 @@ public sealed class EntityResult
             1 => " (F)",
             _ => " (M)",
         };
-        var feasibility = GetFeasibility(species, advances);
+        var feasibility = GetFeasibility(indicateSkittish, advances);
         return $"{alpha}{Name}{gender}:{shiny}{ivs}{nature,-8}{notAlpha}{feasibility}";
     }
 
-    private string GetFeasibility(ushort species, ReadOnlySpan<Advance> advances)
+    private static string GetFeasibility(bool indicateSkittish, ReadOnlySpan<Advance> advances)
     {
-        var isBaseSkittish = BehaviorUtil.Skittish.Contains(species);
-        if (!isBaseSkittish)
+        if (!indicateSkittish)
             return string.Empty;
 
         var anyMulti = advances.IsAnyMulti();
         if (anyMulti)
-            return " -- Skittish, multi with sufficient aggressive peers!";
-        if (IsSkittish)
-            return " -- SKITTISH, NOT MULTI";
-        return " -- Base encounter Skittish, NOT MULTI.";
+            return " -- Skittish: Aggressive!";
+        return     " -- Skittish: Single advances!";
     }
 }

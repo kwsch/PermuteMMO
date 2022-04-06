@@ -42,10 +42,10 @@ public sealed record PermuteMeta(SpawnInfo Spawner)
     /// <summary>
     /// Calls <see cref="PermuteResult.Print"/> for all objects in the result list.
     /// </summary>
-    public void PrintResults(ushort species)
+    public void PrintResults(bool indicateSkittish)
     {
         foreach (var result in Results)
-            result.Print(species);
+            result.Print(indicateSkittish);
     }
 
     public bool HasResults => Results.Count is not 0;
@@ -53,11 +53,11 @@ public sealed record PermuteMeta(SpawnInfo Spawner)
 
 public sealed record PermuteResult(Advance[] Advances, EntityResult Entity, in int SpawnIndex, in bool IsBonus)
 {
-    public void Print(ushort species)
+    public void Print(bool indicateSkittish)
     {
         var steps = string.Join("|", Advances.Select(z => z.GetName()));
         // 37 total characters for the steps:
         // 10+7 spawner has 6+(3)+3=12 max permutations, +"SB|", remove last |; (3*12+2)=37.
-        Console.WriteLine($"* {steps,-37} >>> {(IsBonus ? "Bonus " : "")}Spawn{SpawnIndex} = {Entity.GetSummary(species, Advances)}");
+        Console.WriteLine($"* {steps,-37} >>> {(IsBonus ? "Bonus " : "")}Spawn{SpawnIndex} = {Entity.GetSummary(Advances, indicateSkittish)}");
     }
 }
