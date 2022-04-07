@@ -53,11 +53,11 @@ public sealed record PermuteMeta(SpawnInfo Spawner)
 
 public sealed record PermuteResult(Advance[] Advances, EntityResult Entity, in int SpawnIndex, in bool IsBonus)
 {
-    public void Print(bool indicateSkittish)
+    public void Print(bool skittishBase, bool skittishBonus = false)
     {
         var steps = string.Join("|", Advances.Select(z => z.GetName()));
         // 37 total characters for the steps:
         // 10+7 spawner has 6+(3)+3=12 max permutations, +"SB|", remove last |; (3*12+2)=37.
-        Console.WriteLine($"* {steps,-37} >>> {(IsBonus ? "Bonus " : "")}Spawn{SpawnIndex} = {Entity.GetSummary(Advances, indicateSkittish)}");
+        Console.WriteLine($"* {steps,-37} >>> {(IsBonus ? "Bonus " : "")}Spawn{SpawnIndex} = {Entity.GetSummary(Advances, skittishBase, skittishBonus)}");
     }
 }
