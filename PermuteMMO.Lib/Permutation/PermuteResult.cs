@@ -5,7 +5,7 @@
 /// </summary>
 public sealed record PermuteResult(Advance[] Advances, EntityResult Entity, in int SpawnIndex, in bool IsBonus)
 {
-    public string GetLine(PermuteResult? prev, bool skittishBase, bool skittishBonus)
+    public string GetLine(PermuteResult? prev, bool isActionMultiResult, bool skittishBase, bool skittishBonus)
     {
         var steps = GetSteps(prev);
         // 37 total characters for the steps:
@@ -13,6 +13,8 @@ public sealed record PermuteResult(Advance[] Advances, EntityResult Entity, in i
         var line = $"* {steps,-37} >>> {(IsBonus ? "Bonus " : "      ")}Spawn{SpawnIndex} = {Entity.GetSummary(Advances, skittishBase, skittishBonus)}";
         if (prev != null)
             line += " ~~ Chain result!";
+        if (isActionMultiResult)
+            line += " ~~ Spawns multiple results!";
         return line;
     }
 

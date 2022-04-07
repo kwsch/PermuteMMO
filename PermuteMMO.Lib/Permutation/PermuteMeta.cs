@@ -48,8 +48,31 @@ public sealed record PermuteMeta(SpawnInfo Spawner)
         {
             var result = Results[i];
             var parent = FindNearestParentAdvanceResult(i, result.Advances);
-            yield return result.GetLine(parent, skittishBase, skittishBonus);
+            bool isActionMultiResult = IsActionMultiResult(i, result.Advances);
+            yield return result.GetLine(parent, isActionMultiResult, skittishBase, skittishBonus);
         }
+    }
+
+    private bool IsActionMultiResult(int index, Advance[] child)
+    {
+        int count = 0;
+        // scan backwards until different
+        for (int i = index - 1; i >= 0; i--)
+        {
+            if (Results[i].Advances.SequenceEqual(child))
+                count++;
+            else
+                break;
+        }
+        // scan forwards until different
+        for (int i = index + 1; i < Results.Count; i++)
+        {
+            if (Results[i].Advances.SequenceEqual(child))
+                count++;
+            else
+                break;
+        }
+        return count != 0;
     }
 
     private PermuteResult? FindNearestParentAdvanceResult(int index, Advance[] child)
@@ -71,7 +94,7 @@ public sealed record PermuteMeta(SpawnInfo Spawner)
     private static bool IsSubset(Advance[] parent, Advance[] child)
     {
         // check if parent sequence [0..n) matches child's [0..n)
-        if (parent.Length > child.Length)
+        if (parent.Length >= child.Length)
             return false;
         for (var i = 0; i < parent.Length; i++)
         {
