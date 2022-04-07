@@ -58,8 +58,11 @@ public static class ConsolePermuter
 
                 Console.WriteLine($"Spawner {j+1} at ({spawner.X:F1}, {spawner.Y:F1}, {spawner.Z}) shows {SpeciesName.GetSpeciesName(spawner.DisplaySpecies, 2)}");
                 Console.WriteLine(spawn);
-                bool hasSkittish = SpawnGenerator.IsSkittish(spawn.BaseTable);
-                result.PrintResults(hasSkittish);
+                bool skittishBase = SpawnGenerator.IsSkittish(spawn.BaseTable);
+                bool skittishBonus = SpawnGenerator.IsSkittish(spawn.BonusTable);
+                var lines = result.GetLines(skittishBase, skittishBonus);
+                foreach (var line in lines)
+                    Console.WriteLine(line);
                 Console.WriteLine();
             }
 
@@ -112,8 +115,10 @@ public static class ConsolePermuter
             Console.WriteLine("==========");
             Console.WriteLine($"Spawner at ({spawner.X:F1}, {spawner.Y:F1}, {spawner.Z}) shows {SpeciesName.GetSpeciesName(spawner.DisplaySpecies, 2)}");
             Console.WriteLine(spawn);
-            bool hasSkittish = SpawnGenerator.IsSkittish(spawner.DisplaySpecies);
-            result.PrintResults(hasSkittish);
+            bool skittishBase = SpawnGenerator.IsSkittish(spawner.DisplaySpecies);
+            var lines = result.GetLines(skittishBase);
+            foreach (var line in lines)
+                Console.WriteLine(line);
             Console.WriteLine();
         }
         Console.WriteLine("Done permuting Mass Outbreaks.");
@@ -137,8 +142,11 @@ public static class ConsolePermuter
         }
         else
         {
-            bool hasSkittish = SpawnGenerator.IsSkittish(spawn.BaseTable);
-            result.PrintResults(hasSkittish);
+            bool skittishBase = SpawnGenerator.IsSkittish(spawn.BaseTable);
+            bool skittishBonus = SpawnGenerator.IsSkittish(spawn.BonusTable);
+            var lines = result.GetLines(skittishBase, skittishBonus);
+            foreach (var line in lines)
+                Console.WriteLine(line);
         }
 
         Console.WriteLine();
