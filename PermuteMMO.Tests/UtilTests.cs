@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using FluentAssertions;
 using Newtonsoft.Json;
 using PermuteMMO.Lib;
@@ -63,5 +65,33 @@ public static class UtilTests
         var permute = Permuter.Permute(spawn, seed);
         var match = permute.Results.Find(z => z.Entity.Seed == respawnSeed);
         match.Should().NotBeNull();
+    }
+
+    [Fact]
+    public static void Stantler()
+    {
+        var json = new UserEnteredSpawnInfo
+        {
+            Seed = "88514016295302425",
+            Species = 234,
+            BaseCount = 10,
+            BaseTable = "0x5BFA9CCA4ED8142B",
+            BonusCount = 6,
+            BonusTable = "0xC213942F6D31614C",
+        };
+        var spawn = json.GetSpawn();
+
+        // Spawn 4 pokemon
+        var seed = json.GetSeed();
+        var entities = new List<EntityResult>();
+        for (int i = 1; i <= 4; i++)
+        {
+            var genSeed = Calculations.GetGenerateSeed(seed, i);
+            var entity = SpawnGenerator.Generate(genSeed, spawn.BaseTable, SpawnType.MMO);
+            entities.Add(entity);
+        }
+
+        var count = entities.Count(z => z.IsAggressive);
+        count.Should().Be(2);
     }
 }
