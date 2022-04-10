@@ -57,7 +57,8 @@ public static class ConsolePermuter
                 }
 
                 Console.WriteLine($"Spawner {j+1} at ({spawner.X:F1}, {spawner.Y:F1}, {spawner.Z}) shows {SpeciesName.GetSpeciesName(spawner.DisplaySpecies, 2)}");
-                Console.WriteLine(spawn);
+                Console.WriteLine($"Parameters: {spawn}");
+                Console.WriteLine($"Seed: {seed}");
                 bool skittishBase = SpawnGenerator.IsSkittish(spawn.BaseTable);
                 bool skittishBonus = SpawnGenerator.IsSkittish(spawn.BonusTable);
                 var lines = result.GetLines(skittishBase, skittishBonus);
@@ -114,7 +115,8 @@ public static class ConsolePermuter
             Console.WriteLine($"Found paths for {(Species)spawner.DisplaySpecies} Mass Outbreak in {areaName}:");
             Console.WriteLine("==========");
             Console.WriteLine($"Spawner at ({spawner.X:F1}, {spawner.Y:F1}, {spawner.Z}) shows {SpeciesName.GetSpeciesName(spawner.DisplaySpecies, 2)}");
-            Console.WriteLine(spawn);
+            Console.WriteLine($"Parameters: {spawn}");
+            Console.WriteLine($"Seed: {seed}");
             bool skittishBase = SpawnGenerator.IsSkittish(spawner.DisplaySpecies);
             var lines = result.GetLines(skittishBase);
             foreach (var line in lines)
@@ -133,7 +135,7 @@ public static class ConsolePermuter
         Console.WriteLine($"Permuting all possible paths for {seed:X16}.");
         Console.WriteLine($"Base Species: {SpeciesName.GetSpeciesName(species, 2)}");
         Console.WriteLine($"Parameters: {spawn}");
-        Console.WriteLine();
+        Console.WriteLine($"Seed: {seed}");
 
         var result = Permuter.Permute(spawn, seed);
         if (!result.HasResults)

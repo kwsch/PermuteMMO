@@ -102,8 +102,8 @@ public static class Permuter
             var subSeed = rng.Next();
             _ = rng.Next(); // Unknown
 
-            if (i > respawn)
-                continue; // end of wave ghost
+            if (count != respawn && MaxAlive - i >= respawn)
+                continue; // end of wave ghost -- ghosts spawn first!
 
             var generate = SpawnGenerator.Generate(subSeed, table, spawn.Spawner.Type);
             if (spawn.IsResult(generate))
