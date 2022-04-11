@@ -72,7 +72,12 @@ public static class AdvanceExtensions
     /// <summary>
     /// Indicates if a multi-battle is required for this advancement.
     /// </summary>
-    public static bool IsMulti(this Advance advance) => advance is (A2 or A3 or A4) or (S2 or S3 or S4);
+    public static bool IsMulti(this Advance advance) => advance is (A2 or A3 or A4);
+
+    /// <summary>
+    /// Indicates if a multi-battle is required for this advancement.
+    /// </summary>
+    public static bool IsScare(this Advance advance) => advance is (S2 or S3 or S4);
 
     /// <summary>
     /// Indicates if any advance requires a multi-battle for advancement.
@@ -82,6 +87,20 @@ public static class AdvanceExtensions
         foreach (var adv in advances)
         {
             if (adv.IsMulti())
+                return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Indicates if any advance requires a multi-scare for advancement.
+    /// </summary>
+    public static bool IsAnyMultiScare(this ReadOnlySpan<Advance> advances)
+    {
+        foreach (var adv in advances)
+        {
+            if (adv.IsScare())
                 return true;
         }
 

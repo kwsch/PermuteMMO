@@ -53,7 +53,7 @@ public sealed class EntityResult
 
     private static string GetFeasibility(ReadOnlySpan<Advance> advances, bool skittishBase, bool skittishBonus)
     {
-        if (!advances.IsAnyMulti())
+        if (!advances.IsAnyMulti() && !advances.IsAnyMultiScare())
             return " -- Single advances!";
 
         if (!skittishBase && !skittishBonus)
@@ -69,6 +69,13 @@ public sealed class EntityResult
         else
         {
             skittishMulti |= skittishBase && advances.IsAnyMulti();
+        }
+
+        if (advances.IsAnyMultiScare())
+        {
+            if (skittishMulti)
+                return " -- Skittish: multi scaring with aggressive!";
+            return " -- Skittish: multi scaring!";
         }
 
         if (skittishMulti)

@@ -27,6 +27,13 @@ public static class Permuter
             return this with { Alive = Alive - count, Dead = Dead + count, AliveAggressive = newAggro };
         }
 
+        public SpawnState Scare(int count)
+        {
+            // Can only scare Skittish
+            Debug.Assert(AliveTimid >= count);
+            return this with { Alive = Alive - count, Dead = Dead + count };
+        }
+
         public SpawnState Generate(int count, int aggro) => this with
         {
             Count = Count - count,
@@ -99,7 +106,7 @@ public static class Permuter
         {
             var step = (int)Advance.S2 + (i - 2);
             meta.Start((Advance)step);
-            var newState = state.Knockout(i);
+            var newState = state.Scare(i);
             PermuteRecursion(meta, table, isBonus, seed, newState);
             meta.End();
         }
