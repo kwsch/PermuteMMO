@@ -74,8 +74,8 @@ public sealed class EntityResult
         if (advances.IsAnyMultiScare())
         {
             if (skittishMulti)
-                return " -- Skittish: multi scaring with aggressive!";
-            return " -- Skittish: multi scaring!";
+                return " -- Skittish: Multi scaring with aggressive!";
+            return " -- Skittish: Multi scaring!";
         }
 
         if (skittishMulti)
