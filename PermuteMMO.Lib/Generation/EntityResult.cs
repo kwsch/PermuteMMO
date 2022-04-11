@@ -53,14 +53,14 @@ public sealed class EntityResult
 
     private static string GetFeasibility(ReadOnlySpan<Advance> advances, bool skittishBase, bool skittishBonus)
     {
-        if (!advances.IsAnyMulti())
+        if (!advances.IsAnyMulti() && !advances.IsAnyMultiScare())
             return " -- Single advances!";
 
         if (!skittishBase && !skittishBonus)
             return string.Empty;
 
         bool skittishMulti = false;
-        int bonusIndex = GetBonusStartIndex(advances);
+        int bonusIndex = GetNextWaveStartIndex(advances);
         if (bonusIndex != -1)
         {
             skittishMulti |= skittishBase && advances[..bonusIndex].IsAnyMulti();
@@ -71,16 +71,23 @@ public sealed class EntityResult
             skittishMulti |= skittishBase && advances.IsAnyMulti();
         }
 
+        if (advances.IsAnyMultiScare())
+        {
+            if (skittishMulti)
+                return " -- Skittish: multi scaring with aggressive!";
+            return " -- Skittish: multi scaring!";
+        }
+
         if (skittishMulti)
             return " -- Skittish: Aggressive!";
         return     " -- Skittish: Single advances!";
     }
 
-    private static int GetBonusStartIndex(ReadOnlySpan<Advance> advances)
+    private static int GetNextWaveStartIndex(ReadOnlySpan<Advance> advances)
     {
         for (int i = 0; i < advances.Length; i++)
         {
-            if (advances[i] == Advance.SB)
+            if (advances[i] == Advance.CW)
                 return i;
         }
         return -1;
