@@ -7,7 +7,7 @@ namespace PermuteMMO.Lib;
 /// </summary>
 public enum Advance : byte
 {
-    CW,
+    CR,
 
     A1,
     A2,
@@ -40,7 +40,7 @@ public static class AdvanceExtensions
 
     private static string Humanize(Advance advance) => advance switch
     {
-        CW => "Clear Wave",
+        CR => "Clear Remaining",
 
         A1 => "De-spawn 1",
         A2 => "Battle 2",

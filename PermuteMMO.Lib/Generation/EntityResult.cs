@@ -87,7 +87,7 @@ public sealed class EntityResult
     {
         for (int i = 0; i < advances.Length; i++)
         {
-            if (advances[i] == Advance.CW)
+            if (advances[i] == Advance.CR)
                 return i;
         }
         return -1;

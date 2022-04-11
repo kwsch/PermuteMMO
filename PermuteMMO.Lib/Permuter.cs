@@ -146,7 +146,7 @@ public static class Permuter
 
     private static void PermuteBonusTable(PermuteMeta meta, in ulong seed)
     {
-        meta.Start(Advance.CW);
+        meta.Start(Advance.CR);
         var state = new SpawnState(meta.Spawner.BonusCount) { Dead = MaxDead };
         PermuteOutbreak(meta, meta.Spawner.BonusTable, true, seed, state);
         meta.End();
