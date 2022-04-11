@@ -15,7 +15,9 @@ public static class Permuter
     // State tracking
     private readonly record struct SpawnState(in int Count, in int Alive = 0, in int Dead = 0, in int Ghost = 0, int AliveAggressive = 0)
     {
+        public int AliveTimid => Alive - AliveAggressive;
         public int MaxCountBattle => Math.Min(Alive, AliveAggressive + 1);
+        public int MaxScareSkittish => Math.Min(Alive, AliveTimid);
 
         public SpawnState Knockout(int count)
         {
@@ -91,6 +93,16 @@ public static class Permuter
             PermuteRecursion(meta, table, isBonus, seed, newState);
             meta.End();
         }
+
+        // If we can scare multiple, try this route too
+        for (int i = 2; i <= state.MaxScareSkittish; i++)
+        {
+            var step = (int)Advance.S2 + (i - 2);
+            meta.Start((Advance)step);
+            var newState = state.Knockout(i);
+            PermuteRecursion(meta, table, isBonus, seed, newState);
+            meta.End();
+        }
     }
 
     private static (ulong Seed, int Aggressive) GenerateSpawns(PermuteMeta spawn, in ulong table, in bool isBonus, in ulong seed, int count, in int respawn)
@@ -127,7 +139,7 @@ public static class Permuter
 
     private static void PermuteBonusTable(PermuteMeta meta, in ulong seed)
     {
-        meta.Start(Advance.SB);
+        meta.Start(Advance.CW);
         var state = new SpawnState(meta.Spawner.BonusCount) { Dead = MaxDead };
         PermuteOutbreak(meta, meta.Spawner.BonusTable, true, seed, state);
         meta.End();

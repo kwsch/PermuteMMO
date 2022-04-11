@@ -60,7 +60,7 @@ public sealed class EntityResult
             return string.Empty;
 
         bool skittishMulti = false;
-        int bonusIndex = GetBonusStartIndex(advances);
+        int bonusIndex = GetNextWaveStartIndex(advances);
         if (bonusIndex != -1)
         {
             skittishMulti |= skittishBase && advances[..bonusIndex].IsAnyMulti();
@@ -76,11 +76,11 @@ public sealed class EntityResult
         return     " -- Skittish: Single advances!";
     }
 
-    private static int GetBonusStartIndex(ReadOnlySpan<Advance> advances)
+    private static int GetNextWaveStartIndex(ReadOnlySpan<Advance> advances)
     {
         for (int i = 0; i < advances.Length; i++)
         {
-            if (advances[i] == Advance.SB)
+            if (advances[i] == Advance.CW)
                 return i;
         }
         return -1;
