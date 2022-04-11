@@ -34,7 +34,7 @@ public sealed class EntityResult
     public bool IsSkittish => BehaviorUtil.Skittish.Contains(Species);
     public bool IsAggressive => IsAlpha || !IsSkittish;
 
-    public string GetSummary(ReadOnlySpan<Advance> advances, bool skittishBase, bool skittishBonus)
+    public string GetSummary()
     {
         var shiny = IsShiny ? $" {RollCountUsed,2} {(ShinyXor == 0 ? '■' : '*')}" : "";
         var ivs = $" {IVs[0]:00}/{IVs[1]:00}/{IVs[2]:00}/{IVs[3]:00}/{IVs[4]:00}/{IVs[5]:00}";
@@ -47,49 +47,6 @@ public sealed class EntityResult
             1 => " (F)",
             _ => " (M)",
         };
-        var feasibility = GetFeasibility(advances, skittishBase, skittishBonus);
-        return $"{alpha}{Name}{gender}:{shiny}{ivs}{nature,-8}{notAlpha}{feasibility}";
-    }
-
-    private static string GetFeasibility(ReadOnlySpan<Advance> advances, bool skittishBase, bool skittishBonus)
-    {
-        if (!advances.IsAnyMulti() && !advances.IsAnyMultiScare())
-            return " -- Single advances!";
-
-        if (!skittishBase && !skittishBonus)
-            return string.Empty;
-
-        bool skittishMulti = false;
-        int bonusIndex = GetNextWaveStartIndex(advances);
-        if (bonusIndex != -1)
-        {
-            skittishMulti |= skittishBase && advances[..bonusIndex].IsAnyMulti();
-            skittishMulti |= skittishBonus && advances[bonusIndex..].IsAnyMulti();
-        }
-        else
-        {
-            skittishMulti |= skittishBase && advances.IsAnyMulti();
-        }
-
-        if (advances.IsAnyMultiScare())
-        {
-            if (skittishMulti)
-                return " -- Skittish: Multi scaring with aggressive!";
-            return " -- Skittish: Multi scaring!";
-        }
-
-        if (skittishMulti)
-            return " -- Skittish: Aggressive!";
-        return     " -- Skittish: Single advances!";
-    }
-
-    private static int GetNextWaveStartIndex(ReadOnlySpan<Advance> advances)
-    {
-        for (int i = 0; i < advances.Length; i++)
-        {
-            if (advances[i] == Advance.CR)
-                return i;
-        }
-        return -1;
+        return $"{alpha}{Name}{gender}:{shiny}{ivs}{nature,-8}{notAlpha}";
     }
 }
