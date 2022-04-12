@@ -10,6 +10,7 @@ public sealed record SpawnInfo
     public ulong BaseTable { get; init; }
     public ulong BonusTable { get; init; }
     public SpawnType Type { get; init; } = SpawnType.MMO;
+    public int MaxAlive { get; init; } = 4;
 
     public bool HasBase => BaseTable is not (0 or 0xCBF29CE484222645);
     public bool HasBonus => BonusTable is not (0 or 0xCBF29CE484222645);

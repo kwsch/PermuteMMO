@@ -13,6 +13,9 @@ public sealed record PermuteMeta(SpawnInfo Spawner)
     public readonly List<PermuteResult> Results = new();
     private readonly List<Advance> Advances = new();
 
+    public bool HasResults => Results.Count is not 0;
+    public int MaxAlive { get; } = Spawner.MaxAlive;
+
     /// <summary>
     /// Signals the start of a recursive permutation step.
     /// </summary>
@@ -103,6 +106,4 @@ public sealed record PermuteMeta(SpawnInfo Spawner)
         }
         return true;
     }
-
-    public bool HasResults => Results.Count is not 0;
 }

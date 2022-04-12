@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using PKHeX.Core;
+﻿using PKHeX.Core;
 
 namespace PermuteMMO.Lib;
 
@@ -8,51 +7,13 @@ namespace PermuteMMO.Lib;
 /// </summary>
 public static class Permuter
 {
-    private const int MaxAlive = 4;
-    private const int MaxDead = 4;
-    private const int MaxGhosts = 3;
-
-    // State tracking
-    private readonly record struct SpawnState(in int Count, in int Alive = 0, in int Dead = 0, in int Ghost = 0, int AliveAggressive = 0)
-    {
-        public int AliveTimid => Alive - AliveAggressive;
-        public int MaxCountBattle => Math.Min(Alive, AliveAggressive + 1);
-        public int MaxScareSkittish => Math.Min(Alive, AliveTimid);
-
-        public SpawnState Knockout(int count)
-        {
-            // Prefer to knock out the Skittish, and any required Aggressives
-            var newAggro = AliveAggressive - count + 1;
-            Debug.Assert(newAggro >= 0);
-            return this with { Alive = Alive - count, Dead = Dead + count, AliveAggressive = newAggro };
-        }
-
-        public SpawnState Scare(int count)
-        {
-            // Can only scare Skittish
-            Debug.Assert(AliveTimid >= count);
-            return this with { Alive = Alive - count, Dead = Dead + count };
-        }
-
-        public SpawnState Generate(int count, int aggro) => this with
-        {
-            Count = Count - count,
-            Alive = Alive + count,
-            Dead = Dead - count,
-            Ghost = Dead - count,
-            AliveAggressive = AliveAggressive + aggro,
-        };
-
-        public SpawnState AddGhosts(int count) => this with { Alive = Alive - count, Dead = Dead + count, Ghost = count };
-    }
-
     /// <summary>
     /// Iterates through all possible player actions with the starting <see cref="seed"/> and <see cref="spawner"/> details.
     /// </summary>
-    public static PermuteMeta Permute(SpawnInfo spawner, ulong seed)
+    public static PermuteMeta Permute(SpawnInfo spawner, in ulong seed)
     {
         var info = new PermuteMeta(spawner);
-        var state = new SpawnState(spawner.BaseCount) { Dead = MaxDead };
+        var state = new SpawnState(spawner.BaseCount, info.MaxAlive);
 
         // Generate the encounters!
         PermuteRecursion(info, spawner.BaseTable, false, seed, state);
@@ -72,10 +33,8 @@ public static class Permuter
     private static void PermuteOutbreak(PermuteMeta meta, in ulong table, in bool isBonus, in ulong seed, in SpawnState state)
     {
         // Re-spawn to capacity
-        var emptySlots = state.Dead;
-        var respawn = Math.Min(state.Count, emptySlots);
-        Debug.Assert(respawn != 0);
-        var (reseed, aggro) = GenerateSpawns(meta, table, isBonus, seed, emptySlots, respawn);
+        var (empty, respawn, ghosts) = state.GetRespawnInfo();
+        var (reseed, aggro) = GenerateSpawns(meta, table, isBonus, seed, empty, ghosts);
 
         // Update spawn state
         var newState = state.Generate(respawn, aggro);
@@ -102,7 +61,7 @@ public static class Permuter
         }
 
         // If we can scare multiple, try this route too
-        for (int i = 2; i <= state.MaxScareSkittish; i++)
+        for (int i = 2; i <= state.MaxCountScare; i++)
         {
             var step = (int)Advance.S2 + (i - 2);
             meta.Start((Advance)step);
@@ -112,7 +71,7 @@ public static class Permuter
         }
     }
 
-    private static (ulong Seed, int Aggressive) GenerateSpawns(PermuteMeta spawn, in ulong table, in bool isBonus, in ulong seed, int count, in int respawn)
+    private static (ulong Seed, int Aggressive) GenerateSpawns(PermuteMeta spawn, in ulong table, in bool isBonus, in ulong seed, int count, in int ghosts)
     {
         int aggressive = 0;
         var rng = new Xoroshiro128Plus(seed);
@@ -121,7 +80,7 @@ public static class Permuter
             var subSeed = rng.Next();
             _ = rng.Next(); // Unknown
 
-            if (count != respawn && MaxAlive - i >= respawn)
+            if (i <= ghosts)
                 continue; // end of wave ghost -- ghosts spawn first!
 
             var generate = SpawnGenerator.Generate(subSeed, table, spawn.Spawner.Type);
@@ -140,32 +99,27 @@ public static class Permuter
         PermuteBonusTable(meta, seed);
 
         // Try adding ghost spawns if we haven't capped out yet.
-        if (state.Ghost is not MaxGhosts)
+        if (state.CanAddGhosts)
             PermuteAddGhosts(meta, seed, table, state);
     }
 
     private static void PermuteBonusTable(PermuteMeta meta, in ulong seed)
     {
         meta.Start(Advance.CR);
-        var state = new SpawnState(meta.Spawner.BonusCount) { Dead = MaxDead };
+        var state = new SpawnState(meta.Spawner.BonusCount, meta.MaxAlive);
         PermuteOutbreak(meta, meta.Spawner.BonusTable, true, seed, state);
         meta.End();
     }
 
     private static void PermuteAddGhosts(PermuteMeta meta, in ulong seed, in ulong table, in SpawnState state)
     {
-        var remain = MaxAlive - state.Ghost;
-        for (int i = 1; i < remain; i++)
+        var remain = state.EmptyGhostSlots;
+        for (int i = 1; i <= remain; i++)
         {
-            // Get updated state with added ghosts
-            var ghosts = state.Ghost + i;
-            var newState = state.AddGhosts(ghosts);
             var step = (int)Advance.G1 + (i - 1);
-
-            // Simulate ghost advancements via camp reset
-            var gSeed = Calculations.GetGroupSeed(seed, ghosts);
-
             meta.Start((Advance)step);
+            var newState = state.AddGhosts(i);
+            var gSeed = Calculations.GetGroupSeed(seed, newState.Ghost);
             PermuteRecursion(meta, table, false, gSeed, newState);
             meta.End();
         }
