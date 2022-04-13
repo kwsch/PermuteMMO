@@ -3,7 +3,7 @@
 /// <summary>
 /// Stores object-type references for cleaner passing internally. Only refer to <see cref="Results"/> when done.
 /// </summary>
-public sealed record PermuteMeta(SpawnInfo Spawner)
+public sealed record PermuteMeta(SpawnInfo Spawner, int MaxDepth)
 {
     /// <summary>
     /// Global configuration for determining if a <see cref="EntityResult"/> is a suitable result.
@@ -14,7 +14,14 @@ public sealed record PermuteMeta(SpawnInfo Spawner)
     private readonly List<Advance> Advances = new();
 
     public bool HasResults => Results.Count is not 0;
-    public int MaxAlive { get; } = Spawner.MaxAlive;
+    public SpawnInfo Spawner { get; set; } = Spawner;
+
+    public (bool CanContinue, SpawnInfo Next) AttemptNextWave()
+    {
+        if (Advances.Count < MaxDepth && Spawner.GetNextWave(out var next))
+            return (true, next);
+        return (false, Spawner);
+    }
 
     /// <summary>
     /// Signals the start of a recursive permutation step.
@@ -30,10 +37,10 @@ public sealed record PermuteMeta(SpawnInfo Spawner)
     /// <summary>
     /// Stores a result.
     /// </summary>
-    public void AddResult(EntityResult entity, in int index, in bool isBonus)
+    public void AddResult(EntityResult entity, in int index)
     {
         var steps = Advances.ToArray();
-        var result = new PermuteResult(steps, entity, index, isBonus);
+        var result = new PermuteResult(steps, entity, index);
         Results.Add(result);
     }
 

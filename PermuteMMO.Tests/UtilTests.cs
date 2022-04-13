@@ -39,25 +39,17 @@ public static class UtilTests
     [Fact]
     public static void Garchomp()
     {
-        var json = new UserEnteredSpawnInfo
-        {
-            Seed = "12880307074085126207",
-            Species = 444,
-            BaseCount = 9,
-            BaseTable = "0x85714105CF348588",
-            BonusCount = 7,
-            BonusTable = "0x8AE0881E5F939184",
-        };
-        var spawn = json.GetSpawn();
-
-        ulong seed = json.GetSeed();
+        var spawn = SpawnInfo.GetMMO(0x85714105CF348588, 9, 0x8AE0881E5F939184, 7);
+        const ulong seed = 12880307074085126207u;
         var sequence = new[] { A2, A1, A3 };
         const int index = 2;
 
         var gs = Calculations.GetGroupSeed(seed, sequence);
         var respawnSeed = Calculations.GetGenerateSeed(gs, index);
         var entitySeed = Calculations.GetEntitySeed(gs, index);
-        var result = SpawnGenerator.Generate(respawnSeed, spawn.BonusTable, SpawnType.MMO);
+        if (!spawn.GetNextWave(out var next))
+            throw new Exception();
+        var result = SpawnGenerator.Generate(respawnSeed, next.Set.Table, next.Detail.SpawnType);
         result.IsShiny.Should().BeTrue();
         result.IsAlpha.Should().BeTrue();
         entitySeed.Should().Be(0xc50932b428a734fd);
@@ -70,24 +62,15 @@ public static class UtilTests
     [Fact]
     public static void Stantler()
     {
-        var json = new UserEnteredSpawnInfo
-        {
-            Seed = "88514016295302425",
-            Species = 234,
-            BaseCount = 10,
-            BaseTable = "0x5BFA9CCA4ED8142B",
-            BonusCount = 6,
-            BonusTable = "0xC213942F6D31614C",
-        };
-        var spawn = json.GetSpawn();
+        var spawn = SpawnInfo.GetMMO(0x5BFA9CCA4ED8142B, 10, 0xC213942F6D31614C, 6);
+        const ulong seed = 88514016295302425u;
 
         // Spawn 4 pokemon
-        var seed = json.GetSeed();
         var entities = new List<EntityResult>();
         for (int i = 1; i <= 4; i++)
         {
             var genSeed = Calculations.GetGenerateSeed(seed, i);
-            var entity = SpawnGenerator.Generate(genSeed, spawn.BaseTable, SpawnType.MMO);
+            var entity = SpawnGenerator.Generate(genSeed, spawn.Set.Table, spawn.Detail.SpawnType);
             entities.Add(entity);
         }
 

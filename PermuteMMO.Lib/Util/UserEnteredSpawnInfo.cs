@@ -19,18 +19,14 @@ public sealed record UserEnteredSpawnInfo
     {
         var table = Parse(BaseTable);
         var bonus = Parse(BonusTable);
-        var type = bonus is 0 && table is 0 ? SpawnType.Outbreak : SpawnType.MMO;
-        if (table < 1000)
-            table = Species;
-
-        return new SpawnInfo
+        bool isOutbreak = !HashUtil.IsNonZeroHash(table) && !HashUtil.IsNonZeroHash(bonus);
+        if (isOutbreak)
         {
-            BaseCount = BaseCount,
-            BonusCount = BonusCount,
-            BaseTable = table,
-            BonusTable = bonus,
-            Type = type,
-        };
+            if (table < 1000)
+                table = Species;
+            return SpawnInfo.GetMO(table, BaseCount);
+        }
+        return SpawnInfo.GetMMO(table, BaseCount, bonus, BonusCount);
     }
 
     private static ulong Parse(string hex)
