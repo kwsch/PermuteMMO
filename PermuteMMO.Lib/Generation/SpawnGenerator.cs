@@ -115,7 +115,7 @@ public static class SpawnGenerator
             return (int)type;
         bool perfect = Pokedex.IsPerfect(species);
         bool complete = Pokedex.IsComplete(species);
-        return 1 + (complete ? 1 : 0) + (perfect ? 2 : 0) + (HasCharm ? 3 : 0) + (int)type;
+        return 1 + (complete ? 1 : 0) + (perfect ? 2 : 0) + (HasCharm ? 3 : 0) + (int)(type - 7);
     }
 
     private static int GetLevel(SlotDetail slot, Xoroshiro128Plus slotrng)

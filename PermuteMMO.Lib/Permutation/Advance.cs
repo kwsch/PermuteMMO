@@ -12,6 +12,8 @@ public enum Advance : byte
     A1, A2, A3, A4, // Aggressive
     B1, B2, B3, B4, // Beta
 
+    O1, // Oblivious
+
  // S1 is equivalent to B1
         S2, S3, S4,
 
@@ -45,6 +47,8 @@ public static class AdvanceExtensions
         B2 => "1 Beta + 1 Aggressive",
         B3 => "1 Beta + 2 Aggressive",
         B4 => "1 Beta + 3 Aggressive",
+
+        O1 => "1 Oblivious",
 
         G1 => "De-spawn 1 + Leave",
         G2 => "De-spawn 2 + Leave",

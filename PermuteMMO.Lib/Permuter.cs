@@ -47,10 +47,10 @@ public static class Permuter
     {
         // Re-spawn to capacity
         var (empty, respawn, ghosts) = state.GetRespawnInfo();
-        var (reseed, aggro) = GenerateSpawns(meta, table, seed, empty, ghosts);
+        var (reseed, aggro, beta, oblivious) = GenerateSpawns(meta, table, seed, empty, ghosts);
 
         // Update spawn state
-        var newState = state.Generate(respawn, aggro);
+        var newState = state.Generate(respawn, aggro, beta, oblivious);
         ContinuePermute(meta, table, reseed, newState);
     }
 
@@ -79,8 +79,16 @@ public static class Permuter
             }
         }
 
+        if (state.AliveOblivious != 0)
+        {
+            meta.Start(Advance.O1);
+            var newState = state.KnockoutOblivious();
+            PermuteRecursion(meta, table, seed, newState);
+            meta.End();
+        }
+
         // De-spawn: Single beta with aggressive(s) / none.
-        if (state.AliveTimid != 0)
+        if (state.AliveBeta != 0)
         {
             for (int i = 0; i <= state.AliveAggressive; i++)
             {
@@ -93,7 +101,7 @@ public static class Permuter
         }
 
         // De-spawn: Multiple betas (Scaring)
-        for (int i = 2; i <= state.MaxCountScare; i++)
+        for (int i = 2; i <= state.AliveBeta; i++)
         {
             var step = (int)Advance.S2 + (i - 2);
             meta.Start((Advance)step);
@@ -103,9 +111,11 @@ public static class Permuter
         }
     }
 
-    private static (ulong Seed, int Aggressive) GenerateSpawns(PermuteMeta meta, in ulong table, in ulong seed, int count, in int ghosts)
+    private static (ulong Seed, int Aggressive, int Skittish, int Oblivious) GenerateSpawns(PermuteMeta meta, in ulong table, in ulong seed, int count, in int ghosts)
     {
         int aggressive = 0;
+        int beta = 0;
+        int oblivious = 0;
         var rng = new Xoroshiro128Plus(seed);
         for (int i = 1; i <= count; i++)
         {
@@ -119,11 +129,13 @@ public static class Permuter
             if (meta.IsResult(generate))
                 meta.AddResult(generate, i);
 
-            if (generate.IsAggressive)
-                aggressive++;
+            if (generate.IsAlpha) aggressive++;
+            if (generate.IsSkittish) beta++;
+            else if (generate.IsOblivious) oblivious++;
+            else aggressive++;
         }
         var result = rng.Next(); // Reset the seed for future spawns.
-        return (result, aggressive);
+        return (result, aggressive, beta, oblivious);
     }
 
     private static void PermuteNextTable(PermuteMeta meta, SpawnInfo next, in ulong seed)
