@@ -52,14 +52,14 @@ public sealed record PermuteMeta(SpawnInfo Spawner, int MaxDepth)
     /// <summary>
     /// Calls <see cref="PermuteResult.GetLine"/> for all objects in the result list.
     /// </summary>
-    public IEnumerable<string> GetLines(bool skittishBase, bool skittishBonus = false)
+    public IEnumerable<string> GetLines()
     {
         for (var i = 0; i < Results.Count; i++)
         {
             var result = Results[i];
             var parent = FindNearestParentAdvanceResult(i, result.Advances);
             bool isActionMultiResult = IsActionMultiResult(i, result.Advances);
-            yield return result.GetLine(parent, isActionMultiResult, skittishBase, skittishBonus);
+            yield return result.GetLine(parent, isActionMultiResult);
         }
     }
 

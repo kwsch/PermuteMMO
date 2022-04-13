@@ -21,6 +21,9 @@ public readonly record struct SpawnState(in int Count, in int MaxAlive, in int A
     /// <summary> Current count of timid entities alive. </summary>
     public int AliveTimid => Alive - AliveAggressive;
 
+    /// <summary> Indicates if multiple behaviors (Aggressive, Skittish) are currently spawned. </summary>
+    public bool MixedBehaviors => AliveAggressive != 0 && AliveAggressive != Alive;
+
     /// <summary> Maximum count of entities that can be battled in the current state. </summary>
     public int MaxCountBattle => Math.Min(Alive, AliveAggressive + 1);
 
@@ -39,18 +42,32 @@ public readonly record struct SpawnState(in int Count, in int MaxAlive, in int A
     /// Returns a spawner state after knocking out existing entities.
     /// </summary>
     /// <remarks>
-    /// If <see cref="count"/> is 1, this is the same as capturing a single Entity out of battle.
+    /// If <see cref="count"/> is 1, this is the same as capturing a single Aggressive Entity out of battle.
     /// </remarks>
-    public SpawnState Knockout(in int count)
+    public SpawnState KnockoutAggressive(in int count)
     {
-        // Prefer to knock out the Skittish, and any required Aggressives
+        // Knock out required Aggressive
+        var newAggro = AliveAggressive - count;
+        Debug.Assert(newAggro >= 0);
+        return this with { Alive = Alive - count, Dead = Dead + count, AliveAggressive = newAggro };
+    }
+
+    /// <summary>
+    /// Returns a spawner state after knocking out existing entities.
+    /// </summary>
+    /// <remarks>
+    /// If <see cref="count"/> is 1, this is the same as capturing a single Beta Entity out of battle.
+    /// </remarks>
+    public SpawnState KnockoutBeta(in int count)
+    {
+        // Prefer to knock out the Skittish, and any required Aggressive
         var newAggro = AliveAggressive - count + 1;
         Debug.Assert(newAggro >= 0);
         return this with { Alive = Alive - count, Dead = Dead + count, AliveAggressive = newAggro };
     }
 
     /// <summary>
-    /// Returns a spawner state after scaring existing entities away.
+    /// Returns a spawner state after scaring existing Beta entities away.
     /// </summary>
     public SpawnState Scare(in int count)
     {

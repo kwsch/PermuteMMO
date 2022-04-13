@@ -63,17 +63,36 @@ public static class Permuter
             return;
         }
 
-        // Permute our remaining options
-        for (int i = 1; i <= state.MaxCountBattle; i++)
+        // Depending on what spawns in future calls, the actions we take here can impact the options for future recursion.
+        // We need to try out every single potential action the player can do, and target removals for specific behaviors.
+
+        // De-spawn: Aggressive Only
+        if (state.AliveAggressive != 0)
         {
-            var step = (int)Advance.A1 + (i - 1);
-            meta.Start((Advance)step);
-            var newState = state.Knockout(i);
-            PermuteRecursion(meta, table, seed, newState);
-            meta.End();
+            for (int i = 1; i <= state.AliveAggressive; i++)
+            {
+                var step = (int)Advance.A1 + (i - 1);
+                meta.Start((Advance)step);
+                var newState = state.KnockoutAggressive(i);
+                PermuteRecursion(meta, table, seed, newState);
+                meta.End();
+            }
         }
 
-        // If we can scare multiple, try this route too
+        // De-spawn: Single beta with aggressive(s) / none.
+        if (state.AliveTimid != 0)
+        {
+            for (int i = 0; i <= state.AliveAggressive; i++)
+            {
+                var step = (int)Advance.B1 + i;
+                meta.Start((Advance)step);
+                var newState = state.KnockoutBeta(i + 1);
+                PermuteRecursion(meta, table, seed, newState);
+                meta.End();
+            }
+        }
+
+        // De-spawn: Multiple betas (Scaring)
         for (int i = 2; i <= state.MaxCountScare; i++)
         {
             var step = (int)Advance.S2 + (i - 2);
