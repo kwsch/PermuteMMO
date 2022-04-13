@@ -5,7 +5,7 @@
 /// </summary>
 public enum SpawnType
 {
-    Regular = 0,
-    MMO = 12,
-    Outbreak = 25,
+    Regular  = 7 + 0,
+    MMO      = 7 + 12,
+    Outbreak = 7 + 25,
 }

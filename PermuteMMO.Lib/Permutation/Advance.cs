@@ -17,7 +17,7 @@ public enum Advance : byte
     G1,
     G2,
     G3,
- // G4 is equivalent to CW
+ // G4 is equivalent to CR
 
  // S1 is equivalent to A1
     S2,

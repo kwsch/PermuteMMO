@@ -36,14 +36,7 @@ public static class ConsolePermuter
 
                 Debug.Assert(spawner.HasBase);
                 var seed = spawner.SpawnSeed;
-                var spawn = new SpawnInfo
-                {
-                    BaseCount = spawner.BaseCount,
-                    BaseTable = spawner.BaseTable,
-
-                    BonusCount = spawner.HasBonus ? spawner.BonusCount : 0,
-                    BonusTable = spawner.HasBonus ? spawner.BonusTable : 0,
-                };
+                var spawn = new SpawnInfo(spawner);
 
                 var result = Permuter.Permute(spawn, seed);
                 if (!result.HasResults)
@@ -59,8 +52,8 @@ public static class ConsolePermuter
                 Console.WriteLine($"Spawner {j+1} at ({spawner.X:F1}, {spawner.Y:F1}, {spawner.Z}) shows {SpeciesName.GetSpeciesName(spawner.DisplaySpecies, 2)}");
                 Console.WriteLine($"Parameters: {spawn}");
                 Console.WriteLine($"Seed: {seed}");
-                bool skittishBase = SpawnGenerator.IsSkittish(spawn.BaseTable);
-                bool skittishBonus = SpawnGenerator.IsSkittish(spawn.BonusTable);
+                bool skittishBase = SpawnGenerator.IsSkittish(spawn.Set.Table);
+                bool skittishBonus = spawn.GetNextWave(out var next) && SpawnGenerator.IsSkittish(next.Set.Table);
                 var lines = result.GetLines(skittishBase, skittishBonus);
                 foreach (var line in lines)
                     Console.WriteLine(line);
@@ -98,13 +91,7 @@ public static class ConsolePermuter
             Debug.Assert(spawner.IsValid);
 
             var seed = spawner.SpawnSeed;
-            var spawn = new SpawnInfo
-            {
-                BaseCount = spawner.BaseCount,
-                BaseTable = spawner.DisplaySpecies,
-                Type = SpawnType.Outbreak,
-            };
-
+            var spawn = new SpawnInfo(spawner);
             var result = Permuter.Permute(spawn, seed);
             if (!result.HasResults)
             {
@@ -144,8 +131,8 @@ public static class ConsolePermuter
         }
         else
         {
-            bool skittishBase = SpawnGenerator.IsSkittish(spawn.BaseTable);
-            bool skittishBonus = SpawnGenerator.IsSkittish(spawn.BonusTable);
+            bool skittishBase = SpawnGenerator.IsSkittish(spawn.Set.Table);
+            bool skittishBonus = spawn.GetNextWave(out var next) && SpawnGenerator.IsSkittish(next.Set.Table);
             var lines = result.GetLines(skittishBase, skittishBonus);
             foreach (var line in lines)
                 Console.WriteLine(line);

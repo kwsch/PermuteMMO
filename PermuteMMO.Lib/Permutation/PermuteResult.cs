@@ -3,20 +3,33 @@
 /// <summary>
 /// <see cref="EntityResult"/> wrapper with some utility logic to print to console.
 /// </summary>
-public sealed record PermuteResult(Advance[] Advances, EntityResult Entity, in int SpawnIndex, in bool IsBonus)
+public sealed record PermuteResult(Advance[] Advances, EntityResult Entity, in int SpawnIndex)
 {
+    private bool IsBonus => Array.IndexOf(Advances, Advance.CR) != -1;
+    private int WaveIndex => Advances.Count(adv => adv == Advance.CR);
+
     public string GetLine(PermuteResult? prev, bool isActionMultiResult, bool skittishBase, bool skittishBonus)
     {
         var steps = GetSteps(prev);
         var feasibility = GetFeasibility(Advances, skittishBase, skittishBonus);
         // 37 total characters for the steps:
-        // 10+7 spawner has 6+(3)+3=12 max permutations, +"SB|", remove last |; (3*12+2)=37.
-        var line = $"* {steps,-37} >>> {(IsBonus ? "Bonus " : "      ")}Spawn{SpawnIndex} = {Entity.GetSummary()}{feasibility}";
+        // 10+7 spawner has 6+(3)+3=12 max permutations, +"CR|", remove last |; (3*12+2)=37.
+        var line = $"* {steps,-37} >>> {GetWaveIndicator()}Spawn{SpawnIndex} = {Entity.GetSummary()}{feasibility}";
         if (prev != null)
             line += " ~~ Chain result!";
         if (isActionMultiResult)
             line += " ~~ Spawns multiple results!";
         return line;
+    }
+
+    private string GetWaveIndicator()
+    {
+        if (!IsBonus)
+            return "      ";
+        var waveIndex = WaveIndex;
+        if (waveIndex == 1)
+            return "Bonus ";
+        return    $"Wave {waveIndex}";
     }
 
     public string GetSteps(PermuteResult? prev = null)
