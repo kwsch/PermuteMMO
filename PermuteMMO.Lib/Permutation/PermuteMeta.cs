@@ -59,8 +59,16 @@ public sealed record PermuteMeta(SpawnInfo Spawner, int MaxDepth)
             var result = Results[i];
             var parent = FindNearestParentAdvanceResult(i, result.Advances);
             bool isActionMultiResult = IsActionMultiResult(i, result.Advances);
-            yield return result.GetLine(parent, isActionMultiResult);
+            bool hasChildChain = HasChildChain(i, result.Advances);
+            yield return result.GetLine(parent, isActionMultiResult, hasChildChain);
         }
+    }
+
+    private bool HasChildChain(int index, Advance[] parent)
+    {
+        if (++index >= Results.Count)
+            return false;
+        return IsSubset(parent, Results[index].Advances);
     }
 
     private bool IsActionMultiResult(int index, Advance[] child)
