@@ -59,11 +59,13 @@ public readonly record struct SpawnState(in int Count, in int MaxAlive, in int G
     /// <summary>
     /// Returns a spawner state after knocking out existing entities.
     /// </summary>
-    public SpawnState KnockoutOblivious()
+    public SpawnState KnockoutOblivious(int count)
     {
         // Knock out required Aggressive
         var newOblivious = AliveOblivious - 1;
+        var newAggro = AliveAggressive - count + 1;
         Debug.Assert(newOblivious >= 0);
+        Debug.Assert(newAggro >= 0);
         return this with { Dead = Dead + 1, AliveOblivious = newOblivious };
     }
 

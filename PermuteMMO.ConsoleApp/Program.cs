@@ -1,7 +1,7 @@
 ﻿using PermuteMMO.Lib;
 
 // Change the criteria for emitting matches here.
-PermuteMeta.SatisfyCriteria = (result, advances) => result.IsShiny;
+PermuteMeta.SatisfyCriteria = (result, advances) => result.IsShiny && (advances.Count == 0 || result.Species is ((int)PKHeX.Core.Species.Basculin or (int)PKHeX.Core.Species.Basculegion));
 
 // If a spawner json exists, spawn from that instead
 const string json = "spawner.json";

@@ -81,10 +81,14 @@ public static class Permuter
 
         if (state.AliveOblivious != 0)
         {
-            meta.Start(Advance.O1);
-            var newState = state.KnockoutOblivious();
-            PermuteRecursion(meta, table, seed, newState);
-            meta.End();
+            for (int i = 0; i <= state.AliveAggressive; i++)
+            {
+                var step = (int)Advance.O1 + i;
+                meta.Start((Advance)step);
+                var newState = state.KnockoutOblivious(i + 1);
+                PermuteRecursion(meta, table, seed, newState);
+                meta.End();
+            }
         }
 
         // De-spawn: Single beta with aggressive(s) / none.
