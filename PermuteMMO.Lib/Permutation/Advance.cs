@@ -9,20 +9,16 @@ public enum Advance : byte
 {
     CR,
 
-    A1,
-    A2,
-    A3,
-    A4,
+    A1, A2, A3, A4, // Aggressive
+    B1, B2, B3, B4, // Beta
 
-    G1,
-    G2,
-    G3,
- // G4 is equivalent to CR
+    O1, // Oblivious
 
- // S1 is equivalent to A1
-    S2,
-    S3,
-    S4,
+ // S1 is equivalent to B1
+        S2, S3, S4,
+
+    // G4 is equivalent to CR
+    G1, G2, G3,
 }
 
 public static class AdvanceExtensions
@@ -42,10 +38,17 @@ public static class AdvanceExtensions
     {
         CR => "Clear Remaining",
 
-        A1 => "De-spawn 1",
-        A2 => "Battle 2",
-        A3 => "Battle 3",
-        A4 => "Battle 4",
+        A1 => "1 Aggressive",
+        A2 => "2 Aggressive",
+        A3 => "3 Aggressive",
+        A4 => "4 Aggressive",
+
+        B1 => "1 Beta",
+        B2 => "1 Beta + 1 Aggressive",
+        B3 => "1 Beta + 2 Aggressive",
+        B4 => "1 Beta + 3 Aggressive",
+
+        O1 => "1 Oblivious",
 
         G1 => "De-spawn 1 + Leave",
         G2 => "De-spawn 2 + Leave",
@@ -62,48 +65,40 @@ public static class AdvanceExtensions
     /// </summary>
     public static int AdvanceCount(this Advance advance) => advance switch
     {
-        A1       or G1 => 1,
-        A2 or S2 or G2 => 2,
-        A3 or S3 or G3 => 3,
-        A4 or S4       => 4,
+        A1 or B1       or G1 => 1,
+        A2 or B2 or S2 or G2 => 2,
+        A3 or B3 or S3 or G3 => 3,
+        A4 or B4 or S4       => 4,
         _ => 0,
     };
 
     /// <summary>
     /// Indicates if a multi-battle is required for this advancement.
     /// </summary>
-    public static bool IsMulti(this Advance advance) => advance is (A2 or A3 or A4);
+    public static bool IsMultiAny(this Advance advance) => advance.IsMultiAggressive() || advance.IsMultiBeta() || advance.IsMultiScare();
 
     /// <summary>
     /// Indicates if a multi-battle is required for this advancement.
     /// </summary>
-    public static bool IsScare(this Advance advance) => advance is (S2 or S3 or S4);
+    public static bool IsMultiAggressive(this Advance advance) => advance is (A2 or A3 or A4);
 
     /// <summary>
-    /// Indicates if any advance requires a multi-battle for advancement.
+    /// Indicates if a multi-battle is required for this advancement.
     /// </summary>
-    public static bool IsAnyMulti(this ReadOnlySpan<Advance> advances)
-    {
-        foreach (var adv in advances)
-        {
-            if (adv.IsMulti())
-                return true;
-        }
-
-        return false;
-    }
+    public static bool IsMultiScare(this Advance advance) => advance is (S2 or S3 or S4);
 
     /// <summary>
-    /// Indicates if any advance requires a multi-scare for advancement.
+    /// Indicates if a multi-battle is required for this advancement.
     /// </summary>
-    public static bool IsAnyMultiScare(this ReadOnlySpan<Advance> advances)
+    public static bool IsMultiBeta(this Advance advance) => advance is (B2 or B3 or B4);
+
+    public static bool IsAny<T>(this ReadOnlySpan<T> span, Func<T, bool> check)
     {
-        foreach (var adv in advances)
+        foreach (var x in span)
         {
-            if (adv.IsScare())
+            if (check(x))
                 return true;
         }
-
         return false;
     }
 }

@@ -31,8 +31,9 @@ public sealed class EntityResult
     public byte Height { get; set; }
     public byte Weight { get; set; }
 
+    public bool IsOblivious => BehaviorUtil.Oblivious.Contains(Species);
     public bool IsSkittish => BehaviorUtil.Skittish.Contains(Species);
-    public bool IsAggressive => IsAlpha || !IsSkittish;
+    public bool IsAggressive => IsAlpha || !(IsSkittish || IsOblivious);
 
     public string GetSummary()
     {
