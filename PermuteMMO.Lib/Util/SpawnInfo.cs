@@ -12,6 +12,16 @@ public sealed record SpawnInfo(SpawnDetail Detail, SpawnSet Set, SpawnInfo? Next
 
     private SpawnInfo? Next { get; set; } = Next;
 
+    public string GetSummary(string prefix)
+    {
+        var summary = $"{prefix}{this}";
+        if (Next is not { } x)
+            return summary;
+        if (ReferenceEquals(this, x))
+            return summary + " REPEATING.";
+        return summary + Environment.NewLine + x.GetSummary(prefix);
+    }
+
     public bool GetNextWave([NotNullWhen(true)] out SpawnInfo? next) => (next = Next) != null;
 
     public SpawnInfo(MassiveOutbreakSpawner8a spawner) : this(MMO, new SpawnSet(spawner.BaseTable, spawner.BaseCount), GetBonusChain(spawner)) { }

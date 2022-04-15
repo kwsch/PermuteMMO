@@ -50,7 +50,7 @@ public static class ConsolePermuter
                 }
 
                 Console.WriteLine($"Spawner {j+1} at ({spawner.X:F1}, {spawner.Y:F1}, {spawner.Z}) shows {SpeciesName.GetSpeciesName(spawner.DisplaySpecies, 2)}");
-                Console.WriteLine($"Parameters: {spawn}");
+                Console.WriteLine(spawn.GetSummary("Parameters: "));
                 Console.WriteLine($"Seed: {seed}");
                 var lines = result.GetLines();
                 foreach (var line in lines)
@@ -100,7 +100,7 @@ public static class ConsolePermuter
             Console.WriteLine($"Found paths for {(Species)spawner.DisplaySpecies} Mass Outbreak in {areaName}:");
             Console.WriteLine("==========");
             Console.WriteLine($"Spawner at ({spawner.X:F1}, {spawner.Y:F1}, {spawner.Z}) shows {SpeciesName.GetSpeciesName(spawner.DisplaySpecies, 2)}");
-            Console.WriteLine($"Parameters: {spawn}");
+            Console.WriteLine(spawn.GetSummary("Parameters: "));
             Console.WriteLine($"Seed: {seed}");
             var lines = result.GetLines();
             foreach (var line in lines)
@@ -118,7 +118,7 @@ public static class ConsolePermuter
     {
         Console.WriteLine($"Permuting all possible paths for {seed:X16}.");
         Console.WriteLine($"Base Species: {SpeciesName.GetSpeciesName(species, 2)}");
-        Console.WriteLine($"Parameters: {spawn}");
+        Console.WriteLine(spawn.GetSummary("Parameters: "));
         Console.WriteLine($"Seed: {seed}");
 
         var result = Permuter.Permute(spawn, seed);
