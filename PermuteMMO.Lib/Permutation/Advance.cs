@@ -12,7 +12,7 @@ public enum Advance : byte
     A1, A2, A3, A4, // Aggressive
     B1, B2, B3, B4, // Beta
 
-    O1, // Oblivious
+    O1, O2, O3, O4, // Oblivious
 
  // S1 is equivalent to B1
         S2, S3, S4,
@@ -49,6 +49,9 @@ public static class AdvanceExtensions
         B4 => "1 Beta + 3 Aggressive",
 
         O1 => "1 Oblivious",
+        O2 => "1 Oblivious + 1 Aggressive",
+        O3 => "1 Oblivious + 2 Aggressive",
+        O4 => "1 Oblivious + 3 Aggressive",
 
         G1 => "De-spawn 1 + Leave",
         G2 => "De-spawn 2 + Leave",
@@ -65,17 +68,17 @@ public static class AdvanceExtensions
     /// </summary>
     public static int AdvanceCount(this Advance advance) => advance switch
     {
-        A1 or B1       or G1 => 1,
-        A2 or B2 or S2 or G2 => 2,
-        A3 or B3 or S3 or G3 => 3,
-        A4 or B4 or S4       => 4,
+        A1 or B1 or O1       or G1 => 1,
+        A2 or B2 or O1 or S2 or G2 => 2,
+        A3 or B3 or O1 or S3 or G3 => 3,
+        A4 or B4 or O1 or S4       => 4,
         _ => 0,
     };
 
     /// <summary>
     /// Indicates if a multi-battle is required for this advancement.
     /// </summary>
-    public static bool IsMultiAny(this Advance advance) => advance.IsMultiAggressive() || advance.IsMultiBeta() || advance.IsMultiScare();
+    public static bool IsMultiAny(this Advance advance) => advance.IsMultiAggressive() || advance.IsMultiBeta() || advance.IsMultiScare() || advance.IsMultiOblivious();
 
     /// <summary>
     /// Indicates if a multi-battle is required for this advancement.
@@ -91,6 +94,11 @@ public static class AdvanceExtensions
     /// Indicates if a multi-battle is required for this advancement.
     /// </summary>
     public static bool IsMultiBeta(this Advance advance) => advance is (B2 or B3 or B4);
+
+    /// <summary>
+    /// Indicates if a multi-battle is required for this advancement.
+    /// </summary>
+    public static bool IsMultiOblivious(this Advance advance) => advance is (O2 or O3 or O4);
 
     public static bool IsAny<T>(this ReadOnlySpan<T> span, Func<T, bool> check)
     {

@@ -60,6 +60,9 @@ public sealed record PermuteResult(Advance[] Advances, EntityResult Entity, in i
             return " -- Skittish: Mostly aggressive!";
         }
 
+        if (advances.IsAny(AdvanceExtensions.IsMultiOblivious))
+            return " -- Oblivious: Aggressive!";
+
         if (advances.IsAny(AdvanceExtensions.IsMultiAggressive))
             return string.Empty;
 
