@@ -57,7 +57,7 @@ public sealed record PermuteResult(Advance[] Advances, EntityResult Entity, in i
         {
             if (!advances.IsAny(AdvanceExtensions.IsMultiAggressive))
                 return " -- Skittish: Single advances!";
-            return " -- Skittish: Mostly Aggressive!";
+            return " -- Skittish: Mostly aggressive!";
         }
 
         if (advances.IsAny(AdvanceExtensions.IsMultiAggressive))
