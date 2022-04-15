@@ -130,7 +130,7 @@ public static class Permuter
                 meta.AddResult(generate, i);
 
             if (generate.IsAlpha) aggressive++;
-            if (generate.IsSkittish) beta++;
+            else if (generate.IsSkittish) beta++;
             else if (generate.IsOblivious) oblivious++;
             else aggressive++;
         }
