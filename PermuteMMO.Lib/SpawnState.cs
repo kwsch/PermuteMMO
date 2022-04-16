@@ -115,7 +115,7 @@ public readonly record struct SpawnState(in int Count, in int MaxAlive, in int G
     {
         var emptySlots = Dead;
         var respawn = Math.Min(Count, emptySlots);
-        var ghosts = emptySlots == respawn ? 0 : MaxAlive - respawn;
+        var ghosts = emptySlots - respawn;
 
         Debug.Assert(respawn != 0);
         return (emptySlots, respawn, ghosts);
