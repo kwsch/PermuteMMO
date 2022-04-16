@@ -14,7 +14,7 @@ public static class SpawnGenerator
     /// <summary>
     /// Generates an <see cref="EntityResult"/> from the input <see cref="seed"/> and <see cref="table"/>.
     /// </summary>
-    public static EntityResult Generate(in ulong seed, in ulong table, SpawnType type)
+    public static EntityResult Generate(in ulong groupseed, in int index, in ulong seed, in ulong table, SpawnType type)
     {
         var slotrng = new Xoroshiro128Plus(seed);
 
@@ -38,7 +38,10 @@ public static class SpawnGenerator
             Level = level,
             IsAlpha = slot.IsAlpha,
 
-            Seed = seed,
+            GroupSeed = groupseed,
+            Index = index,
+            SlotSeed = seed,
+            GenSeed = genseed,
             Name = slot.Name,
         };
 

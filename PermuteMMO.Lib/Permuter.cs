@@ -46,12 +46,19 @@ public static class Permuter
     private static void PermuteOutbreak(PermuteMeta meta, in ulong table, in ulong seed, in SpawnState state)
     {
         // Re-spawn to capacity
+        var (reseed, newState) = UpdateRespawn(meta, table, seed, state);
+        ContinuePermute(meta, table, reseed, newState);
+    }
+
+    public static (ulong, SpawnState) UpdateRespawn(PermuteMeta meta, ulong table, ulong seed, SpawnState state)
+    {
         var (empty, respawn, ghosts) = state.GetRespawnInfo();
-        var (reseed, aggro, beta, oblivious) = GenerateSpawns(meta, table, seed, empty, ghosts);
+        var (reseed, alpha, aggro, beta, oblivious)
+            = GenerateSpawns(meta, table, seed, empty, ghosts, state.AliveAlpha, meta.Spawner.NoMultiAlpha);
 
         // Update spawn state
-        var newState = state.Generate(respawn, aggro, beta, oblivious);
-        ContinuePermute(meta, table, reseed, newState);
+        var newState = state.Add(respawn, alpha, aggro, beta, oblivious);
+        return (reseed, newState);
     }
 
     private static void ContinuePermute(PermuteMeta meta, in ulong table, in ulong seed, in SpawnState state)
@@ -115,8 +122,10 @@ public static class Permuter
         }
     }
 
-    private static (ulong Seed, int Aggressive, int Skittish, int Oblivious) GenerateSpawns(PermuteMeta meta, in ulong table, in ulong seed, int count, in int ghosts)
+    private static (ulong Seed, int Alpha, int Aggressive, int Skittish, int Oblivious)
+        GenerateSpawns(PermuteMeta meta, in ulong table, in ulong seed, int count, in int ghosts, int currentAlpha, bool removeNewAlphas)
     {
+        int alpha = 0;
         int aggressive = 0;
         int beta = 0;
         int oblivious = 0;
@@ -129,17 +138,20 @@ public static class Permuter
             if (i <= ghosts)
                 continue; // end of wave ghost -- ghosts spawn first!
 
-            var generate = SpawnGenerator.Generate(subSeed, table, meta.Spawner.Detail.SpawnType);
-            if (meta.IsResult(generate))
-                meta.AddResult(generate, i);
+            var generate = SpawnGenerator.Generate(seed, i, subSeed, table, meta.Spawner.Detail.SpawnType);
+            if (removeNewAlphas && generate.IsAlpha && currentAlpha + alpha != 0)
+                continue; // spawner disallows more Alphas
 
-            if (generate.IsAlpha) aggressive++;
+            if (meta.IsResult(generate))
+                meta.AddResult(generate);
+
+            if (generate.IsAlpha) alpha++;
             else if (generate.IsOblivious) oblivious++;
             else if (generate.IsSkittish) beta++;
             else aggressive++;
         }
         var result = rng.Next(); // Reset the seed for future spawns.
-        return (result, aggressive, beta, oblivious);
+        return (result, alpha, aggressive + alpha, beta, oblivious);
     }
 
     private static void PermuteNextTable(PermuteMeta meta, SpawnInfo next, in ulong seed)

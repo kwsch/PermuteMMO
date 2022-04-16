@@ -1,9 +1,12 @@
-﻿namespace PermuteMMO.Lib;
+﻿using System.Diagnostics;
+
+namespace PermuteMMO.Lib;
 
 /// <summary>
 /// <see cref="EntityResult"/> wrapper with some utility logic to print to console.
 /// </summary>
-public sealed record PermuteResult(Advance[] Advances, EntityResult Entity, in int SpawnIndex)
+[DebuggerDisplay($"{{{nameof(StepSummary)},nq}}")]
+public sealed record PermuteResult(Advance[] Advances, EntityResult Entity)
 {
     private bool IsBonus => Array.IndexOf(Advances, Advance.CR) != -1;
     private int WaveIndex => Advances.Count(adv => adv == Advance.CR);
@@ -14,7 +17,7 @@ public sealed record PermuteResult(Advance[] Advances, EntityResult Entity, in i
         var feasibility = GetFeasibility(Advances);
         // 37 total characters for the steps:
         // 10+7 spawner has 6+(3)+3=12 max permutations, +"CR|", remove last |; (3*12+2)=37.
-        var line = $"* {steps,-37} >>> {GetWaveIndicator()}Spawn{SpawnIndex} = {Entity.GetSummary()}{feasibility}";
+        var line = $"* {steps,-37} >>> {GetWaveIndicator()}Spawn{Entity.Index} = {Entity.GetSummary()}{feasibility}";
         if (prev != null || hasChildChain)
             line += " ~~ Chain result!";
         if (isActionMultiResult)
@@ -31,6 +34,8 @@ public sealed record PermuteResult(Advance[] Advances, EntityResult Entity, in i
             return "Bonus ";
         return    $"Wave {waveIndex}";
     }
+
+    private string StepSummary => $"{Entity.Index} {Entity.GroupSeed:X16} " + GetSteps();
 
     public string GetSteps(PermuteResult? prev = null)
     {

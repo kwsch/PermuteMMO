@@ -1,4 +1,5 @@
-﻿using static PermuteMMO.Lib.Advance;
+﻿using System.Diagnostics;
+using static PermuteMMO.Lib.Advance;
 
 namespace PermuteMMO.Lib;
 
@@ -7,6 +8,7 @@ namespace PermuteMMO.Lib;
 /// </summary>
 public enum Advance : byte
 {
+    RG,
     CR,
 
     A1, A2, A3, A4, // Aggressive
@@ -19,6 +21,75 @@ public enum Advance : byte
 
     // G4 is equivalent to CR
     G1, G2, G3,
+}
+
+public static class AdvanceRemoval
+{
+    public static (int Aggro, int Beta, int Oblivious) GetRemovals(this Advance advance)
+    {
+        var count = advance.AdvanceCount();
+        if (advance.IsMultiAggressive() || advance is A1)
+            return (count, 0, 0);
+        if (advance.IsMultiBeta() || advance is B1)
+            return (count - 1, 1, 0);
+        if (advance.IsMultiScare())
+            return (0, count, 0);
+        if (advance.IsMultiOblivious() || advance is O1)
+            return (count - 1, 0, 1);
+
+        throw new ArgumentOutOfRangeException(nameof(advance));
+    }
+
+    public static SpawnState AdvanceState(this Advance advance, SpawnState state)
+    {
+        var (aggro, beta, oblivious) = advance.GetRemovals();
+        return state.Remove(aggro, beta, oblivious);
+    }
+
+    [DebuggerDisplay($"{{{nameof(StepSummary)},nq}}")]
+    public readonly record struct SpawnStep(Advance Step, SpawnState State, ulong Seed)
+    {
+        public string StepSummary => $"{Step} {State.State} {State.Count} {Seed:X16}";
+    }
+
+    public static IReadOnlyList<SpawnStep> RunForwards(PermuteMeta meta, Advance[] advances, ulong seed)
+    {
+        List<SpawnStep> steps = new();
+        var spawner = meta.Spawner;
+        var state = new SpawnState(spawner.Set.Count, spawner.Detail.MaxAlive);
+        (seed, state) = Permuter.UpdateRespawn(meta, meta.Spawner.Set.Table, seed, state);
+        steps.Add(new(RG, state, seed));
+        foreach (var adv in advances)
+        {
+            meta.Start(adv);
+            if (adv == CR)
+            {
+                if (!meta.Spawner.GetNextWave(out var next))
+                    throw new ArgumentException(nameof(adv));
+                meta.Spawner = next;
+                state = new SpawnState(next.Set.Count, next.Detail.MaxAlive); // reset for new wave
+                steps.Add(new(adv, state, seed));
+            }
+            else if (adv >= G1)
+            {
+                var count = adv.AdvanceCount();
+                state = state.AddGhosts(count);
+                seed = Calculations.GetGroupSeed(seed, state.Ghost);
+                steps.Add(new(adv, state, seed));
+                continue;
+            }
+            else
+            {
+                state = adv.AdvanceState(state);
+                steps.Add(new(adv, state, seed));
+            }
+
+            (seed, state) = Permuter.UpdateRespawn(meta, meta.Spawner.Set.Table, seed, state);
+            steps.Add(new(RG, state, seed));
+        }
+
+        return steps;
+    }
 }
 
 public static class AdvanceExtensions

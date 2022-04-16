@@ -11,6 +11,7 @@ public sealed record SpawnInfo(SpawnDetail Detail, SpawnSet Set, SpawnInfo? Next
     private static readonly SpawnDetail Outbreak = new(SpawnType.Outbreak, 4);
 
     private SpawnInfo? Next { get; set; } = Next;
+    public bool NoMultiAlpha => Detail.SpawnType is SpawnType.Regular;
 
     public string GetSummary(string prefix)
     {
