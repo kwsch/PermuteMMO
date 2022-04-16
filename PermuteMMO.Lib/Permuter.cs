@@ -134,8 +134,8 @@ public static class Permuter
                 meta.AddResult(generate, i);
 
             if (generate.IsAlpha) aggressive++;
-            else if (generate.IsSkittish) beta++;
             else if (generate.IsOblivious) oblivious++;
+            else if (generate.IsSkittish) beta++;
             else aggressive++;
         }
         var result = rng.Next(); // Reset the seed for future spawns.
