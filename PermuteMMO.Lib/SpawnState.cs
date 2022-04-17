@@ -17,6 +17,8 @@ public readonly record struct SpawnState(in int Count, in int MaxAlive, in int G
     /// <summary> Current count of unpopulated entities. </summary>
     public int Dead { get; init; } = MaxAlive;
 
+    public int Alive => MaxAlive - Dead;
+
     /// <summary> Total count of entities that can exist as ghosts. </summary>
     /// <remarks> Completely filling with ghost slots will start the next wave rather than add ghosts. </remarks>
     private int MaxGhosts => MaxAlive - 1;
@@ -49,6 +51,14 @@ public readonly record struct SpawnState(in int Count, in int MaxAlive, in int G
     /// Returns a spawner state after knocking out existing entities.
     /// </summary>
     public SpawnState KnockoutOblivious(int count) => Remove(aggro: count - 1, oblivious: 1);
+
+    public SpawnState KnockoutAny(int count)
+    {
+        int aggro = Math.Max(0, Math.Min(AliveAggressive, count));
+        int beta = Math.Max(0, Math.Min(AliveBeta - aggro, count));
+        int obli = Math.Max(0, Math.Min(AliveOblivious - aggro - beta, count));
+        return Remove(aggro, beta, obli);
+    }
 
     /// <summary>
     /// Returns a spawner state after scaring existing Beta entities away.
@@ -133,7 +143,7 @@ public readonly record struct SpawnState(in int Count, in int MaxAlive, in int G
         var respawn = Math.Min(Count, emptySlots);
         var ghosts = emptySlots - respawn;
 
-        Debug.Assert(respawn != 0);
+        Debug.Assert(respawn != 0 || Dead == 0);
         return (emptySlots, respawn, ghosts);
     }
 

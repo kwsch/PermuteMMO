@@ -47,4 +47,35 @@ public sealed class SimpleTests
         var expect = result.Results.Where(z => seq.SequenceEqual(z.Advances));
         expect.FirstOrDefault(z => z.Entity.IsShiny && z.Entity.Index == 2).Should().NotBeNull();
     }
+
+    [Theory]
+    [InlineData(1911689355633755303u)]
+    public void TestMulti(in ulong seed)
+    {
+        var combee = new SlotDetail[]
+        {
+            new(100, "Combee", false, new [] {17, 20}, 0),
+            new(2, "Combee", true , new [] {32, 35}, 3),
+        };
+        foreach (var s in combee)
+            s.SetSpecies();
+
+        const ulong key = 0x1337BABECAFEDEAD;
+        SpawnGenerator.EncounterTables.Add(key, combee);
+
+        const int count = 2;
+        var details = new SpawnDetail(SpawnType.Regular, count);
+        var set = new SpawnSet(key, count);
+        var spawner = SpawnInfo.GetLoop(details, set);
+
+        var results = Permuter.Permute(spawner, seed, 20);
+        var min = results.Results.OrderBy(z => z.Advances.Length).FirstOrDefault();
+        min.Should().NotBeNull();
+
+        var seq = min!.Advances;
+        var copy = results.Copy();
+        var _ = AdvanceRemoval.RunForwards(copy, seq, seed);
+        var expect = copy.Results.Where(z => seq.SequenceEqual(z.Advances));
+        expect.FirstOrDefault(z => z.Entity.IsShiny && z.Entity.Index == 2).Should().NotBeNull();
+    }
 }

@@ -10,7 +10,7 @@ public static class Permuter
     /// <summary>
     /// Iterates through all possible player actions with the starting <see cref="seed"/> and <see cref="spawner"/> details.
     /// </summary>
-    public static PermuteMeta Permute(SpawnInfo spawner, in ulong seed, int maxDepth = 50)
+    public static PermuteMeta Permute(SpawnInfo spawner, in ulong seed, int maxDepth = 15)
     {
         var info = new PermuteMeta(spawner, maxDepth);
         var state = new SpawnState(spawner.Set.Count, spawner.Detail.MaxAlive);
@@ -34,10 +34,10 @@ public static class Permuter
             return;
 
         // Try the next table before we try adding ghosts.
-        PermuteNextTable(meta, next, seed);
+        PermuteNextTable(meta, next, seed, state);
 
         // Try adding ghost spawns if we haven't capped out yet.
-        if (state.CanAddGhosts)
+        if (meta.Spawner.AllowGhosts && state.CanAddGhosts)
             PermuteAddGhosts(meta, seed, table, state);
 
         // Outbreak complete.
@@ -63,6 +63,20 @@ public static class Permuter
 
     private static void ContinuePermute(PermuteMeta meta, in ulong table, in ulong seed, in SpawnState state)
     {
+        // If our spawner loops (regular), handle differently.
+        if (meta.Spawner.RetainExisting)
+        {
+            for (int i = 1; i <= state.Alive; i++)
+            {
+                var step = (int)Advance.A1 + (i - 1);
+                meta.Start((Advance)step);
+                var newState = state.KnockoutAny(i);
+                PermuteRecursion(meta, table, seed, newState);
+                meta.End();
+            }
+            return;
+        }
+
         // Check if we're now out of possible re-spawns
         if (state.Count == 0)
         {
@@ -154,17 +168,32 @@ public static class Permuter
         return (result, alpha, aggressive + alpha, beta, oblivious);
     }
 
-    private static void PermuteNextTable(PermuteMeta meta, SpawnInfo next, in ulong seed)
+    private static void PermuteNextTable(PermuteMeta meta, SpawnInfo next, in ulong seed, in SpawnState exist)
     {
-        meta.Start(Advance.CR);
+        if (!next.RetainExisting)
+            meta.Start(Advance.CR);
+
         var current = meta.Spawner;
         meta.Spawner = next;
+        var newAlive = next.Detail.MaxAlive;
 
-        var state = new SpawnState(next.Set.Count, next.Detail.MaxAlive);
+        SpawnState state;
+        if (next.RetainExisting)
+        {
+            var maxAlive = Math.Max(newAlive, exist.MaxAlive);
+            var newCount = Math.Max(0, maxAlive - exist.Alive);
+            state = exist with { MaxAlive = maxAlive, Count = newCount };
+        }
+        else
+        {
+            var newCount = next.Set.Count;
+            state = new SpawnState(newCount, newAlive);
+        }
         PermuteOutbreak(meta, next.Set.Table, seed, state);
 
         meta.Spawner = current;
-        meta.End();
+        if (!next.RetainExisting)
+            meta.End();
     }
 
     private static void PermuteAddGhosts(PermuteMeta meta, in ulong seed, in ulong table, in SpawnState state)

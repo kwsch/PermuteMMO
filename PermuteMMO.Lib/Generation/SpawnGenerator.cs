@@ -9,7 +9,7 @@ namespace PermuteMMO.Lib;
 /// </summary>
 public static class SpawnGenerator
 {
-    public static readonly IReadOnlyDictionary<ulong, SlotDetail[]> EncounterTables = JsonDecoder.GetDictionary(Resources.mmo_es);
+    public static readonly IDictionary<ulong, SlotDetail[]> EncounterTables = JsonDecoder.GetDictionary(Resources.mmo_es);
 
     /// <summary>
     /// Generates an <see cref="EntityResult"/> from the input <see cref="seed"/> and <see cref="table"/>.
