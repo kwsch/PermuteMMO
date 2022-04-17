@@ -34,4 +34,17 @@ public sealed class SimpleTests
 
         return result.Results.Find(z => advances.SequenceEqual(z.Advances) && entityResult.Index == z.Entity.Index);
     }
+
+    [Theory]
+    [InlineData(1911689355633755303u, 9, 7)]
+    public void TestForwards(in ulong seed, in int baseCount, in int bonusCount)
+    {
+        var spawner = SpawnInfo.GetMMO(0xECBF77B8F7302126, baseCount, 0x9D713CCF138FD43C, bonusCount);
+        var result = Permuter.Permute(spawner, seed).Copy();
+        var seq = new[] { Advance.A1, Advance.A1, Advance.A2, Advance.A4, Advance.CR, Advance.A2, Advance.A2 };
+
+        var _ = AdvanceRemoval.RunForwards(result, seq, seed);
+        var expect = result.Results.Where(z => seq.SequenceEqual(z.Advances));
+        expect.FirstOrDefault(z => z.Entity.IsShiny && z.Entity.Index == 2).Should().NotBeNull();
+    }
 }
