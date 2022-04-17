@@ -80,4 +80,42 @@ public sealed class SimpleTests
         var expect = copy.Results.Where(z => seq.SequenceEqual(z.Advances));
         expect.FirstOrDefault(z => z.Entity.IsShiny).Should().NotBeNull();
     }
+
+    [Theory]
+    [InlineData(0x9C1107A569F7681D)]
+    public void TestEevee(in ulong seed)
+    {
+        var combee = new SlotDetail[]
+        {
+            new(100, "Bidoof", false, new [] {3, 6}, 0),
+            new(2, "Bidoof", true , new [] {17, 19}, 3),
+            new(20, "Eevee", false, new [] {3, 6}, 0),
+            new(1, "Eevee", true , new [] {17, 19}, 3),
+        };
+        foreach (var s in combee)
+            s.SetSpecies();
+
+        const ulong key = 0x1337BABE12345678;
+        SpawnGenerator.EncounterTables.Add(key, combee);
+
+        const int rolls = 5;
+        const int count = 2;
+        static bool IsSatisfactory(PermuteResult z) => z.Entity.Gender == 1 && z.Entity.RollCountUsed <= rolls;
+
+        var details = new SpawnDetail(SpawnType.Regular, count);
+        var set = new SpawnSet(key, count);
+        var spawner = SpawnInfo.GetLoop(details, set);
+
+        var results = Permuter.Permute(spawner, seed, 20);
+        var min = results.Results
+            .Where(IsSatisfactory)
+            .OrderBy(z => z.Advances.Length).FirstOrDefault();
+        min.Should().NotBeNull();
+
+        var seq = min!.Advances;
+        var copy = results.Copy();
+        var _ = AdvanceRemoval.RunForwards(copy, seq, seed);
+        var expect = copy.Results.Where(z => seq.SequenceEqual(z.Advances));
+        expect.FirstOrDefault(z => z.Entity.IsShiny).Should().NotBeNull();
+    }
 }
