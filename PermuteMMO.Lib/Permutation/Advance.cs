@@ -62,7 +62,19 @@ public static class AdvanceRemoval
         foreach (var adv in advances)
         {
             meta.Start(adv);
-            if (adv == CR)
+            if (meta.Spawner.RetainExisting)
+            {
+                var count = adv.AdvanceCount();
+                state = state.KnockoutAny(count);
+
+                var newAlive = meta.Spawner.Detail.MaxAlive; // meh
+
+                var maxAlive = Math.Max(newAlive, state.MaxAlive);
+                var newCount = Math.Max(0, maxAlive - state.Alive);
+                state = state with { MaxAlive = maxAlive, Count = newCount };
+                steps.Add(new(adv, state, seed));
+            }
+            else if (adv == CR)
             {
                 if (!meta.Spawner.GetNextWave(out var next))
                     throw new ArgumentException(nameof(adv));
