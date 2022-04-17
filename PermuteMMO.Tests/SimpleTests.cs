@@ -49,7 +49,7 @@ public sealed class SimpleTests
     }
 
     [Theory]
-    [InlineData(1911689355633755303u)]
+    [InlineData(0xB2204D9BA549D169u)]
     public void TestMulti(in ulong seed)
     {
         var combee = new SlotDetail[]
@@ -69,13 +69,15 @@ public sealed class SimpleTests
         var spawner = SpawnInfo.GetLoop(details, set);
 
         var results = Permuter.Permute(spawner, seed, 20);
-        var min = results.Results.OrderBy(z => z.Advances.Length).FirstOrDefault();
+        var min = results.Results
+            .Where(z => z.Entity.Gender == 1 && z.Entity.RollCountUsed <= 5)
+            .OrderBy(z => z.Advances.Length).FirstOrDefault();
         min.Should().NotBeNull();
 
         var seq = min!.Advances;
         var copy = results.Copy();
         var _ = AdvanceRemoval.RunForwards(copy, seq, seed);
         var expect = copy.Results.Where(z => seq.SequenceEqual(z.Advances));
-        expect.FirstOrDefault(z => z.Entity.IsShiny && z.Entity.Index == 2).Should().NotBeNull();
+        expect.FirstOrDefault(z => z.Entity.IsShiny).Should().NotBeNull();
     }
 }

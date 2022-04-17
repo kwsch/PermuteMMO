@@ -137,7 +137,7 @@ public static class Permuter
     }
 
     private static (ulong Seed, int Alpha, int Aggressive, int Skittish, int Oblivious)
-        GenerateSpawns(PermuteMeta meta, in ulong table, in ulong seed, int count, in int ghosts, int currentAlpha, bool removeNewAlphas)
+        GenerateSpawns(PermuteMeta meta, in ulong table, in ulong seed, int count, in int ghosts, int currentAlpha, bool onlyOneAlpha)
     {
         int alpha = 0;
         int aggressive = 0;
@@ -152,10 +152,8 @@ public static class Permuter
             if (i <= ghosts)
                 continue; // end of wave ghost -- ghosts spawn first!
 
-            var generate = SpawnGenerator.Generate(seed, i, subSeed, table, meta.Spawner.Detail.SpawnType);
-            if (removeNewAlphas && generate.IsAlpha && currentAlpha + alpha != 0)
-                continue; // spawner disallows more Alphas
-
+            bool noAlpha = onlyOneAlpha && currentAlpha + alpha != 0;
+            var generate = SpawnGenerator.Generate(seed, i, subSeed, table, meta.Spawner.Detail.SpawnType, noAlpha);
             if (meta.IsResult(generate))
                 meta.AddResult(generate);
 
