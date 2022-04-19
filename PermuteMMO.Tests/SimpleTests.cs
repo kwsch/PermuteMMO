@@ -1,6 +1,7 @@
 using System.Linq;
 using FluentAssertions;
 using PermuteMMO.Lib;
+using PKHeX.Core;
 using Xunit;
 
 namespace PermuteMMO.Tests;
@@ -100,7 +101,7 @@ public sealed class SimpleTests
 
         const int rolls = 5;
         const int count = 2;
-        static bool IsSatisfactory(PermuteResult z) => z.Entity.Gender == 1 && z.Entity.RollCountUsed <= rolls;
+        static bool IsSatisfactory(PermuteResult z) => z.Entity.Species == (int)Species.Eevee && z.Entity.Gender == 1 && z.Entity.RollCountUsed <= rolls;
 
         var details = new SpawnDetail(SpawnType.Regular, count);
         var set = new SpawnSet(key, count);
