@@ -10,7 +10,7 @@ public static class Permuter
     /// <summary>
     /// Iterates through all possible player actions with the starting <see cref="seed"/> and <see cref="spawner"/> details.
     /// </summary>
-    public static PermuteMeta Permute(SpawnInfo spawner, in ulong seed, int maxDepth = 50)
+    public static PermuteMeta Permute(SpawnInfo spawner, in ulong seed, int maxDepth = 15)
     {
         var info = new PermuteMeta(spawner, maxDepth);
         var state = new SpawnState(spawner.Set.Count, spawner.Detail.MaxAlive);
@@ -34,10 +34,10 @@ public static class Permuter
             return;
 
         // Try the next table before we try adding ghosts.
-        PermuteNextTable(meta, next, seed);
+        PermuteNextTable(meta, next, seed, state);
 
         // Try adding ghost spawns if we haven't capped out yet.
-        if (state.CanAddGhosts)
+        if (meta.Spawner.AllowGhosts && state.CanAddGhosts)
             PermuteAddGhosts(meta, seed, table, state);
 
         // Outbreak complete.
@@ -46,16 +46,37 @@ public static class Permuter
     private static void PermuteOutbreak(PermuteMeta meta, in ulong table, in ulong seed, in SpawnState state)
     {
         // Re-spawn to capacity
+        var (reseed, newState) = UpdateRespawn(meta, table, seed, state);
+        ContinuePermute(meta, table, reseed, newState);
+    }
+
+    public static (ulong, SpawnState) UpdateRespawn(PermuteMeta meta, ulong table, ulong seed, SpawnState state)
+    {
         var (empty, respawn, ghosts) = state.GetRespawnInfo();
-        var (reseed, aggro, beta, oblivious) = GenerateSpawns(meta, table, seed, empty, ghosts);
+        var (reseed, alpha, aggro, beta, oblivious)
+            = GenerateSpawns(meta, table, seed, empty, ghosts, state.AliveAlpha, meta.Spawner.NoMultiAlpha);
 
         // Update spawn state
-        var newState = state.Generate(respawn, aggro, beta, oblivious);
-        ContinuePermute(meta, table, reseed, newState);
+        var newState = state.Add(respawn, alpha, aggro, beta, oblivious);
+        return (reseed, newState);
     }
 
     private static void ContinuePermute(PermuteMeta meta, in ulong table, in ulong seed, in SpawnState state)
     {
+        // If our spawner loops (regular), handle differently.
+        if (meta.Spawner.RetainExisting)
+        {
+            for (int i = 1; i <= state.Alive; i++)
+            {
+                var step = (int)Advance.A1 + (i - 1);
+                meta.Start((Advance)step);
+                var newState = state.KnockoutAny(i);
+                PermuteRecursion(meta, table, seed, newState);
+                meta.End();
+            }
+            return;
+        }
+
         // Check if we're now out of possible re-spawns
         if (state.Count == 0)
         {
@@ -115,44 +136,65 @@ public static class Permuter
         }
     }
 
-    private static (ulong Seed, int Aggressive, int Skittish, int Oblivious) GenerateSpawns(PermuteMeta meta, in ulong table, in ulong seed, int count, in int ghosts)
+    private static (ulong Seed, int Alpha, int Aggressive, int Skittish, int Oblivious)
+        GenerateSpawns(PermuteMeta meta, in ulong table, in ulong seed, int count, in int ghosts, int currentAlpha, bool onlyOneAlpha)
     {
+        int alpha = 0;
         int aggressive = 0;
         int beta = 0;
         int oblivious = 0;
         var rng = new Xoroshiro128Plus(seed);
         for (int i = 1; i <= count; i++)
         {
-            var subSeed = rng.Next();
-            _ = rng.Next(); // Unknown
+            var subSeed = rng.Next(); // generate/slot seed
+            _ = rng.Next(); // alpha move, don't care
 
             if (i <= ghosts)
                 continue; // end of wave ghost -- ghosts spawn first!
 
-            var generate = SpawnGenerator.Generate(subSeed, table, meta.Spawner.Detail.SpawnType);
-            if (meta.IsResult(generate))
-                meta.AddResult(generate, i);
+            bool noAlpha = onlyOneAlpha && currentAlpha + alpha != 0;
+            var generate = SpawnGenerator.Generate(seed, i, subSeed, table, meta.Spawner.Detail.SpawnType, noAlpha);
+            if (generate is null) // only a consideration for spawners with 100% static alphas, qty >1, maybe some weather/time tables?
+                continue; // empty ghost slot -- spawn failure.
 
-            if (generate.IsAlpha) aggressive++;
+            if (meta.IsResult(generate))
+                meta.AddResult(generate);
+
+            if (generate.IsAlpha) alpha++;
             else if (generate.IsOblivious) oblivious++;
             else if (generate.IsSkittish) beta++;
             else aggressive++;
         }
         var result = rng.Next(); // Reset the seed for future spawns.
-        return (result, aggressive, beta, oblivious);
+        return (result, alpha, aggressive + alpha, beta, oblivious);
     }
 
-    private static void PermuteNextTable(PermuteMeta meta, SpawnInfo next, in ulong seed)
+    private static void PermuteNextTable(PermuteMeta meta, SpawnInfo next, in ulong seed, in SpawnState exist)
     {
-        meta.Start(Advance.CR);
+        if (!next.RetainExisting)
+            meta.Start(Advance.CR);
+
         var current = meta.Spawner;
         meta.Spawner = next;
+        var newAlive = next.Detail.MaxAlive;
 
-        var state = new SpawnState(next.Set.Count, next.Detail.MaxAlive);
+        SpawnState state;
+        if (next.RetainExisting)
+        {
+            var maxAlive = Math.Max(newAlive, exist.MaxAlive);
+            var newCount = Math.Max(0, maxAlive - exist.Alive);
+            state = exist with { MaxAlive = maxAlive, Count = newCount };
+        }
+        else
+        {
+            var newCount = next.Set.Count;
+            state = new SpawnState(newCount, newAlive);
+        }
         PermuteOutbreak(meta, next.Set.Table, seed, state);
 
         meta.Spawner = current;
-        meta.End();
+        if (!next.RetainExisting)
+            meta.End();
     }
 
     private static void PermuteAddGhosts(PermuteMeta meta, in ulong seed, in ulong table, in SpawnState state)

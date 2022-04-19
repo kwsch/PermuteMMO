@@ -8,10 +8,14 @@ public sealed record PermuteMeta(SpawnInfo Spawner, int MaxDepth)
     /// <summary>
     /// Global configuration for determining if a <see cref="EntityResult"/> is a suitable result.
     /// </summary>
-    public static Func<EntityResult, IReadOnlyList<Advance>, bool> SatisfyCriteria { private get; set; } = (result, _) => result.IsShiny && result.IsAlpha;
+    public static Func<EntityResult, IReadOnlyList<Advance>, bool> SatisfyCriteria { get; set; } = (result, _) => result.IsShiny && result.IsAlpha;
+
+    public Func<EntityResult, IReadOnlyList<Advance>, bool> Criteria { get; set; } = SatisfyCriteria;
 
     public readonly List<PermuteResult> Results = new();
     private readonly List<Advance> Advances = new();
+
+    public PermuteMeta Copy() => new(Spawner, MaxDepth);
 
     public bool HasResults => Results.Count is not 0;
     public SpawnInfo Spawner { get; set; } = Spawner;
@@ -37,17 +41,17 @@ public sealed record PermuteMeta(SpawnInfo Spawner, int MaxDepth)
     /// <summary>
     /// Stores a result.
     /// </summary>
-    public void AddResult(EntityResult entity, in int index)
+    public void AddResult(EntityResult entity)
     {
         var steps = Advances.ToArray();
-        var result = new PermuteResult(steps, entity, index);
+        var result = new PermuteResult(steps, entity);
         Results.Add(result);
     }
 
     /// <summary>
     /// Checks if the <see cref="entity"/> is a suitable result.
     /// </summary>
-    public bool IsResult(EntityResult entity) => SatisfyCriteria(entity, Advances);
+    public bool IsResult(EntityResult entity) => Criteria(entity, Advances);
 
     /// <summary>
     /// Calls <see cref="PermuteResult.GetLine"/> for all objects in the result list.

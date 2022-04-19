@@ -9,17 +9,22 @@ namespace PermuteMMO.Lib;
 /// </summary>
 public static class SpawnGenerator
 {
-    public static readonly IReadOnlyDictionary<ulong, SlotDetail[]> EncounterTables = JsonDecoder.GetDictionary(Resources.mmo_es);
+    public static readonly IDictionary<ulong, SlotDetail[]> EncounterTables = JsonDecoder.GetDictionary(Resources.mmo_es);
 
     /// <summary>
     /// Generates an <see cref="EntityResult"/> from the input <see cref="seed"/> and <see cref="table"/>.
     /// </summary>
-    public static EntityResult Generate(in ulong seed, in ulong table, SpawnType type)
+    public static EntityResult? Generate(in ulong groupseed, in int index, in ulong seed, in ulong table, SpawnType type, bool noAlpha)
     {
         var slotrng = new Xoroshiro128Plus(seed);
 
-        var slots = GetSlots(table);
+        IEnumerable<SlotDetail> slots = GetSlots(table);
+        if (noAlpha)
+            slots = slots.Where(z => !z.IsAlpha).ToList();
         var slotSum = slots.Sum(z => z.Rate);
+        if (slotSum == 0)
+            return null;
+
         var slotroll = slotrng.NextFloat(slotSum);
         var slot = GetSlot(slots, slotroll);
         var genseed = slotrng.Next();
@@ -38,7 +43,10 @@ public static class SpawnGenerator
             Level = level,
             IsAlpha = slot.IsAlpha,
 
-            Seed = seed,
+            GroupSeed = groupseed,
+            Index = index,
+            SlotSeed = seed,
+            GenSeed = genseed,
             Name = slot.Name,
         };
 

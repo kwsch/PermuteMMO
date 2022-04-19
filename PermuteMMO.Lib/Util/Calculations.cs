@@ -19,8 +19,8 @@ public static class Calculations
             var rng = new Xoroshiro128Plus(seed);
             for (int i = 0; i < count; i++)
             {
-                _ = rng.Next();
-                _ = rng.Next(); // Unknown
+                _ = rng.Next(); // generate/slot seed
+                _ = rng.Next(); // alpha move
             }
             seed = rng.Next(); // Reset the seed for future spawns.
         }
@@ -36,8 +36,8 @@ public static class Calculations
         var rng = new Xoroshiro128Plus(seed);
         for (int i = 0; i < count; i++)
         {
-            _ = rng.Next();
-            _ = rng.Next(); // Unknown
+            _ = rng.Next(); // generate/slot seed
+            _ = rng.Next(); // alpha move
         }
 
         return rng.Next(); // Reset the seed for future spawns.
@@ -54,8 +54,8 @@ public static class Calculations
         var rng = new Xoroshiro128Plus(groupSeed);
         for (int i = 1; i <= spawnIndex; i++)
         {
-            var subSeed = rng.Next();
-            _ = rng.Next(); // Unknown
+            var subSeed = rng.Next(); // generate/slot seed
+            _ = rng.Next(); // alpha move, don't care
 
             if (i == spawnIndex)
                 return subSeed;
@@ -75,8 +75,8 @@ public static class Calculations
         var rng = new Xoroshiro128Plus(groupSeed);
         for (int i = 1; i <= spawnIndex; i++)
         {
-            var subSeed = rng.Next();
-            _ = rng.Next(); // Unknown
+            var subSeed = rng.Next(); // generate/slot seed
+            _ = rng.Next(); // alpha move, don't care
 
             if (i != spawnIndex)
                 continue;

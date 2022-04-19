@@ -23,8 +23,8 @@ public readonly ref struct MassiveOutbreakSpawner8a
     public ulong BaseTable => BinaryPrimitives.ReadUInt64LittleEndian(Data[0x38..]);
     public ulong BonusTable => BinaryPrimitives.ReadUInt64LittleEndian(Data[0x40..]);
     public ulong AguavSeed => BinaryPrimitives.ReadUInt64LittleEndian(Data[0x48..]);
-    public ulong UnknownSeed => BinaryPrimitives.ReadUInt64LittleEndian(Data[0x50..]);
-    public ulong SpawnSeed => BinaryPrimitives.ReadUInt64LittleEndian(Data[0x58..]);
+    public ulong CountSeed => BinaryPrimitives.ReadUInt64LittleEndian(Data[0x50..]);
+    public ulong GroupSeed => BinaryPrimitives.ReadUInt64LittleEndian(Data[0x58..]);
     public byte BaseCount => Data[0x60];
     public uint SpawnedCount => BinaryPrimitives.ReadUInt32LittleEndian(Data[0x64..]);
     public ulong SpawnerName => BinaryPrimitives.ReadUInt64LittleEndian(Data[0x68..]);
