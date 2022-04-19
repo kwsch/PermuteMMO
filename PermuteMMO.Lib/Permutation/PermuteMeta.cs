@@ -13,7 +13,7 @@ public sealed record PermuteMeta(SpawnInfo Spawner, int MaxDepth)
     public Func<EntityResult, IReadOnlyList<Advance>, bool> Criteria { get; set; } = SatisfyCriteria;
 
     public readonly List<PermuteResult> Results = new();
-    private readonly List<Advance> Advances = new();
+    private readonly List<Advance> Advances = new(MaxDepth);
 
     public PermuteMeta Copy() => new(Spawner, MaxDepth);
 
