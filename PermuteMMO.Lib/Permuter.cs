@@ -146,8 +146,8 @@ public static class Permuter
         var rng = new Xoroshiro128Plus(seed);
         for (int i = 1; i <= count; i++)
         {
-            var subSeed = rng.Next();
-            _ = rng.Next(); // Unknown
+            var subSeed = rng.Next(); // generate/slot seed
+            _ = rng.Next(); // alpha move, don't care
 
             if (i <= ghosts)
                 continue; // end of wave ghost -- ghosts spawn first!
