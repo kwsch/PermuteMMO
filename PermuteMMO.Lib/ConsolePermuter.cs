@@ -35,7 +35,7 @@ public static class ConsolePermuter
                     continue;
 
                 Debug.Assert(spawner.HasBase);
-                var seed = spawner.SpawnSeed;
+                var seed = spawner.GroupSeed;
                 var spawn = new SpawnInfo(spawner);
 
                 var result = Permuter.Permute(spawn, seed);
@@ -88,7 +88,7 @@ public static class ConsolePermuter
             }
             Debug.Assert(spawner.IsValid);
 
-            var seed = spawner.SpawnSeed;
+            var seed = spawner.GroupSeed;
             var spawn = new SpawnInfo(spawner);
             var result = Permuter.Permute(spawn, seed);
             if (!result.HasResults)
