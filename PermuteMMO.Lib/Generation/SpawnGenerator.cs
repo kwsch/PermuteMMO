@@ -18,15 +18,13 @@ public static class SpawnGenerator
     {
         var slotrng = new Xoroshiro128Plus(seed);
 
-        IEnumerable<SlotDetail> slots = GetSlots(table);
-        if (noAlpha)
-            slots = slots.Where(z => !z.IsAlpha).ToList();
-        var slotSum = slots.Sum(z => z.Rate);
+        var slots = GetSlots(table);
+        var slotSum = GetSlotSum(slots, noAlpha);
         if (slotSum == 0)
             return null;
 
         var slotroll = slotrng.NextFloat(slotSum);
-        var slot = GetSlot(slots, slotroll);
+        var slot = GetSlot(slots, slotroll, noAlpha);
         var genseed = slotrng.Next();
         var level = GetLevel(slot, slotrng);
 
@@ -96,13 +94,28 @@ public static class SpawnGenerator
         return level;
     }
 
-    private static SlotDetail GetSlot(IEnumerable<SlotDetail> slots, float slotroll)
+    private static float GetSlotSum(IEnumerable<SlotDetail> slots, bool noAlpha)
     {
-        foreach (var s in slots)
+        float total = 0;
+        foreach (var slot in slots)
         {
-            slotroll -= s.Rate;
+            if (noAlpha && slot.IsAlpha)
+                continue;
+            total += slot.Rate;
+        }
+        return total;
+    }
+
+    private static SlotDetail GetSlot(IEnumerable<SlotDetail> slots, float slotroll, bool noAlpha)
+    {
+        foreach (var slot in slots)
+        {
+            if (noAlpha && slot.IsAlpha)
+                continue;
+
+            slotroll -= slot.Rate;
             if (slotroll <= 0)
-                return s;
+                return slot;
         }
         throw new ArgumentOutOfRangeException(nameof(slotroll));
     }
