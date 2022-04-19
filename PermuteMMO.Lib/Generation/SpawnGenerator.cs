@@ -14,7 +14,7 @@ public static class SpawnGenerator
     /// <summary>
     /// Generates an <see cref="EntityResult"/> from the input <see cref="seed"/> and <see cref="table"/>.
     /// </summary>
-    public static EntityResult Generate(in ulong groupseed, in int index, in ulong seed, in ulong table, SpawnType type, bool noAlpha)
+    public static EntityResult? Generate(in ulong groupseed, in int index, in ulong seed, in ulong table, SpawnType type, bool noAlpha)
     {
         var slotrng = new Xoroshiro128Plus(seed);
 
@@ -22,6 +22,9 @@ public static class SpawnGenerator
         if (noAlpha)
             slots = slots.Where(z => !z.IsAlpha).ToList();
         var slotSum = slots.Sum(z => z.Rate);
+        if (slotSum == 0)
+            return null;
+
         var slotroll = slotrng.NextFloat(slotSum);
         var slot = GetSlot(slots, slotroll);
         var genseed = slotrng.Next();

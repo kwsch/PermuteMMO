@@ -50,6 +50,8 @@ public static class UtilTests
         if (!spawn.GetNextWave(out var next))
             throw new Exception();
         var result = SpawnGenerator.Generate(seed, index, respawnSeed, next.Set.Table, next.Detail.SpawnType, false);
+        if (result is null)
+            throw new ArgumentNullException(nameof(result));
         result.IsShiny.Should().BeTrue();
         result.IsAlpha.Should().BeTrue();
         entitySeed.Should().Be(0xc50932b428a734fd);
@@ -71,6 +73,8 @@ public static class UtilTests
         {
             var genSeed = Calculations.GetGenerateSeed(seed, i);
             var entity = SpawnGenerator.Generate(seed, i, genSeed, spawn.Set.Table, spawn.Detail.SpawnType, false);
+            if (entity is null)
+                throw new ArgumentNullException(nameof(entity));
             entities.Add(entity);
         }
 
