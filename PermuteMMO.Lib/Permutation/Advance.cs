@@ -56,7 +56,7 @@ public static class AdvanceRemoval
     {
         List<SpawnStep> steps = new();
         var spawner = meta.Spawner;
-        var state = new SpawnState(spawner.Set.Count, spawner.Detail.MaxAlive);
+        var state = spawner.GetStartingState();
         (seed, state) = Permuter.UpdateRespawn(meta, meta.Spawner.Set.Table, seed, state);
         steps.Add(new(RG, state, seed));
         foreach (var adv in advances)
@@ -67,7 +67,7 @@ public static class AdvanceRemoval
                 var count = adv.AdvanceCount();
                 state = state.KnockoutAny(count);
 
-                var newAlive = meta.Spawner.Detail.MaxAlive; // meh
+                var newAlive = meta.Spawner.Count.GetNextCount();
 
                 var maxAlive = Math.Max(newAlive, state.MaxAlive);
                 var newCount = Math.Max(0, maxAlive - state.Alive);
@@ -79,7 +79,7 @@ public static class AdvanceRemoval
                 if (!meta.Spawner.GetNextWave(out var next))
                     throw new ArgumentException(nameof(adv));
                 meta.Spawner = next;
-                state = new SpawnState(next.Set.Count, next.Detail.MaxAlive); // reset for new wave
+                state = next.GetStartingState();
                 steps.Add(new(adv, state, seed));
             }
             else if (adv >= G1)

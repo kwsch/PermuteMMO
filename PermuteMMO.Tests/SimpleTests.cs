@@ -65,9 +65,9 @@ public sealed class SimpleTests
         SpawnGenerator.EncounterTables.Add(key, combee);
 
         const int count = 2;
-        var details = new SpawnDetail(SpawnType.Regular, count);
+        var details = new SpawnCount(count, count);
         var set = new SpawnSet(key, count);
-        var spawner = SpawnInfo.GetLoop(details, set);
+        var spawner = SpawnInfo.GetLoop(details, set, SpawnType.Regular);
 
         var results = Permuter.Permute(spawner, seed, 20);
         var min = results.Results
@@ -103,9 +103,9 @@ public sealed class SimpleTests
         const int count = 2;
         static bool IsSatisfactory(PermuteResult z) => z.Entity.Species == (int)Species.Eevee && z.Entity.Gender == 1 && z.Entity.RollCountUsed <= rolls;
 
-        var details = new SpawnDetail(SpawnType.Regular, count);
+        var details = new SpawnCount(count, count);
         var set = new SpawnSet(key, count);
-        var spawner = SpawnInfo.GetLoop(details, set);
+        var spawner = SpawnInfo.GetLoop(details, set, SpawnType.Regular);
 
         var results = Permuter.Permute(spawner, seed, 20);
         var min = results.Results

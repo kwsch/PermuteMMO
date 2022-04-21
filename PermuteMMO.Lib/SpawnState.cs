@@ -31,6 +31,9 @@ public readonly record struct SpawnState(in int Count, in int MaxAlive, in int G
     /// <remarks> Only call this if <see cref="Count"/> is zero. </remarks>
     public int EmptyGhostSlots => MaxGhosts - Ghost;
 
+    public static SpawnState Get(int count) => Get(count, count);
+    public static SpawnState Get(int totalCount, int aliveCount) => new(totalCount, aliveCount);
+
     /// <summary>
     /// Returns a spawner state after knocking out existing entities.
     /// </summary>
