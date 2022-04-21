@@ -69,9 +69,10 @@ public static class AdvanceRemoval
 
                 var newAlive = meta.Spawner.Count.GetNextCount();
 
-                var maxAlive = Math.Max(newAlive, state.MaxAlive);
+                var maxAlive = Math.Max(newAlive, state.Alive);
                 var newCount = Math.Max(0, maxAlive - state.Alive);
-                state = state with { MaxAlive = maxAlive, Count = newCount };
+                var newDead = maxAlive - state.Alive;
+                state = state with { MaxAlive = maxAlive, Count = newCount, Dead = newDead };
                 steps.Add(new(adv, state, seed));
             }
             else if (adv == CR)
@@ -96,7 +97,8 @@ public static class AdvanceRemoval
                 steps.Add(new(adv, state, seed));
             }
 
-            (seed, state) = Permuter.UpdateRespawn(meta, meta.Spawner.Set.Table, seed, state);
+            if (state.Count != 0)
+                (seed, state) = Permuter.UpdateRespawn(meta, meta.Spawner.Set.Table, seed, state);
             steps.Add(new(RG, state, seed));
         }
 

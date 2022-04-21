@@ -74,8 +74,8 @@ public record SpawnCount(int MaxAlive, int MinAlive = 0, ulong CountSeed = 0)
         if (IsFixedCount)
             return MaxAlive;
         var rand = new Xoroshiro128Plus(CountSeed);
-        var delta = MinAlive - MaxAlive;
-        var result = (int)rand.NextInt((uint)delta + 1);
+        var delta = MaxAlive - MinAlive;
+        var result = MinAlive + (int)rand.NextInt((uint)delta + 1);
         CountSeed = rand.Next();
         return result;
     }
@@ -83,8 +83,8 @@ public record SpawnCount(int MaxAlive, int MinAlive = 0, ulong CountSeed = 0)
     private int PeekNextCount()
     {
         var rand = new Xoroshiro128Plus(CountSeed);
-        var delta = MinAlive - MaxAlive;
-        return (int)rand.NextInt((uint)delta + 1);
+        var delta = MaxAlive - MinAlive;
+        return MinAlive + (int)rand.NextInt((uint)delta + 1);
     }
 
     public bool CanSpawnMore(int currentMaxAlive)

@@ -83,6 +83,46 @@ public sealed class SimpleTests
     }
 
     [Theory]
+    [InlineData(0xA0B404668A34A9E6u, 0x6B9EBA2AD7437ADEu)]
+    public void TestUnown(in ulong seed, in ulong countSeed)
+    {
+        SlotDetail[] slots = new SlotDetail[28 * 2];
+        const ulong key = 9489890319879407414;
+        for (int i = 0; i < slots.Length/2; i++)
+        {
+            slots[i]      = new(100, "Unown", false, new[] { 25, 25 }, 0);
+            slots[i + 28] = new(001, "Unown", true , new[] { 25, 25 }, 3);
+        }
+        SetFakeTable(slots, key);
+
+        const int minCount = 2;
+        const int maxCount = 3;
+        var details = new SpawnCount(maxCount, minCount, countSeed);
+        var set = new SpawnSet(key, 0);
+        var spawner = SpawnInfo.GetLoop(details, set, SpawnType.Regular);
+
+        var results = Permuter.Permute(spawner, seed, 10);
+        var min = results.Results
+            .MinBy(z => z.Advances.Length);
+        min.Should().NotBeNull();
+
+        var seq = min!.Advances;
+        var copy = results.Copy();
+        copy.Spawner.Count.CountSeed = countSeed;
+        var _ = AdvanceRemoval.RunForwards(copy, seq, seed);
+        var expect = copy.Results.Where(z => seq.SequenceEqual(z.Advances));
+        expect.FirstOrDefault(z => z.Entity.IsShiny).Should().NotBeNull();
+    }
+
+    private static void SetFakeTable(SlotDetail[] slots, ulong key)
+    {
+        foreach (var s in slots)
+            s.SetSpecies();
+
+        SpawnGenerator.EncounterTables.Add(key, slots);
+    }
+
+    [Theory]
     [InlineData(0x9C1107A569F7681D)]
     public void TestEevee(in ulong seed)
     {
