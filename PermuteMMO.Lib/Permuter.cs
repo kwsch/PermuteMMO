@@ -52,6 +52,8 @@ public static class Permuter
 
     public static (ulong, SpawnState) UpdateRespawn(PermuteMeta meta, ulong table, ulong seed, SpawnState state)
     {
+        if (state.Count == 0)
+            return (seed, state);
         var (empty, respawn, ghosts) = state.GetRespawnInfo();
         var (reseed, alpha, aggro, beta, oblivious)
             = GenerateSpawns(meta, table, seed, empty, ghosts, state.AliveAlpha, meta.Spawner.NoMultiAlpha);
@@ -194,9 +196,7 @@ public static class Permuter
         SpawnState state;
         if (next.RetainExisting)
         {
-            var maxAlive = Math.Max(newAlive, exist.MaxAlive);
-            var newCount = Math.Max(0, maxAlive - exist.Alive);
-            state = exist with { MaxAlive = maxAlive, Count = newCount };
+            state = exist.AdjustCount(newAlive);
         }
         else
         {

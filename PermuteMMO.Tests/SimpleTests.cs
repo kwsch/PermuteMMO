@@ -101,7 +101,7 @@ public sealed class SimpleTests
         var set = new SpawnSet(key, 0);
         var spawner = SpawnInfo.GetLoop(details, set, SpawnType.Regular);
 
-        var results = Permuter.Permute(spawner, seed, 10);
+        var results = Permuter.Permute(spawner, seed, 12);
         var min = results.Results
             .MinBy(z => z.Advances.Length);
         min.Should().NotBeNull();

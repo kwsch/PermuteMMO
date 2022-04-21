@@ -65,14 +65,11 @@ public static class AdvanceRemoval
             if (meta.Spawner.RetainExisting)
             {
                 var count = adv.AdvanceCount();
-                state = state.KnockoutAny(count);
+                if (count != 0)
+                    state = state.KnockoutAny(count);
 
                 var newAlive = meta.Spawner.Count.GetNextCount();
-
-                var maxAlive = Math.Max(newAlive, state.Alive);
-                var newCount = Math.Max(0, maxAlive - state.Alive);
-                var newDead = maxAlive - state.Alive;
-                state = state with { MaxAlive = maxAlive, Count = newCount, Dead = newDead };
+                state = state.AdjustCount(newAlive);
                 steps.Add(new(adv, state, seed, meta.Spawner.Count.CountSeed));
             }
             else if (adv == CR)

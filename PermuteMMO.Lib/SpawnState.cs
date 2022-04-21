@@ -130,6 +130,14 @@ public readonly record struct SpawnState(in int Count, in int MaxAlive, in int G
         };
     }
 
+    public SpawnState AdjustCount(int newAlive)
+    {
+        var maxAlive = Math.Max(newAlive, Alive);
+        var newCount = Math.Max(0, maxAlive - Alive);
+        var newDead = maxAlive - Alive;
+        return this with { MaxAlive = maxAlive, Count = newCount, Dead = newDead };
+    }
+
     /// <summary>
     /// Returns a spawner state with additional ghosts added.
     /// </summary>
