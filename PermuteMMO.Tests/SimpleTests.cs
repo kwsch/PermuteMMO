@@ -90,8 +90,9 @@ public sealed class SimpleTests
         const ulong key = 9489890319879407414;
         for (int i = 0; i < slots.Length/2; i++)
         {
-            slots[i]      = new(100, "Unown", false, new[] { 25, 25 }, 0);
-            slots[i + 28] = new(001, "Unown", true , new[] { 25, 25 }, 3);
+            var name = $"Unown{(i == 0 ? "" : $"-{i}")}";
+            slots[i]      = new(100, name, false, new[] { 25, 25 }, 0);
+            slots[i + 28] = new(001, name, true , new[] { 25, 25 }, 3);
         }
         SetFakeTable(slots, key);
 
