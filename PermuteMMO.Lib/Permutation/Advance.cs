@@ -47,57 +47,56 @@ public static class AdvanceRemoval
     }
 
     [DebuggerDisplay($"{{{nameof(StepSummary)},nq}}")]
-    public readonly record struct SpawnStep(Advance Step, SpawnState State, ulong Seed)
+    public readonly record struct SpawnStep(Advance Step, SpawnState State, ulong Seed, ulong CountSeed)
     {
-        public string StepSummary => $"{Step} {State.State} {State.Count} {Seed:X16}";
+        public string StepSummary => $"{Step} {State.State} {State.Count} {Seed:X16} {CountSeed:X16}";
     }
 
     public static IReadOnlyList<SpawnStep> RunForwards(PermuteMeta meta, Advance[] advances, ulong seed)
     {
         List<SpawnStep> steps = new();
         var spawner = meta.Spawner;
-        var state = new SpawnState(spawner.Set.Count, spawner.Detail.MaxAlive);
+        var state = spawner.GetStartingState();
         (seed, state) = Permuter.UpdateRespawn(meta, meta.Spawner.Set.Table, seed, state);
-        steps.Add(new(RG, state, seed));
+        steps.Add(new(RG, state, seed, meta.Spawner.Count.CountSeed));
         foreach (var adv in advances)
         {
             meta.Start(adv);
             if (meta.Spawner.RetainExisting)
             {
                 var count = adv.AdvanceCount();
-                state = state.KnockoutAny(count);
+                if (count != 0)
+                    state = state.KnockoutAny(count);
 
-                var newAlive = meta.Spawner.Detail.MaxAlive; // meh
-
-                var maxAlive = Math.Max(newAlive, state.MaxAlive);
-                var newCount = Math.Max(0, maxAlive - state.Alive);
-                state = state with { MaxAlive = maxAlive, Count = newCount };
-                steps.Add(new(adv, state, seed));
+                var newAlive = meta.Spawner.Count.GetNextCount();
+                state = state.AdjustCount(newAlive);
+                steps.Add(new(adv, state, seed, meta.Spawner.Count.CountSeed));
             }
             else if (adv == CR)
             {
                 if (!meta.Spawner.GetNextWave(out var next))
                     throw new ArgumentException(nameof(adv));
                 meta.Spawner = next;
-                state = new SpawnState(next.Set.Count, next.Detail.MaxAlive); // reset for new wave
-                steps.Add(new(adv, state, seed));
+                state = next.GetStartingState();
+                steps.Add(new(adv, state, seed, meta.Spawner.Count.CountSeed));
             }
             else if (adv >= G1)
             {
                 var count = adv.AdvanceCount();
                 state = state.AddGhosts(count);
                 seed = Calculations.GetGroupSeed(seed, state.Ghost);
-                steps.Add(new(adv, state, seed));
+                steps.Add(new(adv, state, seed, meta.Spawner.Count.CountSeed));
                 continue;
             }
             else
             {
                 state = adv.AdvanceState(state);
-                steps.Add(new(adv, state, seed));
+                steps.Add(new(adv, state, seed, meta.Spawner.Count.CountSeed));
             }
 
-            (seed, state) = Permuter.UpdateRespawn(meta, meta.Spawner.Set.Table, seed, state);
-            steps.Add(new(RG, state, seed));
+            if (state.Count != 0)
+                (seed, state) = Permuter.UpdateRespawn(meta, meta.Spawner.Set.Table, seed, state);
+            steps.Add(new(RG, state, seed, meta.Spawner.Count.CountSeed));
         }
 
         return steps;

@@ -13,7 +13,7 @@ public static class Permuter
     public static PermuteMeta Permute(SpawnInfo spawner, in ulong seed, int maxDepth = 15)
     {
         var info = new PermuteMeta(spawner, maxDepth);
-        var state = new SpawnState(spawner.Set.Count, spawner.Detail.MaxAlive);
+        var state = spawner.GetStartingState();
 
         // Generate the encounters!
         PermuteRecursion(info, spawner.Set.Table, seed, state);
@@ -52,6 +52,8 @@ public static class Permuter
 
     public static (ulong, SpawnState) UpdateRespawn(PermuteMeta meta, ulong table, ulong seed, SpawnState state)
     {
+        if (state.Count == 0)
+            return (seed, state);
         var (empty, respawn, ghosts) = state.GetRespawnInfo();
         var (reseed, alpha, aggro, beta, oblivious)
             = GenerateSpawns(meta, table, seed, empty, ghosts, state.AliveAlpha, meta.Spawner.NoMultiAlpha);
@@ -63,9 +65,21 @@ public static class Permuter
 
     private static void ContinuePermute(PermuteMeta meta, in ulong table, in ulong seed, in SpawnState state)
     {
+        var spawner = meta.Spawner;
         // If our spawner loops (regular), handle differently.
-        if (meta.Spawner.RetainExisting)
+        if (spawner.Type is SpawnType.Regular)
         {
+            // Try KO none if a future state can spawn more.
+            var countSeed = spawner.Count.CountSeed;
+            if (spawner.Count.CanSpawnMore(state.Alive))
+            {
+                meta.Start(Advance.RG);
+                PermuteRecursion(meta, table, seed, state);
+                meta.End();
+                spawner.Count.CountSeed = countSeed;
+            }
+
+            // Try all Knockout->Respawn steps.
             for (int i = 1; i <= state.Alive; i++)
             {
                 var step = (int)Advance.A1 + (i - 1);
@@ -73,6 +87,7 @@ public static class Permuter
                 var newState = state.KnockoutAny(i);
                 PermuteRecursion(meta, table, seed, newState);
                 meta.End();
+                spawner.Count.CountSeed = countSeed;
             }
             return;
         }
@@ -153,7 +168,7 @@ public static class Permuter
                 continue; // end of wave ghost -- ghosts spawn first!
 
             bool noAlpha = onlyOneAlpha && currentAlpha + alpha != 0;
-            var generate = SpawnGenerator.Generate(seed, i, subSeed, table, meta.Spawner.Detail.SpawnType, noAlpha);
+            var generate = SpawnGenerator.Generate(seed, i, subSeed, table, meta.Spawner.Type, noAlpha);
             if (generate is null) // only a consideration for spawners with 100% static alphas, qty >1, maybe some weather/time tables?
                 continue; // empty ghost slot -- spawn failure.
 
@@ -176,19 +191,16 @@ public static class Permuter
 
         var current = meta.Spawner;
         meta.Spawner = next;
-        var newAlive = next.Detail.MaxAlive;
+        var newAlive = next.Count.GetNextCount();
 
         SpawnState state;
         if (next.RetainExisting)
         {
-            var maxAlive = Math.Max(newAlive, exist.MaxAlive);
-            var newCount = Math.Max(0, maxAlive - exist.Alive);
-            state = exist with { MaxAlive = maxAlive, Count = newCount };
+            state = exist.AdjustCount(newAlive);
         }
         else
         {
-            var newCount = next.Set.Count;
-            state = new SpawnState(newCount, newAlive);
+            state = next.GetStartingState();
         }
         PermuteOutbreak(meta, next.Set.Table, seed, state);
 
