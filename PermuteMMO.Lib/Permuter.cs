@@ -162,13 +162,13 @@ public static class Permuter
         for (int i = 1; i <= count; i++)
         {
             var subSeed = rng.Next(); // generate/slot seed
-            _ = rng.Next(); // alpha move, don't care
+            var alphaSeed = rng.Next(); // alpha move, don't care
 
             if (i <= ghosts)
                 continue; // end of wave ghost -- ghosts spawn first!
 
             bool noAlpha = onlyOneAlpha && currentAlpha + alpha != 0;
-            var generate = SpawnGenerator.Generate(seed, i, subSeed, table, meta.Spawner.Type, noAlpha);
+            var generate = SpawnGenerator.Generate(seed, i, subSeed, alphaSeed, table, meta.Spawner.Type, noAlpha);
             if (generate is null) // only a consideration for spawners with 100% static alphas, qty >1, maybe some weather/time tables?
                 continue; // empty ghost slot -- spawn failure.
 

@@ -45,11 +45,11 @@ public static class UtilTests
         const int index = 2;
 
         var gs = Calculations.GetGroupSeed(seed, sequence);
-        var respawnSeed = Calculations.GetGenerateSeed(gs, index);
+        var (genSeed, alphaSeed) = Calculations.GetGenerateSeed(gs, index);
         var entitySeed = Calculations.GetEntitySeed(gs, index);
         if (!spawn.GetNextWave(out var next))
             throw new Exception();
-        var result = SpawnGenerator.Generate(seed, index, respawnSeed, next.Set.Table, next.Type, false);
+        var result = SpawnGenerator.Generate(seed, index, genSeed, alphaSeed, next.Set.Table, next.Type, false);
         if (result is null)
             throw new ArgumentNullException(nameof(result));
         result.IsShiny.Should().BeTrue();
@@ -57,7 +57,7 @@ public static class UtilTests
         entitySeed.Should().Be(0xc50932b428a734fd);
 
         var permute = Permuter.Permute(spawn, seed);
-        var match = permute.Results.Find(z => z.Entity.SlotSeed == respawnSeed);
+        var match = permute.Results.Find(z => z.Entity.SlotSeed == genSeed);
         match.Should().NotBeNull();
     }
 
@@ -71,8 +71,8 @@ public static class UtilTests
         var entities = new List<EntityResult>();
         for (int i = 1; i <= 4; i++)
         {
-            var genSeed = Calculations.GetGenerateSeed(seed, i);
-            var entity = SpawnGenerator.Generate(seed, i, genSeed, spawn.Set.Table, spawn.Type, false);
+            var (genSeed, alphaSeed) = Calculations.GetGenerateSeed(seed, i);
+            var entity = SpawnGenerator.Generate(seed, i, genSeed, alphaSeed, spawn.Set.Table, spawn.Type, false);
             if (entity is null)
                 throw new ArgumentNullException(nameof(entity));
             entities.Add(entity);
