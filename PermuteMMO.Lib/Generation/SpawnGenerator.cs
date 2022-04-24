@@ -14,7 +14,7 @@ public static class SpawnGenerator
     /// <summary>
     /// Generates an <see cref="EntityResult"/> from the input <see cref="seed"/> and <see cref="table"/>.
     /// </summary>
-    public static EntityResult? Generate(in ulong groupseed, in int index, in ulong seed, in ulong table, SpawnType type, bool noAlpha)
+    public static EntityResult? Generate(in ulong groupseed, in int index, in ulong seed, in ulong alphaSeed, in ulong table, SpawnType type, bool noAlpha)
     {
         var slotrng = new Xoroshiro128Plus(seed);
 
@@ -34,7 +34,7 @@ public static class SpawnGenerator
         // Get roll count from save file
         int shinyRolls = SaveFileParameter.GetRerollCount(slot.Species, type);
 
-        var result = new EntityResult
+        var result = new EntityResult(slot)
         {
             Species = slot.Species,
             Form = slot.Form,
@@ -45,7 +45,9 @@ public static class SpawnGenerator
             Index = index,
             SlotSeed = seed,
             GenSeed = genseed,
-            Name = slot.Name,
+
+            AlphaSeed = alphaSeed,
+            SlotRoll = slotroll,
         };
 
         GeneratePokemon(result, genseed, shinyRolls, slot.FlawlessIVs, gt);
