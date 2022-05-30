@@ -6,6 +6,8 @@ public static class BehaviorUtil
 {
     public static readonly HashSet<ushort> Oblivious = new()
     {
+        (ushort)Cyndaquil,  // Cyndaquil and Hippopotas can be scared, but the game seems to only
+        (ushort)Hippopotas, // ever spawn 1 that will run away and 3 that attack you instead.
         (ushort)Lickilicky,
         (ushort)Lickitung,
         (ushort)Magikarp,
@@ -31,7 +33,6 @@ public static class BehaviorUtil
         (ushort)Clefairy,
         (ushort)Cleffa,
         (ushort)Combee,
-        (ushort)Cyndaquil,
         (ushort)Eevee,
         (ushort)Finneon,
         (ushort)Froslass,
@@ -39,7 +40,6 @@ public static class BehaviorUtil
         (ushort)Glameow,
         (ushort)Goomy,
         (ushort)Happiny,
-        (ushort)Hippopotas,
         (ushort)Kirlia,
         (ushort)Kricketot,
         (ushort)Kricketune,
