@@ -12,14 +12,14 @@ public static class JsonDecoder
     /// <summary>
     /// Wrapper to deserialize the json using whatever package this project is currently using.
     /// </summary>
-    public static T Deserialize<T>(string json) where T : class => JsonConvert.DeserializeObject<T>(json);
+    public static T Deserialize<T>(string json) where T : class => JsonConvert.DeserializeObject<T>(json)!;
 
     /// <summary>
     /// Converts the json string back to a usable dictionary.
     /// </summary>
     public static Dictionary<ulong, SlotDetail[]> GetDictionary(string json)
     {
-        var obj = JsonConvert.DeserializeObject<Dictionary<string, SlotDetail[]>>(json);
+        var obj = Deserialize<Dictionary<string, SlotDetail[]>>(json);
         var result = new Dictionary<ulong, SlotDetail[]>(obj.Count);
         foreach (var (key, value) in obj)
         {
