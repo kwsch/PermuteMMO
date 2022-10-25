@@ -172,7 +172,7 @@ public static class SpawnGenerator
             PersonalInfo.RatioMagicGenderless => 2,
             PersonalInfo.RatioMagicFemale => 1,
             PersonalInfo.RatioMagicMale => 0,
-            _ => (int)rng.NextInt(252) + 1 < genderRatio ? (byte)1: (byte)0,
+            _ => (int)rng.NextInt(253) + 1 < genderRatio ? (byte)1: (byte)0,
         };
         result.Nature = (byte)rng.NextInt(25);
 

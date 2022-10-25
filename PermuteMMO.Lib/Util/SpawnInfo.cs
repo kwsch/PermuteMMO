@@ -12,7 +12,7 @@ public sealed record SpawnInfo(SpawnCount Count, SpawnSet Set, SpawnType Type, S
     private static readonly SpawnCount Outbreak = new(4, 4);
 
     private SpawnInfo? Next { get; set; } = Next;
-    public bool NoMultiAlpha => Type is SpawnType.Regular;
+    public bool NoMultiAlpha => Type is SpawnType.Regular or SpawnType.Outbreak;
     public bool AllowGhosts => Type is not SpawnType.Regular;
     public bool RetainExisting => Type is SpawnType.Regular;
 
