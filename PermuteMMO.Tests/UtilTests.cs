@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
 using FluentAssertions;
 using Newtonsoft.Json;
 using PermuteMMO.Lib;
@@ -41,7 +37,7 @@ public static class UtilTests
     {
         var spawn = SpawnInfo.GetMMO(0x85714105CF348588, 9, 0x8AE0881E5F939184, 7);
         const ulong seed = 12880307074085126207u;
-        var sequence = new[] { A2, A1, A3 };
+        Advance[] sequence = [A2, A1, A3];
         const int index = 2;
 
         var gs = Calculations.GetGroupSeed(seed, sequence);

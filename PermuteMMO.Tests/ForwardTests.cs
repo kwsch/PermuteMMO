@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using FluentAssertions;
 using PermuteMMO.Lib;
 using Xunit;
@@ -21,12 +19,12 @@ public sealed class ForwardTests
         result.Results.Find(z => z.Entity.PID == 0x6f4edff0).Should().NotBeNull();
 
         var first = result.Results[0];
-        var match = RunFowardsRegenerate(seed, result, first);
+        var match = RunForwardsRegenerate(seed, result, first);
         Assert.NotNull(match);
-        match!.Entity.SlotSeed.Should().Be(first.Entity.SlotSeed);
+        match.Entity.SlotSeed.Should().Be(first.Entity.SlotSeed);
     }
 
-    private static PermuteResult? RunFowardsRegenerate(ulong seed, PermuteMeta result, PermuteResult first)
+    private static PermuteResult? RunForwardsRegenerate(ulong seed, PermuteMeta result, PermuteResult first)
     {
         result = result.Copy(); // disassociate but keep same inputs
         result.Criteria = (_, _) => true;
@@ -43,11 +41,11 @@ public sealed class ForwardTests
     {
         var spawner = SpawnInfo.GetMMO(0xECBF77B8F7302126, baseCount, 0x9D713CCF138FD43C, bonusCount);
         var result = Permuter.Permute(spawner, seed).Copy();
-        var seq = new[] { A1, A1, A2, A4, CR, A2, A2 };
+        Advance[] seq = [A1, A1, A2, A4, CR, A2, A2];
 
         var _ = AdvanceRemoval.RunForwards(result, seq, seed);
         var expect = result.Results.Where(z => seq.SequenceEqual(z.Advances));
-        expect.FirstOrDefault(z => z.Entity.IsShiny && z.Entity.Index == 2).Should().NotBeNull();
+        expect.FirstOrDefault(z => z.Entity is { IsShiny: true, Index: 2 }).Should().NotBeNull();
     }
 
     [Theory]
@@ -56,11 +54,11 @@ public sealed class ForwardTests
     {
         var spawner = SpawnInfo.GetMMO(0x03B40EB53F427739, baseCount, 0xDF3114CC95FDCF22, bonusCount);
         var result = Permuter.Permute(spawner, seed).Copy();
-        var seq = new[] { B1, B1, B1, B1, B1, G1, CR, A1, A4 };
+        Advance[] seq = [B1, B1, B1, B1, B1, G1, CR, A1, A4];
 
         var _ = AdvanceRemoval.RunForwards(result, seq, seed);
         var expect = result.Results.Where(z => seq.SequenceEqual(z.Advances));
-        expect.FirstOrDefault(z => z.Entity.IsShiny && z.Entity.Index == 4).Should().NotBeNull();
+        expect.FirstOrDefault(z => z.Entity is { IsShiny: true, Index: 4 }).Should().NotBeNull();
 
         var copy = Permuter.Permute(spawner, seed).Copy();
         copy.Criteria = (_, _) => true;

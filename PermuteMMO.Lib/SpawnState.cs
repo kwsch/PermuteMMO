@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 
 namespace PermuteMMO.Lib;
 
@@ -163,7 +163,7 @@ public readonly record struct SpawnState(in int Count, in int MaxAlive, in int G
     private string GetState()
     {
         int ctr = 0;
-        char[] result = new char[MaxAlive];
+        Span<char> result = stackalloc char[MaxAlive];
         for (int i = 0; i < AliveAlpha; i++)
             result[ctr++] = 'a';
         for (int i = 0; i < AliveAggressive - AliveAlpha; i++)
@@ -178,6 +178,6 @@ public readonly record struct SpawnState(in int Count, in int MaxAlive, in int G
             result[ctr++] = 'X';
         while (ctr != result.Length)
             result[ctr++] = '?'; // shouldn't hit here besides ghosts
-        return new string(result);
+        return new string(result[..ctr]);
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace PermuteMMO.Lib;
+namespace PermuteMMO.Lib;
 
 /// <summary>
 /// Stores object-type references for cleaner passing internally. Only refer to <see cref="Results"/> when done.
@@ -12,7 +12,7 @@ public sealed record PermuteMeta(SpawnInfo Spawner, int MaxDepth)
 
     public Func<EntityResult, IReadOnlyList<Advance>, bool> Criteria { get; set; } = SatisfyCriteria;
 
-    public readonly List<PermuteResult> Results = new();
+    public readonly List<PermuteResult> Results = [];
     private readonly List<Advance> Advances = new(MaxDepth);
 
     public PermuteMeta Copy() => new(Spawner, MaxDepth);
@@ -68,20 +68,20 @@ public sealed record PermuteMeta(SpawnInfo Spawner, int MaxDepth)
         }
     }
 
-    private bool HasChildChain(int index, Advance[] parent)
+    private bool HasChildChain(int index, ReadOnlySpan<Advance> parent)
     {
         if (++index >= Results.Count)
             return false;
         return IsSubset(parent, Results[index].Advances);
     }
 
-    private bool IsActionMultiResult(int index, Advance[] child)
+    private bool IsActionMultiResult(int index, ReadOnlySpan<Advance> child)
     {
         int count = 0;
         // scan backwards until different
         for (int i = index - 1; i >= 0; i--)
         {
-            if (Results[i].Advances.SequenceEqual(child))
+            if (child.SequenceEqual(Results[i].Advances))
                 count++;
             else
                 break;
@@ -89,7 +89,7 @@ public sealed record PermuteMeta(SpawnInfo Spawner, int MaxDepth)
         // scan forwards until different
         for (int i = index + 1; i < Results.Count; i++)
         {
-            if (Results[i].Advances.SequenceEqual(child))
+            if (child.SequenceEqual(Results[i].Advances))
                 count++;
             else
                 break;
@@ -97,7 +97,8 @@ public sealed record PermuteMeta(SpawnInfo Spawner, int MaxDepth)
         return count != 0;
     }
 
-    private PermuteResult? FindNearestParentAdvanceResult(int index, Advance[] child)
+    // Non-null indicates this is a chain of results the user might want to pick (compared to other results).
+    private PermuteResult? FindNearestParentAdvanceResult(int index, ReadOnlySpan<Advance> child)
     {
         var start = index - 1;
         if (start < 0)
@@ -105,15 +106,15 @@ public sealed record PermuteMeta(SpawnInfo Spawner, int MaxDepth)
 
         // Due to how we depth-first search, previous results can contain overlapping advancement sequences.
         // Find nearest previous result with advancement sequence being a subset of our child's sequence.
-        var nearest = Results.FindLastIndex(start, start, z => IsSubset(z.Advances, child));
-        if (nearest == -1)
-            return null;
-
-        // Non-null indicates this is a chain of results the user might want to pick (compared to other results).
-        return Results[nearest];
+        for (var i = start; i >= 0; i--)
+        {
+            if (IsSubset(Results[i].Advances, child))
+                return Results[i];
+        }
+        return null;
     }
 
-    private static bool IsSubset(Advance[] parent, Advance[] child)
+    private static bool IsSubset(ReadOnlySpan<Advance> parent, ReadOnlySpan<Advance> child)
     {
         // check if parent sequence [0..n) matches child's [0..n)
         if (parent.Length >= child.Length)

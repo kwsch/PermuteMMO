@@ -1,4 +1,4 @@
-﻿namespace PermuteMMO.Lib;
+namespace PermuteMMO.Lib;
 
 /// <summary>
 /// Status of a Massive Mass Outbreak to display on the map.

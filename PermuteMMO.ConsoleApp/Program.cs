@@ -1,4 +1,4 @@
-﻿using PermuteMMO.Lib;
+using PermuteMMO.Lib;
 
 // Change the criteria for emitting matches here.
 PermuteMeta.SatisfyCriteria = (result, advances) => result.IsShiny;

@@ -1,4 +1,4 @@
-﻿using PKHeX.Core;
+using PKHeX.Core;
 
 namespace PermuteMMO.Lib;
 
@@ -37,17 +37,19 @@ public static class SaveFileParameter
         var data = File.ReadAllBytes(mainPath);
         var sav = new SAV8LA(data);
         UseSaveFileShinyRolls = true;
-        HasCharm = sav.Inventory.Any(z => z.Items.Any(i => i.Index == 632 && i.Count is not 0));
+        HasCharm = sav.Inventory.Any(z => z.Items.Any(IsShinyCharm));
         return sav;
     }
 
+    private static bool IsShinyCharm(InventoryItem item) => item is { Index: 632, Count: not 0 };
+
     /// <summary>
-    /// Gets the count of shiny rolls the player is permitted to have when rolling an <see cref="PKM.PID"/>.
+    /// Gets the count of shiny rolls the player is permitted to have when rolling a <see cref="PKM.PID"/>.
     /// </summary>
     /// <param name="species">Encounter species</param>
     /// <param name="type">Encounter Spawn type</param>
     /// <returns>[1,X] iteration of PID rolls permitted</returns>
-    public static int GetRerollCount(in int species, SpawnType type)
+    public static int GetRerollCount(in ushort species, SpawnType type)
     {
         if (!UseSaveFileShinyRolls)
             return (int)type;

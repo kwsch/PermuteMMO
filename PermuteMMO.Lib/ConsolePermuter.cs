@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using PKHeX.Core;
 
 namespace PermuteMMO.Lib;
@@ -19,7 +19,7 @@ public static class ConsolePermuter
         for (int i = 0; i < MassiveOutbreakSet8a.AreaCount; i++)
         {
             var area = block[i];
-            var areaName = AreaUtil.AreaTable[area.AreaHash];
+            var areaName = AreaUtil.GetAreaName(area.AreaHash);
             if (!area.IsActive)
             {
                 Console.WriteLine($"No outbreak in {areaName}.");
@@ -80,7 +80,7 @@ public static class ConsolePermuter
         for (int i = 0; i < MassOutbreakSet8a.AreaCount; i++)
         {
             var spawner = block[i];
-            var areaName = AreaUtil.AreaTable[spawner.AreaHash];
+            var areaName = AreaUtil.GetAreaName(spawner.AreaHash);
             if (!spawner.HasOutbreak)
             {
                 Console.WriteLine($"No outbreak in {areaName}.");

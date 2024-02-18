@@ -1,17 +1,15 @@
-﻿using System.Buffers.Binary;
+using System.Buffers.Binary;
 
 namespace PermuteMMO.Lib;
 
 /// <summary>
 /// Massive Mass Outbreak data for an individual spawner, indicating all useful parameters for permutation / display.
 /// </summary>
-public readonly ref struct MassiveOutbreakSpawner8a
+public readonly ref struct MassiveOutbreakSpawner8a(Span<byte> data)
 {
     public const int SIZE = 0x90;
 
-    private readonly Span<byte> Data;
-
-    public MassiveOutbreakSpawner8a(Span<byte> data) => Data = data;
+    private readonly Span<byte> Data = data;
 
     public float X => BinaryPrimitives.ReadSingleLittleEndian(Data);
     public float Y => BinaryPrimitives.ReadSingleLittleEndian(Data[4..]);

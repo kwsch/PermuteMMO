@@ -1,4 +1,4 @@
-﻿namespace PermuteMMO.Lib;
+namespace PermuteMMO.Lib;
 
 public static class PermuteDump
 {

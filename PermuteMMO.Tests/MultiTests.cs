@@ -1,4 +1,3 @@
-using System.Linq;
 using FluentAssertions;
 using PermuteMMO.Lib;
 using PKHeX.Core;
@@ -39,8 +38,8 @@ public sealed class MultiTests
 
         var results = Permuter.Permute(spawner, seed, 20);
         var min = results.Results
-            .Where(z => z.Entity.Gender == 1 && z.Entity.RollCountUsed <= 5)
-            .OrderBy(z => z.Advances.Length).FirstOrDefault();
+            .Where(z => z.Entity is { Gender: 1, RollCountUsed: <= 5 })
+            .MinBy(z => z.Advances.Length);
         min.Should().NotBeNull();
 
         var seq = min!.Advances;
@@ -76,7 +75,7 @@ public sealed class MultiTests
         var results = Permuter.Permute(spawner, seed, 20);
         var min = results.Results
             .Where(IsSatisfactory)
-            .OrderBy(z => z.Advances.Length).FirstOrDefault();
+            .MinBy(z => z.Advances.Length);
         min.Should().NotBeNull();
 
         var seq = min!.Advances;

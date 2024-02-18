@@ -1,4 +1,4 @@
-﻿namespace PermuteMMO.Lib;
+namespace PermuteMMO.Lib;
 
 /// <summary>
 /// Type of encounter to generate (determining PID re-roll count)

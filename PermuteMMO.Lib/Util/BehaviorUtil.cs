@@ -1,21 +1,21 @@
-﻿using static PKHeX.Core.Species;
+using static PKHeX.Core.Species;
 
 namespace PermuteMMO.Lib;
 
 public static class BehaviorUtil
 {
-    public static readonly HashSet<ushort> Oblivious = new()
-    {
-        (ushort)Cyndaquil,  // Cyndaquil and Hippopotas can be scared, but the game seems to only
+    public static ReadOnlySpan<ushort> Oblivious =>
+    [
+        (ushort)Cyndaquil, // Cyndaquil and Hippopotas can be scared, but the game seems to only
         (ushort)Hippopotas, // ever spawn 1 that will run away and 3 that attack you instead.
         (ushort)Lickilicky,
         (ushort)Lickitung,
         (ushort)Magikarp,
         (ushort)MrMime,
-    };
+    ];
 
-    public static readonly HashSet<ushort> Skittish = new()
-    {
+    public static ReadOnlySpan<ushort> Skittish =>
+    [
         (ushort)Abra,
         (ushort)Aipom,
         (ushort)Basculin,
@@ -79,5 +79,5 @@ public static class BehaviorUtil
         (ushort)Unown,
         (ushort)Vulpix,
         (ushort)Wurmple,
-    };
+    ];
 }

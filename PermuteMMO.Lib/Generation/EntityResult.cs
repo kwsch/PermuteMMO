@@ -1,4 +1,4 @@
-﻿using PKHeX.Core;
+using PKHeX.Core;
 
 namespace PermuteMMO.Lib;
 
@@ -7,7 +7,8 @@ namespace PermuteMMO.Lib;
 /// </summary>
 public sealed record EntityResult(SlotDetail Slot)
 {
-    public readonly byte[] IVs = { byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue };
+    private const byte UNSET = byte.MaxValue;
+    public readonly byte[] IVs = [UNSET, UNSET, UNSET, UNSET, UNSET, UNSET];
 
     public ulong GroupSeed { get; init; }
     public int Index { get; init; }

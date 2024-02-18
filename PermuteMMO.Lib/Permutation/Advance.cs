@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using static PermuteMMO.Lib.Advance;
 
 namespace PermuteMMO.Lib;
@@ -52,9 +52,9 @@ public static class AdvanceRemoval
         public string StepSummary => $"{Step} {State.State} {State.Count} {Seed:X16} {CountSeed:X16}";
     }
 
-    public static IReadOnlyList<SpawnStep> RunForwards(PermuteMeta meta, Advance[] advances, ulong seed)
+    public static IReadOnlyList<SpawnStep> RunForwards(PermuteMeta meta, ReadOnlySpan<Advance> advances, ulong seed)
     {
-        List<SpawnStep> steps = new();
+        List<SpawnStep> steps = [];
         var spawner = meta.Spawner;
         var state = spawner.GetStartingState();
         (seed, state) = Permuter.UpdateRespawn(meta, meta.Spawner.Set.Table, seed, state);

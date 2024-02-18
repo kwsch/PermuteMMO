@@ -1,4 +1,4 @@
-﻿using System.Runtime.CompilerServices;
+using System.Runtime.CompilerServices;
 using PermuteMMO.Lib.Properties;
 using PKHeX.Core;
 
@@ -54,10 +54,10 @@ public static class SpawnGenerator
         return result;
     }
 
-    private static readonly Dictionary<ushort, SlotDetail[]> Outbreaks = new();
-    private static readonly int[] FakeLevels = { 0, 1, 2 };
+    private static readonly Dictionary<ushort, SlotDetail[]> Outbreaks = [];
+    private static readonly int[] FakeLevels = [0, 1, 2];
 
-    private static SlotDetail[] GetSlots(in ulong table)
+    private static ReadOnlySpan<SlotDetail> GetSlots(in ulong table)
     {
         if (table > 1000)
             return EncounterTables[table];
@@ -74,11 +74,11 @@ public static class SpawnGenerator
         var name = SpeciesName.GetSpeciesName(species, 2);
         if (species == (ushort)Species.Basculin)
             name = $"{name}-2";
-        value = new[]
-        {
+        value =
+        [
             new SlotDetail(100, name, false, FakeLevels, 0),
             new SlotDetail(001, name, true, FakeLevels, 3),
-        };
+        ];
         foreach (var slot in value)
             slot.SetSpecies();
 
@@ -96,7 +96,7 @@ public static class SpawnGenerator
         return level;
     }
 
-    private static float GetSlotSum(IEnumerable<SlotDetail> slots, bool noAlpha)
+    private static float GetSlotSum(ReadOnlySpan<SlotDetail> slots, bool noAlpha)
     {
         float total = 0;
         foreach (var slot in slots)
@@ -108,7 +108,7 @@ public static class SpawnGenerator
         return total;
     }
 
-    private static SlotDetail GetSlot(IEnumerable<SlotDetail> slots, float slotroll, bool noAlpha)
+    private static SlotDetail GetSlot(ReadOnlySpan<SlotDetail> slots, float slotroll, bool noAlpha)
     {
         foreach (var slot in slots)
         {

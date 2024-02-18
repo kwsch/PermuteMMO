@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+using System.Globalization;
 using Newtonsoft.Json;
 using PKHeX.Core;
 
@@ -51,7 +51,7 @@ public sealed record SlotDetail(
     public int LevelMin => Level[0];
     public int LevelMax => Level[1];
     public ushort Species { get; private set; }
-    public ushort Form { get; private set; }
+    public byte Form { get; private set; }
     public bool IsSkittish => BehaviorUtil.Skittish.Contains(Species);
 
     /// <summary>
@@ -65,7 +65,7 @@ public sealed record SlotDetail(
             var dash = Name.IndexOf('-');
             if (dash > 0)
             {
-                Form = ushort.Parse(Name.AsSpan(dash+1));
+                Form = byte.Parse(Name.AsSpan(dash+1));
                 species = Name[..dash];
             }
             else
@@ -78,7 +78,9 @@ public sealed record SlotDetail(
             if (species == "Mr.Mime") // STOP FAKE NAMING SPECIES
                 species = "Mr. Mime";
 
-            Species = (ushort)SpeciesName.SpeciesDict[(int)LanguageID.English][species];
+            if (!SpeciesName.TryGetSpecies(species, (int)LanguageID.English, out var id))
+                throw new Exception();
+            Species = id;
         }
         catch (Exception e)
         {
