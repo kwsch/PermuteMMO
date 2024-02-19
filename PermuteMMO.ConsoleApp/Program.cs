@@ -27,7 +27,7 @@ if (File.Exists(file))
 else
 {
     const string file_mo = "mo.bin";
-    if (File.Exists(file))
+    if (File.Exists(file_mo))
         data_mo = File.ReadAllBytes(file_mo);
     else
         data_mo = SaveFileParameter.GetMassOutbreakData();
