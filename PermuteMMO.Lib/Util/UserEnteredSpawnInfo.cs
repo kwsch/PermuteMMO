@@ -4,16 +4,16 @@ namespace PermuteMMO.Lib;
 
 public sealed record UserEnteredSpawnInfo
 {
-    public ushort Species { get; set; }
-    public string Seed { get; set; } = string.Empty;
+    public ushort Species { get; init; }
+    public string Seed { get; init; } = string.Empty;
 
     public ulong GetSeed() => ulong.Parse(Seed);
 
-    public int BaseCount { get; set; }
-    public string BaseTable { get; set; } = string.Empty;
+    public int BaseCount { get; init; }
+    public string BaseTable { get; init; } = string.Empty;
 
-    public int BonusCount { get; set; }
-    public string BonusTable { get; set; } = string.Empty;
+    public int BonusCount { get; init; }
+    public string BonusTable { get; init; } = string.Empty;
 
     public SpawnInfo GetSpawn()
     {

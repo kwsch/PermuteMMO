@@ -8,7 +8,8 @@ public sealed record PermuteMeta(SpawnInfo Spawner, int MaxDepth)
     /// <summary>
     /// Global configuration for determining if a <see cref="EntityResult"/> is a suitable result.
     /// </summary>
-    public static Func<EntityResult, IReadOnlyList<Advance>, bool> SatisfyCriteria { get; set; } = (result, _) => result.IsShiny && result.IsAlpha;
+    public static Func<EntityResult, IReadOnlyList<Advance>, bool> SatisfyCriteria { get; set; } =
+        (result, _) => result.IsShiny && result.IsAlpha;
 
     public Func<EntityResult, IReadOnlyList<Advance>, bool> Criteria { get; set; } = SatisfyCriteria;
 

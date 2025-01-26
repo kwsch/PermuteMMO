@@ -1,20 +1,18 @@
-using System.Buffers.Binary;
+﻿using static System.Buffers.Binary.BinaryPrimitives;
 
 namespace PermuteMMO.Lib;
 
 /// <summary>
 /// Massive Mass Outbreak data for a single area, containing multiple spawner objects and some metadata.
 /// </summary>
-public readonly ref struct MassiveOutbreakArea8a
+public readonly ref struct MassiveOutbreakArea8a(Span<byte> data)
 {
     public const int SIZE = 0xB80;
     public const int SpawnerCount = 20;
 
-    private readonly Span<byte> Data;
+    private readonly Span<byte> Data = data;
 
-    public MassiveOutbreakArea8a(Span<byte> data) => Data = data;
-
-    public ulong AreaHash => BinaryPrimitives.ReadUInt64LittleEndian(Data);
+    public ulong AreaHash => ReadUInt64LittleEndian(Data);
     public bool IsActive => Data[0x8] == 1;
     public bool IsValid => AreaHash is not (0 or 0xCBF29CE484222645);
 

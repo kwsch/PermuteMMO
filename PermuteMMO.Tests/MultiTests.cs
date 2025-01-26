@@ -27,8 +27,8 @@ public sealed class MultiTests
         const ulong key = 0x1337BABECAFEDEAD;
         var slots = new SlotDetail[]
         {
-            new(100, "Combee", false, new [] {17, 20}, 0),
-            new(2, "Combee", true , new [] {32, 35}, 3),
+            new(100, "Combee", false, [17, 20], 0),
+            new(2, "Combee", true , [32, 35], 3),
         };
         SetFakeTable(slots, key);
 
@@ -42,9 +42,9 @@ public sealed class MultiTests
             .MinBy(z => z.Advances.Length);
         min.Should().NotBeNull();
 
-        var seq = min!.Advances;
+        var seq = min.Advances;
         var copy = results.Copy();
-        var _ = AdvanceRemoval.RunForwards(copy, seq, seed);
+        _ = AdvanceRemoval.RunForwards(copy, seq, seed);
         var expect = copy.Results.Where(z => seq.SequenceEqual(z.Advances));
         expect.FirstOrDefault(z => z.Entity.IsShiny).Should().NotBeNull();
     }
@@ -58,15 +58,15 @@ public sealed class MultiTests
         const ulong key = 0x1337BABE12345678;
         var slots = new SlotDetail[]
         {
-            new(100, "Bidoof", false, new [] {3, 6}, 0),
-            new(2, "Bidoof", true , new [] {17, 19}, 3),
-            new(20, "Eevee", false, new [] {3, 6}, 0),
-            new(1, "Eevee", true , new [] {17, 19}, 3),
+            new(100, "Bidoof", false, [3, 6], 0),
+            new(2, "Bidoof", true , [17, 19], 3),
+            new(20, "Eevee", false, [3, 6], 0),
+            new(1, "Eevee", true , [17, 19], 3),
         };
         SetFakeTable(slots, key);
 
         const int rolls = 5;
-        static bool IsSatisfactory(PermuteResult z) => z.Entity.Species == (int)Species.Eevee && z.Entity.Gender == 1 && z.Entity.RollCountUsed <= rolls;
+        static bool IsSatisfactory(PermuteResult z) => z.Entity is { Species: (int)Species.Eevee, Gender: 1, RollCountUsed: <= rolls };
 
         var details = new SpawnCount(count, count);
         var set = new SpawnSet(key, count);
@@ -78,9 +78,9 @@ public sealed class MultiTests
             .MinBy(z => z.Advances.Length);
         min.Should().NotBeNull();
 
-        var seq = min!.Advances;
+        var seq = min.Advances;
         var copy = results.Copy();
-        var _ = AdvanceRemoval.RunForwards(copy, seq, seed);
+        _ = AdvanceRemoval.RunForwards(copy, seq, seed);
         var expect = copy.Results.Where(z => seq.SequenceEqual(z.Advances));
         expect.FirstOrDefault(z => z.Entity.IsShiny).Should().NotBeNull();
     }
@@ -97,8 +97,8 @@ public sealed class MultiTests
         for (int i = 0; i < slots.Length/2; i++)
         {
             var name = $"Unown{(i == 0 ? "" : $"-{i}")}";
-            slots[i]      = new(100, name, false, new[] { 25, 25 }, 0);
-            slots[i + 28] = new(001, name, true , new[] { 25, 25 }, 3);
+            slots[i]      = new(100, name, false, [25, 25], 0);
+            slots[i + 28] = new(001, name, true , [25, 25], 3);
         }
         SetFakeTable(slots, key);
 
@@ -111,10 +111,10 @@ public sealed class MultiTests
             .MinBy(z => z.Advances.Length);
         min.Should().NotBeNull();
 
-        var seq = min!.Advances;
+        var seq = min.Advances;
         var copy = results.Copy();
         copy.Spawner.Count.CountSeed = countSeed;
-        var _ = AdvanceRemoval.RunForwards(copy, seq, seed);
+        _ = AdvanceRemoval.RunForwards(copy, seq, seed);
         var expect = copy.Results.Where(z => seq.SequenceEqual(z.Advances));
         expect.FirstOrDefault(z => z.Entity.IsShiny).Should().NotBeNull();
     }

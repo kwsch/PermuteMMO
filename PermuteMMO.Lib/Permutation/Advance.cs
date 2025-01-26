@@ -142,7 +142,7 @@ public static class AdvanceExtensions
         S2 => "Multi Scare 2 + Leave",
         S3 => "Multi Scare 3 + Leave",
         S4 => "Multi Scare 4 + Leave",
-        _ => throw new ArgumentOutOfRangeException(nameof(advance), advance, null)
+        _ => throw new ArgumentOutOfRangeException(nameof(advance), advance, null),
     };
 
     /// <summary>

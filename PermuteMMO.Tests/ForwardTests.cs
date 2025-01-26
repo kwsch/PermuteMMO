@@ -43,7 +43,7 @@ public sealed class ForwardTests
         var result = Permuter.Permute(spawner, seed).Copy();
         Advance[] seq = [A1, A1, A2, A4, CR, A2, A2];
 
-        var _ = AdvanceRemoval.RunForwards(result, seq, seed);
+        _ = AdvanceRemoval.RunForwards(result, seq, seed);
         var expect = result.Results.Where(z => seq.SequenceEqual(z.Advances));
         expect.FirstOrDefault(z => z.Entity is { IsShiny: true, Index: 2 }).Should().NotBeNull();
     }
@@ -56,7 +56,7 @@ public sealed class ForwardTests
         var result = Permuter.Permute(spawner, seed).Copy();
         Advance[] seq = [B1, B1, B1, B1, B1, G1, CR, A1, A4];
 
-        var _ = AdvanceRemoval.RunForwards(result, seq, seed);
+        _ = AdvanceRemoval.RunForwards(result, seq, seed);
         var expect = result.Results.Where(z => seq.SequenceEqual(z.Advances));
         expect.FirstOrDefault(z => z.Entity is { IsShiny: true, Index: 4 }).Should().NotBeNull();
 

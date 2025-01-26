@@ -13,6 +13,7 @@ public static class UtilTests
     [Fact]
     public static void CreateJson()
     {
+        const ulong bonusTable = 0;
         var obj = new UserEnteredSpawnInfo
         {
             Species = (int)Species.Diglett,
@@ -20,7 +21,7 @@ public static class UtilTests
             BaseCount = 10,
             BaseTable = $"0x{0x1122_10F4_7DE9_8115:X16}",
             BonusCount = 0,
-            BonusTable = $"0x{0:X16}",
+            BonusTable = $"0x{bonusTable:X16}",
         };
 
         var fileName = Path.Combine(Environment.CurrentDirectory, "spawner.json");

@@ -193,15 +193,7 @@ public static class Permuter
         meta.Spawner = next;
         var newAlive = next.Count.GetNextCount();
 
-        SpawnState state;
-        if (next.RetainExisting)
-        {
-            state = exist.AdjustCount(newAlive);
-        }
-        else
-        {
-            state = next.GetStartingState();
-        }
+        var state = next.RetainExisting ? exist.AdjustCount(newAlive) : next.GetStartingState();
         PermuteOutbreak(meta, next.Set.Table, seed, state);
 
         meta.Spawner = current;
