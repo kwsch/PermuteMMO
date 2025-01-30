@@ -28,7 +28,7 @@ public sealed class MultiTests
         var slots = new SlotDetail[]
         {
             new(100, "Combee", false, [17, 20], 0),
-            new(2, "Combee", true , [32, 35], 3),
+            new(  2, "Combee", true , [32, 35], 3),
         };
         SetFakeTable(slots, key);
 
@@ -58,10 +58,10 @@ public sealed class MultiTests
         const ulong key = 0x1337BABE12345678;
         var slots = new SlotDetail[]
         {
-            new(100, "Bidoof", false, [3, 6], 0),
-            new(2, "Bidoof", true , [17, 19], 3),
-            new(20, "Eevee", false, [3, 6], 0),
-            new(1, "Eevee", true , [17, 19], 3),
+            new(100, "Bidoof", false, [ 3,  6], 0),
+            new(  2, "Bidoof", true,  [18, 21], 3),
+            new( 20, "Eevee",  false, [ 3,  6], 0),
+            new(  1, "Eevee",  true,  [18, 21], 3),
         };
         SetFakeTable(slots, key);
 
