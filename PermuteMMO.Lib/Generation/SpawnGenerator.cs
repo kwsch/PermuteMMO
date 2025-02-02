@@ -28,8 +28,14 @@ public static class SpawnGenerator
         var genseed = slotrng.Next();
         var level = GetLevel(slot, slotrng);
 
-        // Determine stuff from slot detail
-        var gt = PersonalTable.LA.GetFormEntry(slot.Species, slot.Form).Gender;
+        // Magic hashes to signify that this spawner is gender-locked, otherwise use the species default.
+        // Should only apply to multispawners for Basculin-2, where we create fake tables.
+        var gt = table switch
+        {
+            0x123456B0 => PersonalInfo.RatioMagicMale,
+            0x123456B1 => PersonalInfo.RatioMagicFemale,
+            _          => PersonalTable.LA.GetFormEntry(slot.Species, slot.Form).Gender,
+        };
 
         // Get roll count from save file
         int shinyRolls = SaveFileParameter.GetRerollCount(slot.Species, type);

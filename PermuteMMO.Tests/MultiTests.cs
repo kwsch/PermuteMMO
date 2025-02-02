@@ -86,6 +86,35 @@ public sealed class MultiTests
     }
 
     [Theory]
+    [InlineData(0xBE7A00B1CAF3C8DD)]
+    public void TestBasculin(in ulong seed)
+    {
+        const int count = 2; // 2-2 spawner
+
+        const ulong key = 0x123456B0; // Male gender lock
+        var slots = new SlotDetail[]
+        {
+            new(100, "Basculin-2", false, [41, 44], 0),
+            new(  1, "Basculin-2", true,  [56, 59], 3),
+        };
+        SetFakeTable(slots, key);
+
+        const int rolls = 5;
+        static bool IsSatisfactory(PermuteResult z) => z.Entity is { Species: (int)Species.Basculin, Gender: 1, RollCountUsed: <= rolls };
+
+        var details = new SpawnCount(count, count);
+        var set = new SpawnSet(key, count);
+        var spawner = SpawnInfo.GetLoop(details, set, SpawnType.Regular);
+
+        var results = Permuter.Permute(spawner, seed, 20);
+        var min = results.Results
+            .Where(IsSatisfactory)
+            .MinBy(z => z.Advances.Length);
+        results.Should().NotBeNull();
+        min.Should().BeNull();
+    }
+
+    [Theory]
     [InlineData(0xA0B404668A34A9E6u, 0x6B9EBA2AD7437ADEu)]
     public void TestUnown23(in ulong seed, in ulong countSeed)
     {
