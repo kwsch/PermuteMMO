@@ -58,8 +58,9 @@ public readonly record struct SpawnState(in int Count, in int MaxAlive, in int G
     public SpawnState KnockoutAny(int count)
     {
         int aggro = Math.Max(0, Math.Min(AliveAggressive, count));
-        int beta = Math.Max(0, Math.Min(AliveBeta - aggro, count));
-        int obli = Math.Max(0, Math.Min(AliveOblivious - aggro - beta, count));
+        int beta = Math.Max(0, Math.Min(AliveBeta, count - aggro));
+        int obli = Math.Max(0, Math.Min(AliveOblivious, count - aggro - beta));
+        Debug.Assert(aggro + beta + obli == count);
         return Remove(aggro, beta, obli);
     }
 
