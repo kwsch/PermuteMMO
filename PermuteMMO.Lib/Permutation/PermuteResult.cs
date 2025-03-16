@@ -44,7 +44,7 @@ public sealed record PermuteResult(Advance[] Advances, EntityResult Entity)
             return steps;
 
         var prevSeq = p.GetSteps();
-        return string.Concat(Enumerable.Repeat("-> ", (prevSeq.Length+2)/3)) + steps[(prevSeq.Length + 1)..];
+        return string.Concat(Enumerable.Repeat("-> ", (prevSeq.Length + 2) / 3)) + steps[(prevSeq.Length + 1)..];
     }
 
     private static string GetFeasibility(ReadOnlySpan<Advance> advances)

@@ -117,7 +117,10 @@ public sealed record PermuteMeta(SpawnInfo Spawner, int MaxDepth)
 
     private static bool IsSubset(ReadOnlySpan<Advance> parent, ReadOnlySpan<Advance> child)
     {
-        // check if parent sequence [0..n) matches child's [0..n)
+        // Some paths have no steps, so don't consider these part of a chain.
+        if (parent.Length == 0)
+            return false;
+        // Check if parent sequence [0..n) matches child's [0..n)
         if (parent.Length >= child.Length)
             return false;
         for (var i = 0; i < parent.Length; i++)
