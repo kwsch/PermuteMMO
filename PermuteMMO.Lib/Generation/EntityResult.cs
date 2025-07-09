@@ -30,6 +30,7 @@ public sealed record EntityResult(SlotDetail Slot)
 
     public bool IsShiny { get; set; }
     public bool IsAlpha { get; init; }
+    public bool IsMini { get; set; }
     public byte Ability { get; set; }
     public byte Gender { get; set; }
     public byte Nature { get; set; }
@@ -47,13 +48,14 @@ public sealed record EntityResult(SlotDetail Slot)
         var nature = $" {GameInfo.GetStrings(1).Natures[Nature]}";
         var alpha = IsAlpha ? "α-" : "  ";
         var notAlpha = !IsAlpha ? " -- NOT ALPHA" : "";
+        var mini = !IsMini ? "" : " Mini";
         var gender = Gender switch
         {
             2 => "",
             1 => " (F)",
             _ => " (M)",
         };
-        return $"{alpha}{Slot.Name}{gender}:{shiny}{ivs}{nature,-8}{notAlpha}";
+        return $"{alpha}{Slot.Name}{gender}:{shiny}{ivs}{nature,-8}{notAlpha}{mini}";
     }
 
     public IEnumerable<string> GetLines()

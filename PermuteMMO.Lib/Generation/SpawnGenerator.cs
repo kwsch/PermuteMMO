@@ -186,6 +186,8 @@ public static class SpawnGenerator
             ? (byte.MaxValue, byte.MaxValue)
             : ((byte)((int)rng.NextInt(0x81) + (int)rng.NextInt(0x80)),
                (byte)((int)rng.NextInt(0x81) + (int)rng.NextInt(0x80)));
+
+        result.IsMini = !result.IsAlpha && result.Height == 0;
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
