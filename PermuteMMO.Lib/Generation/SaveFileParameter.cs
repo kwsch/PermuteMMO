@@ -11,15 +11,18 @@ public static class SaveFileParameter
 
     public static SAV8LA SaveFile { get; set; } = GetFake();
     public static PokedexSave8a Pokedex => SaveFile.PokedexSave;
-    public static byte[] BackingArray => SaveFile.Blocks.GetBlock(0x02168706).Data;
+    public static Memory<byte> BackingArray => SaveFile.Blocks.GetBlock(0x02168706).Raw;
     public static bool HasCharm { get; set; } = true;
     public static bool UseSaveFileShinyRolls { get; set; }
 
-    public static byte[] GetMassOutbreakData() => SaveFile.GetMassOutbreakData();
-    public static byte[] GetMassiveMassOutbreakData() => SaveFile.GetMassiveMassOutbreakData();
+    public static Memory<byte> GetMassOutbreakData() => SaveFile.GetMassOutbreakData();
+    public static Memory<byte> GetMassiveMassOutbreakData() => SaveFile.GetMassiveMassOutbreakData();
 
-    public static byte[] GetMassOutbreakData(this SAV8LA sav) => sav.Accessor.GetBlock(0x1E0F1BA3).Data;
-    public static byte[] GetMassiveMassOutbreakData(this SAV8LA sav) => sav.Accessor.GetBlock(0x7799EB86).Data;
+    extension(SAV8LA sav)
+    {
+        public Memory<byte> GetMassOutbreakData() => sav.Accessor.GetBlock(0x1E0F1BA3).Raw;
+        public Memory<byte> GetMassiveMassOutbreakData() => sav.Accessor.GetBlock(0x7799EB86).Raw;
+    }
 
     #endregion
 

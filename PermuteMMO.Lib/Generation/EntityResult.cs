@@ -44,7 +44,7 @@ public sealed record EntityResult(SlotDetail Slot)
     {
         var shiny = IsShiny ? $" {RollCountUsed,2} {(ShinyXor == 0 ? '■' : '*')}" : "";
         var ivs = $" {IVs[0]:00}/{IVs[1]:00}/{IVs[2]:00}/{IVs[3]:00}/{IVs[4]:00}/{IVs[5]:00}";
-        var nature = $" {GameInfo.GetStrings(1).Natures[Nature]}";
+        var nature = $" {GameInfo.GetStrings(GameLanguage.DefaultLanguage).Natures[Nature]}";
         var alpha = IsAlpha ? "α-" : "  ";
         var notAlpha = !IsAlpha ? " -- NOT ALPHA" : "";
         var gender = Gender switch
@@ -59,7 +59,7 @@ public sealed record EntityResult(SlotDetail Slot)
     public IEnumerable<string> GetLines()
     {
         var shiny = IsShiny ? $" {RollCountUsed,2} {(ShinyXor == 0 ? '■' : '*')}" : "";
-        var s = GameInfo.GetStrings(1);
+        var s = GameInfo.GetStrings(GameLanguage.DefaultLanguage);
         var alpha = IsAlpha ? "α-" : "";
         yield return shiny + alpha + Slot.Name;
         yield return $"Group Seed: {GroupSeed:X16}";

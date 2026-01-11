@@ -2,7 +2,7 @@
  
 Permutes MMO data to find shinies.
 
-Requires [.NET 6.0](https://dotnet.microsoft.com/download/dotnet/6.0). The executable can be built with any compiler that supports C# 10.
+Requires [.NET 10.0](https://dotnet.microsoft.com/download/dotnet/10.0). The executable can be built with any compiler that supports C# 14.
 
 Usage:
 - Compile the ConsoleApp.

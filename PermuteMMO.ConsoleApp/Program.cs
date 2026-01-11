@@ -30,13 +30,13 @@ else
     if (File.Exists(file_mo))
         data_mo = File.ReadAllBytes(file_mo);
     else
-        data_mo = SaveFileParameter.GetMassOutbreakData();
+        data_mo = SaveFileParameter.GetMassOutbreakData().Span;
 
     const string file_mmo = "mmo.bin";
     if (File.Exists(file_mmo))
         data_mmo = File.ReadAllBytes(file_mmo);
     else
-        data_mmo = SaveFileParameter.GetMassiveMassOutbreakData();
+        data_mmo = SaveFileParameter.GetMassiveMassOutbreakData().Span;
 }
 
 // Compute and print.

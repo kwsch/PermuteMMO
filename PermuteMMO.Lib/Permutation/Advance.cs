@@ -25,25 +25,28 @@ public enum Advance : byte
 
 public static class AdvanceRemoval
 {
-    public static (int Aggro, int Beta, int Oblivious) GetRemovals(this Advance advance)
+    extension(Advance advance)
     {
-        var count = advance.AdvanceCount();
-        if (advance.IsMultiAggressive() || advance is A1)
-            return (count, 0, 0);
-        if (advance.IsMultiBeta() || advance is B1)
-            return (count - 1, 1, 0);
-        if (advance.IsMultiScare())
-            return (0, count, 0);
-        if (advance.IsMultiOblivious() || advance is O1)
-            return (count - 1, 0, 1);
+        public (int Aggro, int Beta, int Oblivious) GetRemovals()
+        {
+            var count = advance.AdvanceCount();
+            if (advance.IsMultiAggressive || advance is A1)
+                return (count, 0, 0);
+            if (advance.IsMultiBeta || advance is B1)
+                return (count - 1, 1, 0);
+            if (advance.IsMultiScare)
+                return (0, count, 0);
+            if (advance.IsMultiOblivious || advance is O1)
+                return (count - 1, 0, 1);
 
-        throw new ArgumentOutOfRangeException(nameof(advance));
-    }
+            throw new ArgumentOutOfRangeException(nameof(advance));
+        }
 
-    public static SpawnState AdvanceState(this Advance advance, SpawnState state)
-    {
-        var (aggro, beta, oblivious) = advance.GetRemovals();
-        return state.Remove(aggro, beta, oblivious);
+        public SpawnState AdvanceState(SpawnState state)
+        {
+            var (aggro, beta, oblivious) = advance.GetRemovals();
+            return state.Remove(aggro, beta, oblivious);
+        }
     }
 
     [DebuggerDisplay($"{{{nameof(StepSummary)},nq}}")]
@@ -145,42 +148,46 @@ public static class AdvanceExtensions
         _ => throw new ArgumentOutOfRangeException(nameof(advance), advance, null),
     };
 
-    /// <summary>
-    /// Gets the count of advances required.
-    /// </summary>
-    public static int AdvanceCount(this Advance advance) => advance switch
+    extension(Advance advance)
     {
-        A1 or B1 or O1       or G1 => 1,
-        A2 or B2 or O1 or S2 or G2 => 2,
-        A3 or B3 or O1 or S3 or G3 => 3,
-        A4 or B4 or O1 or S4       => 4,
-        _ => 0,
-    };
+        /// <summary>
+        /// Gets the count of advances required.
+        /// </summary>
+        public int AdvanceCount() => advance switch
+        {
+            // O2-4 are never used alone since we K.O. 1 at a time.
+            A1 or B1 or O1       or G1 => 1,
+            A2 or B2 or O1 or S2 or G2 => 2,
+            A3 or B3 or O1 or S3 or G3 => 3,
+            A4 or B4 or O1 or S4       => 4,
+            _ => 0,
+        };
 
-    /// <summary>
-    /// Indicates if a multi-battle is required for this advancement.
-    /// </summary>
-    public static bool IsMultiAny(this Advance advance) => advance.IsMultiAggressive() || advance.IsMultiBeta() || advance.IsMultiScare() || advance.IsMultiOblivious();
+        /// <summary>
+        /// Indicates if a multi-battle is required for this advancement.
+        /// </summary>
+        public bool IsMultiAny() => advance.IsMultiAggressive || advance.IsMultiBeta || advance.IsMultiScare || advance.IsMultiOblivious;
 
-    /// <summary>
-    /// Indicates if a multi-battle is required for this advancement.
-    /// </summary>
-    public static bool IsMultiAggressive(this Advance advance) => advance is (A2 or A3 or A4);
+        /// <summary>
+        /// Indicates if a multi-battle is required for this advancement.
+        /// </summary>
+        public bool IsMultiAggressive => advance is (A2 or A3 or A4);
 
-    /// <summary>
-    /// Indicates if a multi-battle is required for this advancement.
-    /// </summary>
-    public static bool IsMultiScare(this Advance advance) => advance is (S2 or S3 or S4);
+        /// <summary>
+        /// Indicates if a multi-battle is required for this advancement.
+        /// </summary>
+        public bool IsMultiScare => advance is (S2 or S3 or S4);
 
-    /// <summary>
-    /// Indicates if a multi-battle is required for this advancement.
-    /// </summary>
-    public static bool IsMultiBeta(this Advance advance) => advance is (B2 or B3 or B4);
+        /// <summary>
+        /// Indicates if a multi-battle is required for this advancement.
+        /// </summary>
+        public bool IsMultiBeta => advance is (B2 or B3 or B4);
 
-    /// <summary>
-    /// Indicates if a multi-battle is required for this advancement.
-    /// </summary>
-    public static bool IsMultiOblivious(this Advance advance) => advance is (O2 or O3 or O4);
+        /// <summary>
+        /// Indicates if a multi-battle is required for this advancement.
+        /// </summary>
+        public bool IsMultiOblivious => advance is (O2 or O3 or O4);
+    }
 
     public static bool IsAny<T>(this ReadOnlySpan<T> span, Func<T, bool> check)
     {

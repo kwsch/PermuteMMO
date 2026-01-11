@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="PermuteMMO.ConsoleApp/PermuteMMO.ConsoleApp.csproj" />
+  <Project Path="PermuteMMO.Lib/PermuteMMO.Lib.csproj" />
+  <Project Path="PermuteMMO.Tests/PermuteMMO.Tests.csproj" />
+</Solution>

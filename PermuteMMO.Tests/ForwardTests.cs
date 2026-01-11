@@ -62,7 +62,7 @@ public sealed class ForwardTests
 
         var copy = Permuter.Permute(spawner, seed).Copy();
         copy.Criteria = (_, _) => true;
-        var __ = AdvanceRemoval.RunForwards(copy, seq, seed);
+        _ = AdvanceRemoval.RunForwards(copy, seq, seed);
         var lines = PermuteDump.Dump(copy);
         var msg = string.Join(Environment.NewLine, lines);
     }

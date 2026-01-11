@@ -1,5 +1,6 @@
 using System.Globalization;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using PKHeX.Core;
 
 namespace PermuteMMO.Lib;
@@ -12,7 +13,7 @@ public static class JsonDecoder
     /// <summary>
     /// Wrapper to deserialize the json using whatever package this project is currently using.
     /// </summary>
-    public static T Deserialize<T>(string json) where T : class => JsonConvert.DeserializeObject<T>(json)!;
+    public static T Deserialize<T>(string json) where T : class => JsonSerializer.Deserialize<T>(json)!;
 
     /// <summary>
     /// Converts the json string back to a usable dictionary.
@@ -23,7 +24,7 @@ public static class JsonDecoder
         var result = new Dictionary<ulong, SlotDetail[]>(obj.Count);
         foreach (var (key, value) in obj)
         {
-            var hash = ulong.Parse(key[2..], NumberStyles.HexNumber, CultureInfo.InvariantCulture);
+            var hash = ulong.Parse(key.AsSpan(2), NumberStyles.HexNumber, CultureInfo.InvariantCulture);
             foreach (var slot in value)
                 slot.SetSpecies();
             result.Add(hash, value);
@@ -41,11 +42,11 @@ public static class JsonDecoder
 /// <param name="Level">Level range array</param>
 /// <param name="FlawlessIVs">Amount of flawless IVs</param>
 public sealed record SlotDetail(
-    [property: JsonProperty("slot")] int Rate,
-    [property: JsonProperty("name")] string Name,
-    [property: JsonProperty("alpha")] bool IsAlpha,
-    [property: JsonProperty("level")] IReadOnlyList<int> Level,
-    [property: JsonProperty("ivs")] int FlawlessIVs
+    [property: JsonPropertyName("slot")] int Rate,
+    [property: JsonPropertyName("name")] string Name,
+    [property: JsonPropertyName("alpha")] bool IsAlpha,
+    [property: JsonPropertyName("level")] IReadOnlyList<int> Level,
+    [property: JsonPropertyName("ivs")] int FlawlessIVs
 )
 {
     public int LevelMin => Level[0];

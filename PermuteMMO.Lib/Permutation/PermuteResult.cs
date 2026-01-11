@@ -49,26 +49,26 @@ public sealed record PermuteResult(Advance[] Advances, EntityResult Entity)
 
     private static string GetFeasibility(ReadOnlySpan<Advance> advances)
     {
-        if (advances.IsAny(AdvanceExtensions.IsMultiScare))
+        if (advances.IsAny(static z => z.IsMultiScare))
         {
-            if (advances.IsAny(AdvanceExtensions.IsMultiBeta))
+            if (advances.IsAny(static z => z.IsMultiBeta))
                 return " -- Skittish: Multi scaring with aggressive!";
             return " -- Skittish: Multi scaring!";
         }
-        if (advances.IsAny(AdvanceExtensions.IsMultiBeta))
+        if (advances.IsAny(static z => z.IsMultiBeta))
             return " -- Skittish: Aggressive!";
 
         if (advances.IsAny(z => z == Advance.B1))
         {
-            if (!advances.IsAny(AdvanceExtensions.IsMultiAggressive))
+            if (!advances.IsAny(static z => z.IsMultiAggressive))
                 return " -- Skittish: Single advances!";
             return " -- Skittish: Mostly aggressive!";
         }
 
-        if (advances.IsAny(AdvanceExtensions.IsMultiOblivious))
+        if (advances.IsAny(static z => z.IsMultiOblivious))
             return " -- Oblivious: Aggressive!";
 
-        if (advances.IsAny(AdvanceExtensions.IsMultiAggressive))
+        if (advances.IsAny(static z => z.IsMultiAggressive))
             return string.Empty;
 
         return " -- Single advances!";
