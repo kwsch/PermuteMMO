@@ -40,11 +40,9 @@ public static class SaveFileParameter
         var data = File.ReadAllBytes(mainPath);
         var sav = new SAV8LA(data);
         UseSaveFileShinyRolls = true;
-        HasCharm = sav.Inventory.Any(z => z.Items.Any(IsShinyCharm));
+        HasCharm = sav.Inventory.Pouches.Any(z => z.HasItem(632));
         return sav;
     }
-
-    private static bool IsShinyCharm(InventoryItem item) => item is { Index: 632, Count: not 0 };
 
     /// <summary>
     /// Gets the count of shiny rolls the player is permitted to have when rolling a <see cref="PKM.PID"/>.
